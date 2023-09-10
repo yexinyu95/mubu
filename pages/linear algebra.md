@@ -1,0 +1,35 @@
+- common matrices
+	- C(column), R(row)
+	- L(lower triangular), U(upper triangular)
+	- Q(orthogonal), S(symmetric)
+	- .\Lambda(eigenvalues)
+- matrices multiplication
+	- $\begin{pmatrix} a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix} X\begin{pmatrix} b_{11} & b_{12} & b_{13}\\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33}\end{pmatrix}$,
+	- $\begin{pmatrix} a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix} X \begin{pmatrix} b_{11} \\ b_{21} \\ b_{31} \end{pmatrix}$+ ...
+	- $\begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \end{pmatrix} X b_{11} +$... = linear combinations of columns,
+- rank
+	- dependent and independent vectors
+- eigenvalues and eigenvectors (only for square matrices)
+- singular values and singular vectors(for any matrices)
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-

@@ -1,0 +1,30 @@
+- 问题：DNS
+	- 可行性
+	  collapsed:: true
+		- DNS地址错误，但IP地址仍可使用
+		- nginx本地反代github | A little homepage. (neutron3529.github.io)
+	- 解决方式：本地反向代理，
+	- 途径（软件）：nginx
+	  collapsed:: true
+		- 参考
+			- GitHub - mashirozx/Pixiv-Nginx: P站（Pixiv）的正确打开方式
+		- nginx的设置
+			- nginx的安装
+				- nginx for Windows
+				- Nginx Windows详细安装部署教程 - taiyonghai - 博客园 (cnblogs.com)
+			- nginx的配置
+				- 证书的签发
+					- openssl的安装
+					- 证书的DNS修改
+				- 服务修改（nginx.conf）
+				- DNS修改（新建hostmap.conf）
+					- DNS的设置
+					- DNS的配置
+			- windows的hosts修改
+			- nginx的启动和关闭
+-
+-
+-
+-
+-
+-

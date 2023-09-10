@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>概率论</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="随机变量的分析">
+            <outline text="构造随机变量"/>
+            <outline text="随机变量与常数">
+                <outline text="大部分概率论的运算都是基于随机变量的，应分清随机变量与常数，"/>
+            </outline>
+            <outline text="随机变量的维度">
+                <outline text="一般统计量会由多个随机变量和多个参数构成，统计量可能是多个随机变量对应的一元随机变量，也可能是多个随机变量对应的多维随机向量，应注意区分；"/>
+                <outline text="此外，也应分清需要求解的是参数（如费舍尔信息量）还是随机变量，"/>
+            </outline>
+        </outline>
+        <outline text="随机事件">
+            <outline text="随机事件：样本空间、样本点、事件"/>
+            <outline text="集合论">
+                <outline text="集合论">
+                    <outline text="集合的类别：可数集合，不可数集合，空集"/>
+                    <outline text="集合的运算">
+                        <outline text="交集、并集、补集；"/>
+                        <outline text="相等、包含（子集）、互斥，"/>
+                    </outline>
+                    <outline text="运算律：交换律、结合律、分配律，"/>
+                </outline>
+                <outline text="集合函数">
+                    <outline text="定义：集合→实数的映射，">
+                        <outline text="集合中的元素可能不是实数，而是现实生活中的具体事件，"/>
+                    </outline>
+                    <outline text="集合的划分">
+                        <outline text="划分（完备事件组）">
+                            <outline text="样本空间为集合S，A1、A2…为S中的事件（子集）；"/>
+                            <outline text="若对任意i ≠ j，都有A_i \cap A_j =\varnothing（即事件两两不交），且\mathop{\cup}\limits_{i =1} ^{\infty}A_i = S，则称Ai构成S的一个划分（完备事件组），"/>
+                            <outline text="同一个集合S可以有多种不同的划分，"/>
+                        </outline>
+                        <outline text="博雷尔事件域">
+                            <outline text="定义">
+<outline text="样本空间为集合S，B为S中的一组子集，"/>
+<outline text="若这一组子集B满足">
+    <outline text="\varnothing \in B,"/>
+    <outline text="若A \in B，则\overline A \in B，"/>
+    <outline text="若A_1, A_2... \in B，则\mathop{\cup}\limits_{i =1} ^{\infty}A_i \in B，"/>
+</outline>
+<outline text="则称B为一个Borel事件域，"/>
+                            </outline>
+                            <outline text="性质">
+<outline text="borel域可以有多个，统计学中讨论的为包含S中全体开集的最小的borel域，"/>
+<outline text="若S可数，则含有n个元素的最小的borel域应有（2^(n+1) - 1）+ 1（空集）个集合，"/>
+<outline text="若S不可数，则可先选定一些端点（a1，a2…），再利用这些端点将S划分为多个集合，并利用这些集合进行并、交运算，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="概率集合函数">
+                <outline text="概率的公理化定义">
+                    <outline text="样本空间为集合S，B为S中的一个Borel事件域，"/>
+                    <outline text="若定义在B上的函数P满足">
+                        <outline text="对任意A \in B, P(A) \geq 0，"/>
+                        <outline text="P(S) = 1，"/>
+                        <outline text="若A_1, A_2... \in B且两两不交，则P(\mathop{\cup}\limits_{i =1}^{\infty}A_i ) = \sum\limits_{i =1}^{\infty} P(A_i)，"/>
+                    </outline>
+                    <outline text="则称P为一个概率函数，"/>
+                </outline>
+                <outline text="概率的性质">
+                    <outline text="（非负性、规范性、可列可加性）"/>
+                    <outline text="可列可加性 → 有限可加性"/>
+                    <outline text="有限可加性 + 连续性 → 可列可加性"/>
+                </outline>
+                <outline text="条件概率">
+                    <outline text="条件概率的定义"/>
+                    <outline text="独立性">
+                        <outline text="两两独立与相互独立"/>
+                        <outline text="独立重复实验（伯努利试验）"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="概率的计算">
+                <outline text="集合的运算规律（德摩根律）"/>
+                <outline text="加法公式、乘法公式、减法公式，"/>
+                <outline text="全概率公式、贝叶斯公式，"/>
+                <outline text="概率不等式：Bon不等式、Boole不等式"/>
+            </outline>
+            <outline text="计数原理（排列、组合）"/>
+            <outline text="古典概型、几何概型"/>
+        </outline>
+        <outline text="随机变量">
+            <outline text="一维随机变量">
+                <outline text="随机变量的概念">
+                    <outline text="集合函数（事件→实数）的因变量，概率函数（实数→实数（概率））的自变量，"/>
+                    <outline text="可以看成中介变量，即随机变量（实数）理论上没有概率，只是反映了对应的事件的概率；将事件统一为随机变量易于数学处理，"/>
+                    <outline text="类别：离散型、连续型、（混合型）"/>
+                </outline>
+                <outline text="概率函数">
+                    <outline text="累积分布函数cdf">
+                        <outline text="定义：分布函数描述的为变量取某些值的“概率”，而并非传统函数的一一对应关系，"/>
+                        <outline text="性质、计算（事件的描述、不连续点）"/>
+                        <outline text="依分布相等：随机变量由事件定义，因此随机变量相等即对应的事件相等，因此概率也相等；而分布函数由概率定义，所以依分布相等只能说明事件的概率相同，不能说明事件也相等，"/>
+                    </outline>
+                    <outline text="概率分布函数">
+                        <outline text="示性函数与支集"/>
+                        <outline text="离散随机变量pmf、连续随机变量pdf"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="多维随机变量">
+                <outline text="随机向量">
+                    <outline text="样本空间由一元变为多元，并非为多个一元空间的组合；因此总的概率仍为1，"/>
+                    <outline text="定义：概率P[(x_1 \leq k_1) ∩ (x_2 \leq k_2)]，"/>
+                </outline>
+                <outline text="联合分布函数、边缘分布函数"/>
+                <outline text="离散-连续混合分布"/>
+            </outline>
+            <outline text="条件分布">
+                <outline text="（条件概率定义）"/>
+                <outline text="条件pdf/pmf">
+                    <outline text="表达式为多元函数，"/>
+                    <outline text="对于f(y|x)，y为随机变量，x则看作常量；因此求解数字特征、概率时以y为基础 ，"/>
+                </outline>
+                <outline text="独立性">
+                    <outline text="独立性和不相关性">
+                        <outline text="独立性由概率定义，不相关性由数字特征（协方差）定义；因此独立可以说明不相关，但不相关不一定独立，"/>
+                    </outline>
+                    <outline text="独立性的证明与否定">
+                        <outline text="证明：密度函数乘积、分布函数乘积、概率的乘积；"/>
+                        <outline text="证明需要严格说明以上三点中的一点（即必须算出准确的pdf、cdf等），但否定独立性则只需要寻找一个反例（如某交集事件的概率不同于两个事件的概率的乘积），"/>
+                    </outline>
+                    <outline text="独立随机变量的性质"/>
+                </outline>
+                <outline text="混合分布">
+                    <outline text="线性组合、混合分布（离散）、混合分布（连续），"/>
+                </outline>
+                <outline text="条件分布思想">
+                    <outline text="对于较复杂的概率问题，应尝试从条件分布的角度考虑；即对随机变量进行适当的划分，"/>
+                </outline>
+                <outline text="（连续场合的全概率公式与贝叶斯公式）"/>
+                <outline text="（多元条件分布）、（联合条件分布）、（Borel悖论）"/>
+            </outline>
+        </outline>
+        <outline text="数字特征">
+            <outline text="一元">
+                <outline text="期望（矩）">
+                    <outline text="数学期望、方差（标准差）及其性质"/>
+                    <outline text="矩">
+                        <outline text="n阶（原点）矩、n阶中心矩"/>
+                        <outline text="变异系数、峰度、偏度"/>
+                    </outline>
+                    <outline text="矩母函数、特征函数，"/>
+                </outline>
+                <outline text="分位数">
+                    <outline text="中位数、p分位数、众数"/>
+                </outline>
+                <outline text="（故障率函数）"/>
+                <outline text="（熵）"/>
+            </outline>
+            <outline text="一元/条件分布">
+                <outline text="条件数学期望、条件方差（一般为随机变量）；"/>
+                <outline text="重期望公式">
+                    <outline text="定理：EX = E[E(X|Y)] = E[g(Y)]，（常数）"/>
+                    <outline text="性质">
+                        <outline text="\min E[Y-g(X)]^2 = E[Y-E(Y|X)]^2，"/>
+                        <outline text="对难以直接求解的EX，可以考虑将X拆分为条件分布X|Y，再根据重期望公式求解，"/>
+                        <outline text="若X、Y不独立，但条件分布已知，则可由重期望公式计算E[g(x, y)]，其理论依据为给定条件分布后，Y可以看作常量，所以可以由常量的期望运算规则，从算式中分离，"/>
+                        <outline text="如E[g(X,Y)] = E(E[g(X,Y)|Y]) = E(h(Y)*E[u(X)|Y])（将g(X, Y) 拆分为h(Y)和u(X)的乘积）= E[h(Y)*t(Y)]，"/>
+                    </outline>
+                </outline>
+                <outline text="条件方差公式">
+                    <outline text="VarX = E[Var(X|Y)] + Var[E(X|Y)] =E[g(Y)] + Var[g(Y)] ，（常数）"/>
+                    <outline text="Var[Y-E(Y|X)]  = E[ Var(Y|X)] ，"/>
+                </outline>
+            </outline>
+            <outline text="线性条件均值（正态）"/>
+            <outline text="多元">
+                <outline text="协方差与相关系数及其性质"/>
+                <outline text="随机向量矩母函数"/>
+                <outline text="随机向量期望"/>
+                <outline text="方差-协方差矩阵"/>
+            </outline>
+            <outline text="随机变量函数的数字特征"/>
+            <outline text="数字特征的不等式">
+                <outline text="柯西－施瓦茨不等式；（闵可夫斯基不等式、holder不等式）；"/>
+                <outline text="Jensen不等式及其推广；（凸函数／严格凸函数），"/>
+            </outline>
+        </outline>
+        <outline text="变量变换">
+            <outline text="随机变量的函数的分布">
+                <outline text="随机变量的函数的分布"/>
+                <outline text="根据两个随机变量的联合分布求其函数的分布"/>
+                <outline text="根据多个独立随机变量的联合分布求其函数的分布"/>
+            </outline>
+            <outline text="分析变量">
+                <outline text="类型：离散、连续、混合，"/>
+                <outline text="维度：一元-一元，多元-一元，多元-多元，"/>
+            </outline>
+            <outline text="确定变量支集">
+                <outline text="原变量"/>
+                <outline text="新变量">
+                    <outline text="连续：不等式变换/边界变换，增补变量法，"/>
+                    <outline text="离散：穷举，"/>
+                </outline>
+                <outline text="描述事件">
+                    <outline text="分析变换方式">
+                        <outline text="一对一变换"/>
+                        <outline text="非一对一变换">
+                            <outline text="对于X \in(-1,3), Y =X^2"/>
+                            <outline text="X的不同支集 → Y的同一支集：概率相加，即 P(0&lt;Y&lt;1) = P(-1&lt;X&lt;0)+P(0&lt;X&lt;1)，"/>
+                            <outline text="X的不同支集 → Y的不同支集：分段函数，即 P(1&lt;Y&lt;9) = P(1&lt;X&lt;3)，与前两段无关，"/>
+                        </outline>
+                    </outline>
+                    <outline text="“事件”的描述">
+                        <outline text="全概率公式展开，"/>
+                        <outline text="联合分布与条件分布的应用，"/>
+                        <outline text="独立性的应用，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="概率的计算">
+                <outline text="拆分支集，按支集分别计算概率，"/>
+                <outline text="离散：求和">
+                    <outline text="分析/引入求和变量，"/>
+                </outline>
+                <outline text="连续：积分">
+                    <outline text="确定积分变量，积分限，"/>
+                    <outline text="确定事件（概率P）→ cdf的定义（函数F）"/>
+                </outline>
+            </outline>
+            <outline text="技巧">
+                <outline text="描述事件">
+                    <outline text="应首先尝试对“事件”（即概率P(f(x,y)\leq z)进行化简，将其尽量转化为已知分布的形式；化简时应注意不等号的方向，"/>
+                    <outline text="可以通过分析随机变量之间的关系，分布函数F(x) 的性质等寻找突破，"/>
+                    <outline text="拆分为多个一对一变换时，应注意不同的变换的雅可比行列式可能不同，"/>
+                    <outline text="（直接计算分布有困难时，可以考虑引入新的随机变量，）"/>
+                </outline>
+                <outline text="计算概率">
+                    <outline text="对于离散分布，可以用求和代替积分；一般可以引入第三变量 i 以便于求和——而对于较复杂的函数变换，可以考虑引入多个参数来表示随机变量，"/>
+                    <outline text="含参数的二重积分的积分限的划分方式与普通的二重积分类似，只是参数z可能会出现在原本为常数的积分范围中，应画图辅助分析，"/>
+                    <outline text="pdf一般难以直接求解，所以一般方法为先由概率求出cdf，再求导得到pdf，"/>
+                    <outline text="对于均匀分布等，二重积分换元后的函数与雅可比行列式|J|可能变化较小，但支集的变化一般较大，即积分得到的一元分布会有差异，"/>
+                    <outline text="对于离散-连续混合分布，若难以写出pmf的表达式，可以写成分布列的形式，"/>
+                </outline>
+                <outline text="（矩母函数方法）"/>
+            </outline>
+        </outline>
+        <outline text="常见分布族">
+            <outline text="分布的定义（支集）、分布的密度函数（分布的参数）、数字特征">
+                <outline text="常见分布族的分布函数与数字特征，与规定的随机变量支集、参数形式、参数取值一一对应；若具体数据不完全符合规定信息，则不能直接使用算得的结论，"/>
+                <outline text="可以考虑重新设置随机变量，或重新计算密度函数、数字特征，"/>
+            </outline>
+            <outline text="一维分布">
+                <outline text="离散">
+                    <outline text="二项分布、泊松分布、几何分布，"/>
+                    <outline text="负二项分布、帕斯卡分布、离散均匀分布、超几何分布，"/>
+                    <outline text="组合数、二项式定理，"/>
+                    <outline text="泊松定理、（泊松过程）"/>
+                </outline>
+                <outline text="连续">
+                    <outline text="均匀分布"/>
+                    <outline text="正态分布（标准正态分布），"/>
+                    <outline text="伽马分布（Γ函数）、χ2分布、指数分布、贝塔分布（B函数），">
+                        <outline text="伽马分布与泊松分布的cdf的关系；贝塔分布与二项/负二项分布的cdf的关系，"/>
+                    </outline>
+                    <outline text="柯西分布、逻辑斯蒂分布；"/>
+                    <outline text="折叠正态分布、对数正态分布；"/>
+                    <outline text="双指数分布、威布尔分布、帕累托分布，"/>
+                </outline>
+            </outline>
+            <outline text="多维分布">
+                <outline text="离散">
+                    <outline text="三项分布（二维）、多项分布">
+                        <outline text="三点分布、多点分布、（条件分布），"/>
+                        <outline text="多项式定理，"/>
+                    </outline>
+                    <outline text="（三维超几何分布）"/>
+                </outline>
+                <outline text="连续">
+                    <outline text="二维正态分布"/>
+                    <outline text="多元正态分布">
+                        <outline text="多元正态分布的矩阵表示"/>
+                        <outline text="边缘分布与条件分布">
+                            <outline text="定理：多元正态分布的线性组合仍为正态分布，且协方差为0等价于独立，"/>
+                            <outline text="多个独立的正态分布（多维正态分布） → 多维正态分布（分布间不独立）→ 多个正态分布（分布间不独立）"/>
+                        </outline>
+                        <outline text="多元正态分布的方差-协方差矩阵"/>
+                    </outline>
+                    <outline text="二维均匀分布"/>
+                    <outline text="（狄利克雷分布）"/>
+                </outline>
+            </outline>
+            <outline text="指数分布族">
+                <outline text="定义、性质（正则条件、充分（完全）统计量、mlr），"/>
+                <outline text="多参数指数族，曲指数族，"/>
+            </outline>
+            <outline text="位置－尺度族">
+                <outline text="位置－尺度变换、位置 - 尺度不变统计量，"/>
+                <outline text="标准化、数字特征，"/>
+            </outline>
+            <outline text="分布之间的关系">
+                <outline text="可加性">
+                    <outline text="需要随机变量间的独立作为前提，"/>
+                    <outline text="离散">
+                        <outline text="二项分布b(n_i, p)，">
+                            <outline text="负二项分布nb(n_i, p)，"/>
+                            <outline text="几何分布geo(p)/pa(1,p)，帕斯卡分布pa(r_i, p)，"/>
+                        </outline>
+                        <outline text="泊松分布P(\lambda _i)，"/>
+                    </outline>
+                    <outline text="连续">
+                        <outline text="伽马分布Ga(\alpha_i, \beta)，">
+                            <outline text="χ2分布\chi^2 (n_i)，"/>
+                            <outline text="指数分布关于参数λ无可加性，但分布参数相同时，有\Sigma X_i \sim Ga(n, 1/\lambda)，"/>
+                        </outline>
+                        <outline text="正态分布N(\mu_i, \sigma_i^2)，">
+                            <outline text="方差项为常数平方相加，即((a+b)\mu_i, (a^2 + b^2)\sigma_i^2)，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="分布间的关系">
+                    <outline text="概率积分变换定理">
+                        <outline text="若X的cdf为F_X(x)，则随机变量Y= F_X(X) \sim U(0,1)，"/>
+                        <outline text="反之，若X \sim U(0,1), Y = F^{-1}_Y(X)，则Y的cdf为F_Y(y)，"/>
+                    </outline>
+                    <outline text="离散">
+                        <outline text="若X \sim b(n,p)，则n -X \sim b(n,1-p)，"/>
+                        <outline text="若X_i \sim P(\lambda_i)，且Xi之间相互独立，则(X_1|X_1 +X_2) \sim b(n,\pi_1)，\pi_1 =  \dfrac{\lambda_1} {\lambda_1 +\lambda_2},"/>
+                        <outline text="对于多个随机变量，多元变量（X1，X2…，Xk）的条件分布为多项分布(X_1,X_2...,X_k|\sum\limits_{i =1}^{k} X_i) \sim MN(n,\pi)，\pi为参数向量(\pi_1,\pi_2...,\pi_k),\pi_i = \dfrac{\lambda_i} {\sum\limits_{i =1}^{k} \lambda_i}，"/>
+                    </outline>
+                    <outline text="连续">
+                        <outline text="正态分布">
+                            <outline text="标准化：X \sim N(\mu, \sigma^2)，则{\dfrac{X - \mu} {\sigma}} \sim N(0,1)，"/>
+                            <outline text="若X \sim N(0,1)，则X^2 \sim \chi^2(1)，"/>
+                            <outline text="若X,Y \sim N(0,1)，则\dfrac{X} {|Y|} = \dfrac{X} {\sqrt  {Y^2}}\sim t(1), Cau(0,1)，"/>
+                        </outline>
+                        <outline text="伽马分布">
+                            <outline text="若X \sim Ga(\alpha, \beta)，则Y = kX \sim Ga(\alpha, k\beta)，">
+<outline text="特例，Y = \dfrac{2} {\beta}X \sim \chi^2(2\alpha)，"/>
+                            </outline>
+                            <outline text="定理：若X \sim Ga(\alpha_1, \beta)，Y \sim Ga(\alpha_2, \beta)，则Z =\dfrac{X} {X+Y} \sim Be(\alpha_1, \alpha_2)，\dfrac{Y} {X+Y} \sim Be(\alpha_2, \alpha_1)，">
+<outline text="Z与X + Y独立，（Z的分布不依赖于β，X+Y为β的充分统计量），"/>
+<outline text="可用于构造分布不依赖于β的统计量，"/>
+<outline text="对于X \sim \chi^2(m)，Y \sim \chi^2(n)，有\dfrac{X} {X+Y} \sim  Be(\dfrac{m} {2}, \dfrac{n} {2}），可进一步推广为F统计量，"/>
+                            </outline>
+                        </outline>
+                        <outline text="贝塔分布">
+                            <outline text="若X \sim Be(\theta, 1)，则-\ln X \sim Exp(\theta)，"/>
+                            <outline text="若X \sim Be(m, n)，则Y = 1 - X \sim Be(n, m)，"/>
+                            <outline text="若X \sim Be(m, n)，则F = \dfrac{X} {1-X}* \dfrac{n} {m} \sim F(2m, 2n)，"/>
+                            <outline text="反之，若F \sim F(m, n)，则B = \dfrac {\dfrac{m} {n}F} {1 + \dfrac{m} {n} F} \sim Be(\dfrac{m} {2}, \dfrac{n} {2})，"/>
+                        </outline>
+                        <outline text="均匀分布">
+                            <outline text="若X \sim U(0, \theta)，Yn为最大次序统计量，则似然比统计量\Lambda = {(\dfrac{Y_n} {\theta_0})}^n的准确分布为-2\ln \Lambda \sim \chi^2(2)，"/>
+                            <outline text="若X \sim U(0, 1)，则极差Y_n - Y_1 \sim Be(n-1, 2)，"/>
+                            <outline text="若X \sim U(0, 1)，则次序统计量Y_j \sim Be(j, n-j+1)，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="分布间的近似">
+                    <outline text="二项分布、负二项分布的泊松分布近似，"/>
+                    <outline text="二项分布的正态分布近似">
+                        <outline text="连续性校正，"/>
+                    </outline>
+                    <outline text="超几何分布的二项分布近似，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="其它">
+            <outline text="非参数统计：游程检验、符号检验、Wilcoxon秩和检验、得分检验，"/>
+        </outline>
+    </body>
+</opml>

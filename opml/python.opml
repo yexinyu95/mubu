@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>python</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="准备步骤">
+            <outline text="环境部署">
+                <outline text="可以直接下载python.exe安装，"/>
+                <outline text="anaconda的使用">
+                    <outline text="anaconda类似一个环境，而非python解释器或编辑器，"/>
+                    <outline text="anaconda prompt">
+                        <outline text="官方指南https://conda.io/projects/conda/en/latest/user-guide/，"/>
+                        <outline text="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html，"/>
+                    </outline>
+                    <outline text="更换镜像">
+                        <outline text="anaconda navigator → environments → channels，更换至https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/，"/>
+                    </outline>
+                    <outline text="更换根目录cd C:\Users ，"/>
+                </outline>
+            </outline>
+            <outline text="编辑器">
+                <outline text="IDLE（python自带的编辑器）"/>
+                <outline text="powershell（windows自带的命令行，可以输入python后进入python环境；输入exit()可以返回powershell）"/>
+                <outline text="VS code（微软的ide，可以编辑并运行代码）"/>
+                <outline text="jupyter notebook">
+                    <outline text="在anaconda prompt中输入'jupyter lab'可以打开jupyter notebook,"/>
+                    <outline text="打开后，可以使用'http://localhost:8888/lab ' 打开新的一页，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="python程序的基本组成">
+            <outline text="python为解释型语言，因此可以在解释器中直接输入代码进行运算，"/>
+            <outline text="一般的python程序包括变量和函数，"/>
+        </outline>
+        <outline text="编程风格">
+            <outline text="语句的区分">
+                <outline text="不同于Java、c，python不用大括号和分号来标识每个语句，而是利用缩进来标识，"/>
+                <outline text="除了应有缩进的语句没有缩进会报错，不需要缩进的语句如果额外缩进也会报错，"/>
+                <outline text="python也支持用分号区分多个语句，但不常用，"/>
+                <outline text="一般语句只能写在一整行（即换行符会导致报错），">
+                    <outline text="可以利用反斜杠\ 来拆分语句，"/>
+                </outline>
+            </outline>
+            <outline text="注释">
+                <outline text="# 符号和三引号标识出来的语句会被python当作注释，不会被执行，"/>
+                <outline text="合理的注释可让程序更容易被理解，"/>
+            </outline>
+            <outline text="命名风格">
+                <outline text="python区分大小写，可以包含字母、数字和下划线，">
+                    <outline text="变量名称不能为纯数字，也不能包含其他字符（如*、&amp;等），关键字也不能被用作变量名，"/>
+                </outline>
+                <outline text="模块名一般不包含下划线，函数名和变量名一般用下划线来增加可读性，"/>
+                <outline text="模块、函数、变量一般全小写，只有类的单词的首字母一般用大写，"/>
+                <outline text="需要的部分常量（如PI、E等）一般字母全大写，"/>
+                <outline text="在类中，一般使用一个空行来分隔方法；而在模块中，可使用两个空行来分隔类，"/>
+            </outline>
+        </outline>
+        <outline text="数据类型">
+            <outline text="基本特性">
+                <outline text="数据类型与对象相关联">
+                    <outline text="python的数据类型与对象相关联，即变量可以为任何数据结构，"/>
+                    <outline text="优点在于，变量无需声明即可使用，"/>
+                    <outline text="缺点在于，同一变量在代码的不同部分可能会变为不同的数据结构，从而导致错误，"/>
+                </outline>
+                <outline text="type函数可以判断值的类型，del函数可以删除变量，"/>
+                <outline text="python的命名空间">
+                    <outline text="Python的命名空间分为三类，局部（如函数中定义的变量）、全局（如直接在交互模式中定义的变量）和内置（即python内部的关键词），"/>
+                    <outline text="在运行中遇到特定字符时，Python的查找顺序为局部命名空间→全局命名空间→内置命名空间，若仍未发现特定字符，python就会引发NameError，"/>
+                    <outline text="由于python会首先查找全局命名空间，因此应避免将部分关键词用作变量，">
+                        <outline text="python没有将所有的内置函数都设置为不能用于命名的关键词，即使用print,tuple,max等函数名称来命名变量是合法的，"/>
+                        <outline text="然而，这样的命名规则会导致对应的内置函数无法使用，"/>
+                        <outline text="在交互模式下，使用del函数删除对应的变量就可以重新使用对应函数；但仍应避免这样的命名方式，可以在关键词后加入数字和下划线以进行区分，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="基本数据结构">
+                <outline text="数值">
+                    <outline text="基本类型：整数、浮点数、复数">
+                        <outline text="整数的位数理论上没有限制（只受限于计算机的内存），浮点数只能有16位小数（多余的位数可以输入，但在赋值时会被舍去），"/>
+                        <outline text="由于对象和数据结构相关，因此python中可以由整数算得浮点数，但浮点数间的运算只会产生浮点数，"/>
+                        <outline text="复数">
+                            <outline text="由实部和虚部组成，虚部带有符号j；应注意j为未定义变量，而1j才是复数单位i，"/>
+                            <outline text="复数间的运算只会产生复数，如1j *1j会得到-1 + 0j，而不是整数-1，"/>
+                            <outline text="可以用x.real 获得实部，x.imag获得虚部，"/>
+                        </outline>
+                    </outline>
+                    <outline text="基本操作">
+                        <outline text="可以使用int, float, str函数转换数据类型，但前提为数据可以转换，如字符串'2'可以转换为整数2，"/>
+                        <outline text="int函数可以接受第二个可选参数， 用来指定转换输入的字符串时采用的数值进制，"/>
+                    </outline>
+                </outline>
+                <outline text="布尔值">
+                    <outline text="只有True和False两种结果，"/>
+                    <outline text="True类似数值1，False类似数值0，即可以对布尔值进行数值运算，"/>
+                    <outline text="反之，0可以被用作条件False，其它数值则可以被用作条件True，"/>
+                </outline>
+                <outline text="字符串">
+                    <outline text="组成">
+                        <outline text="由单引号、双引号或三引号标记的一段字符，引号中的所有字符（包括空格、字母、数字等）会被看作一个整体，"/>
+                        <outline text="默认使用双引号表示字符串，但单引号、双引号或三引号都可以被识别，"/>
+                        <outline text="由于python用缩进来标识语句的终止，因此单引号和双引号标记的字符串不能换行，但三引号标记的字符串可以换行，">
+                            <outline text="也可以利用反斜杠\ 来拆分语句，"/>
+                        </outline>
+                        <outline text="由空白字符分隔的字符串会被Python解释器自动拼接成整个字符串，"/>
+                    </outline>
+                    <outline text="转义字符">
+                        <outline text="\ 符号可以将后边的字符变为其他含义，"/>
+                        <outline text="应注意，字符串仍由转义字符组成，只有使用print函数打印出字符串时转义字符才会变为对应含义，">
+                            <outline text="print函数默认会在字符串末尾添加换行符，若字符串已经以换行符\ n结尾则会导致两次换行，可以将print函数的end参数设为&quot;&quot;来使print函数不再添加换行符，"/>
+                        </outline>
+                        <outline text="ASCII字符">
+                            <outline text="\t代表缩进，\n代表换行；\ &quot;，\ \则分别代表&quot;（不会被当作字符串的结束符）和\本身，"/>
+                        </outline>
+                        <outline text="Unicode字符">
+                            <outline text="\ 也可以将后面的字符转为八进制、十六进制的数字，"/>
+                        </outline>
+                    </outline>
+                    <outline text="基本操作">
+                        <outline text="下标">
+                            <outline text="索引">
+<outline text="[n]表示字符串中的第n个字符（n∈N+），"/>
+<outline text="索引从0开始而并非从1，即[0]表示第一个字母，"/>
+<outline text="索引也可以为反方向，即负数索引[-1]，代表最后一个字符，"/>
+                            </outline>
+                            <outline text="切片">
+<outline text="[x:y]返回从第x个字符到第y个字符的字符串片段（不包括第y个），"/>
+<outline text="切片也可以为负方向，"/>
+<outline text="x/y可以省略，省略时表示从头部/尾部开始；两个都省略时则会复制原字符串，"/>
+                            </outline>
+                        </outline>
+                        <outline text="数学符号">
+                            <outline text="+可以连接两个字符串，* 可以按指定次数重复某个字符串，但不常用，"/>
+                        </outline>
+                        <outline text="布尔运算">
+                            <outline text="in运算符可以判断元素是否在字符串中，"/>
+                        </outline>
+                    </outline>
+                    <outline text="函数与方法">
+                        <outline text="函数">
+                            <outline text="len函数可以返回字符串中字符的数量，"/>
+                            <outline text="print函数可以将输入的对象转换为字符串后显示出来，但不会输出结果，">
+<outline text="print函数可以接收多个参数和关键字参数，如print(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, sep=&quot;|&quot;, end=&quot;\t&quot;)会输出a|b|c    ，"/>
+                            </outline>
+                            <outline text="repr函数和str函数可以将任意对象转换为字符串，但形成的具体的字符串会有差异，"/>
+                            <outline text="list函数可以将字符串转换为列表，并应用列表方法修改，">
+<outline text="修改完后可以使用join方法将列表转换回字符串，相比之下，str函数会将整个列表当作一个字符串，"/>
+                            </outline>
+                        </outline>
+                        <outline text="方法">
+                            <outline text="分割与组合">
+<outline text="split方法以所有空白符号（空格、\ t和\ n等）为界，将字符串分割为子字符串，返回一个子字符串组成的列表">
+    <outline text="split方法可以接受可选参数arg1作为分界符，"/>
+    <outline text="split方法可以接受可选参数arg2作为分解次数，"/>
+</outline>
+<outline text="join方法以字符串列表为参数， 将字符串连在一起形成一个新字符串，">
+    <outline text="join方法接受的字符串列表为参数join(list1)，并非对象x.join；但join方法仍需要字符串对象，不能直接使用方法，"/>
+    <outline text="调用join方法的字符串对象会被作为分隔符插入新的字符串中，"/>
+</outline>
+                            </outline>
+                            <outline text="修改">
+<outline text="应注意，已经定义的字符串无法被重新赋值；但可以利用旧的字符串创建一个新的字符串，"/>
+<outline text="strip方法默认移除原字符串首尾的空白字符，并返回新字符串，">
+    <outline text="lstrip和rstrip方法的功能类似， 只不过分别移除的是原字符串左边或右边的空白符，"/>
+    <outline text="strip方法可以接受可选参数arg1作为需要移除的字符，所有即在字符串中又在arg1中的字符都会被移除，不受arg1的顺序影响，"/>
+</outline>
+<outline text="replace(arg1, arg2)将字符串中的arg1全部替换为arg2，">
+    <outline text="若需要修改多个对象，可以综合利用maketrans和translate方法，"/>
+</outline>
+<outline text="&quot;...{0}...{1}...&quot;.format(arg1, arg2...)会按照顺序将字符串中由{n}表示的对象按数字顺序逐个替换为arg1，arg2，">
+    <outline text="可使用关键字参数，指定原字符串中需要更改的子字符串，"/>
+    <outline text="可使用格式描述符进行更精确的转换，"/>
+</outline>
+<outline text="upper、lower()将字符串的字母全部转换为大写、小写，"/>
+                            </outline>
+                            <outline text="查找">
+<outline text="find方法需要参数arg1，返回第一个arg1在字符串对象中的位置，如果未找到则返回-1，">
+    <outline text="rfind方法类似find方法，但是从字符串的末尾开始搜索， 返回的也是arg1在字符串中最后一次出现时的位置，"/>
+    <outline text="index、rindex方法类似find、rfind方法，但在字符串中找不到arg1时不会返回-1， 而是会引发ValueError，"/>
+</outline>
+<outline text="startswith和endswith方法检查字符串的开头或结尾是否为arg1，并返回True或False二者之一，"/>
+<outline text="count方法查找字符串中是否有arg1，并返回arg1的数量，不存在arg1则会返回0，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="bytes对象">
+                        <outline text="处理二进制数据（如从二进制数据文件中读取数据等）会用到bytes对象；bytes对象在处理国际字符集时也会有应用，"/>
+                        <outline text="encode方法可以将字符串转换为bytes对象，bytes对象的decode方法可以将其转换为字符串，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="高级数据结构">
+                <outline text="列表">
+                    <outline text="组成">
+                        <outline text="有顺序的多个值组成的序列，由方括号[]括起来，元素间用逗号连接，"/>
+                        <outline text="值可以是各种数据类型（数值、字符串、列表、字典等），但列表中嵌套的一整个列表会被视为一个元素，"/>
+                        <outline text="列表中的数值是可变的，长度也是可变的，因此不需要事先声明，"/>
+                        <outline text="可以将列表的值赋给变量，"/>
+                        <outline text="只含有单一元素的列表仍然是列表'[item]'，而不是字符串'item'，"/>
+                    </outline>
+                    <outline text="基本操作">
+                        <outline text="下标">
+                            <outline text="索引、切片方法与字符串相同，"/>
+                            <outline text="下标可以嵌套使用，如(list[1])[1]或list[1][1]，但应注意对象是否为仍为列表，"/>
+                            <outline text="列表是可变的，因此可以通过下标方法修改特定的元素，list[n] = arg1可以将列表中的第n个元素替换为arg1，">
+<outline text="下标修改操作不能更改列表的长度，即不能通过下标修改超过原列表长度的值，"/>
+                            </outline>
+                        </outline>
+                        <outline text="运算符号">
+                            <outline text="加号可以将两个列表连在一起（并非将每个对应值相加），乘号可以形成新的重复几次的列表（并非将列表中的每个值相乘），"/>
+                            <outline text="运算符号不会改变原列表，而是会返回新的列表，"/>
+                            <outline text="列表不能进行减法、除法运算，"/>
+                        </outline>
+                        <outline text="布尔运算">
+                            <outline text="in运算符可以判断元素是否在列表中，但只能初步识别，">
+<outline text="可以利用下标进一步识别嵌套列表中的元素，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="函数与方法">
+                        <outline text="注意事项">
+                            <outline text="应注意函数可能改变、不改变原列表，返回新列表或None，"/>
+                            <outline text="由于部分函数可能会直接修改原列表，为了保险起见，可以创造关于原列表的副本，"/>
+                        </outline>
+                        <outline text="函数">
+                            <outline text="len函数返回列表的元素数量，"/>
+                            <outline text="max、min函数返回列表中的最大、最小值，"/>
+                            <outline text="sum函数可以对数值型列表进行求和，"/>
+                            <outline text="sorted函数可以将任意可迭代对象（字符串、元组、字典等）排序，并返回一个列表，"/>
+                            <outline text="del函数可以删除n索引位置的元素，">
+<outline text="del函数可以不加括号使用，即del list1[n]的形式，但不能作为方法使用，"/>
+                            </outline>
+                        </outline>
+                        <outline text="方法">
+                            <outline text="应注意，大部分方法都会修改原列表，不产生返回值（即返回None），"/>
+                            <outline text="元素修改">
+<outline text="append(arg1)，将arg1作为一个整体添加到列表末端，即输入的列表也会被当作一整个元素，"/>
+<outline text="extend(list1)，将列表（仅接受列表）中的元素添加到列表末端；"/>
+<outline text="insert(n, arg1)，将元素arg1插入到列表的n索引位置前，"/>
+<outline text="remove(arg1)，搜索列表，并删除列表中的arg1元素；列表中不存在arg1则会引发错误，"/>
+                            </outline>
+                            <outline text="排序">
+<outline text="sort方法可以对列表进行排序，">
+    <outline text="sort方法也可以对嵌套列表进行排序，python规定的排序规则为先升序比较第一个元素， 再升序比较第二个元素，以此类推，"/>
+    <outline text="可以利用关键字参数key来自定义排序规则，"/>
+    <outline text="sort只能对列表进行排序，字符串、元组、字典没有sort方法，"/>
+</outline>
+<outline text="reverse方法可以将列表按逆序重新排列，也可使用sort方法的附带参数reverse = True来实现，"/>
+                            </outline>
+                            <outline text="其它">
+<outline text="index(arg1)，查找列表中是否有arg1，并返回arg1的位置；列表中不存在arg1则会引发错误，"/>
+<outline text="count(arg1)，查找列表中是否有arg1，并返回arg1的数量；列表中不存在arg1则会引发错误，"/>
+                            </outline>
+                        </outline>
+                        <outline text="嵌套列表复制">
+                            <outline text="若列表1 = [元素1]，列表2 = [[列表1], 元素2]，">
+<outline text="修改列表1中的元素1，会导致列表2中的列表1的同步变化，"/>
+<outline text="直接修改列表1（改为另一个列表、字符串等），列表2不会变化，"/>
+                            </outline>
+                            <outline text="浅复制">
+<outline text="操作x[:], x+[], x*1 可以得到列表的浅副本，修改浅副本中的嵌套列表的值会导致原列表的同步变化，其他元素的修改则不会产生影响，"/>
+                            </outline>
+                            <outline text="深复制">
+<outline text="copy模块的deepcopy函数可以得到列表的深副本，修改深副本中的嵌套列表的值对原列表没有影响，"/>
+                            </outline>
+                        </outline>
+                        <outline text="循环">
+                            <outline text="列表可以使用for循环遍历，"/>
+                        </outline>
+                    </outline>
+                    <outline text="其它操作">
+                        <outline text="大部分常用列表操作可以归为映射、筛选和归并三类，（一般需要通过遍历列表中的元素来实现）">
+                            <outline text="映射：将给定列表中的每个元素用函数转化为另一个元素，并生成新的列表，"/>
+                            <outline text="筛选：根据给定特征选出给定列表中的部分元素，并生成新的列表，"/>
+                            <outline text="归并：将列表中的元素根据给定规则整合为单一的输出值，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="元组">
+                    <outline text="组成">
+                        <outline text="有顺序的多个值组成的序列，由括号()括起来，元素间用逗号连接，"/>
+                        <outline text="一般用括号()将元组括起来，但并非必须，直接用逗号隔开各个取值的输入也会被python识别为元组；">
+                            <outline text="同理，应将多个用逗号隔开的值看成一个元组，而非离散的各个元素，"/>
+                        </outline>
+                        <outline text="不同于列表，元组中的值是不可变的，因此可用作字典的键，">
+                            <outline text="然而，元组中的元素可以为可变对象（列表等），类似于嵌套列表，"/>
+                            <outline text="包含了可变对象的元组不能用作字典的键，"/>
+                        </outline>
+                    </outline>
+                    <outline text="基本操作">
+                        <outline text="下标">
+                            <outline text="索引、切片等操作类似列表，"/>
+                            <outline text="元组中的元素的不可更改，即不可以重新赋值；但可以利用类似更新字符串的方式，利用已有元组构造新的元组，"/>
+                        </outline>
+                        <outline text="运算符号"/>
+                        <outline text="布尔运算"/>
+                        <outline text="元组赋值">
+                            <outline text="元组可以出现在赋值操作符的左侧，即可以将右侧元组中的数值依次赋予赋值操作符左侧元组中的元素，"/>
+                            <outline text="在变量前加上* 可以让变量接受多个元素，变量的默认形式为列表，"/>
+                        </outline>
+                    </outline>
+                    <outline text="函数与方法">
+                        <outline text="由于元组不可更改，所以许多列表方法都无法使用，但函数的使用类似列表，"/>
+                        <outline text="函数">
+                            <outline text="可以用list(), tuple()函数在列表和元组间转换对象，"/>
+                            <outline text="zip函数">
+<outline text="接受多个序列组，返回一个元组列表，每个元组包含了各个序列中相对位置的一个元素；"/>
+<outline text="zip函数并不产生输出，可以通过列表list将其输出赋值给一个列表，"/>
+<outline text="如果输入的序列的长度不一，则返回的对象以最短序列的长度为准，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="字典">
+                    <outline text="组成">
+                        <outline text="多组“键值对”组成的序列，由大括号{}括起来，元素间用逗号连接，每组元素间用：对应——冒号左侧的值称为“键”，右侧的值称为“值”，"/>
+                        <outline text="多个键可以对应同一个值，但是必须要分开为多个键分别储存，而不能储存为一个键；相比之下，一个值只能对应一个键——若输入了多个键，则python默认只保留其中最大的一个，"/>
+                        <outline text="每组元素必须为一一对应，但元素可以为数值、字符串、列表、元组、字典，"/>
+                        <outline text="字典的值的数据结构没有限制，但键必须是“可哈希的”，">
+                            <outline text="哈希函数接受一个值（任意类型）并返回一个整数，字典使用这些整数存储和查找键值对，"/>
+                            <outline text="键必须为不可变的，否则同一个键可能会对应多个哈希值，从而阻碍字典的工作，"/>
+                            <outline text="列表可以作为字典中的值，但是不能作为键，因为列表是可变的；同理，字典本身也不能作为键，"/>
+                        </outline>
+                    </outline>
+                    <outline text="基本操作">
+                        <outline text="赋值">
+                            <outline text="可以通过dict[arg1] = arg2的方式对字典赋值——当arg1为整数时，此方法类似列表的下标操作，但实际上字典并非按下标顺序构造元素，仍是只存储了键值对n:arg2，"/>
+                        </outline>
+                        <outline text="下标">
+                            <outline text="不同于列表和元组，字典利用关键字来查找对应值，所以其中的项的顺序没有列表那么重要，"/>
+                            <outline text="仍可以使用下标访问字典中的值，但只有正整数索引，且只能访问字典中的值，不能访问键，"/>
+                            <outline text="字典不能进行切片操作，"/>
+                        </outline>
+                        <outline text="查找">
+                            <outline text="可以使用类似下标的操作寻找字典中给定的键对应的值，"/>
+                            <outline text="一般而言，字典不能直接进行逆向查找，即较难以通过值寻找到对应的键；一般可以通过for循环遍历字典来寻找，且应注意一个值可能对应多个键，"/>
+                        </outline>
+                        <outline text="运算符号"/>
+                        <outline text="布尔运算">
+                            <outline text="in函数可以检查字典中是否存在某个键（不能检查值），"/>
+                        </outline>
+                    </outline>
+                    <outline text="函数与方法">
+                        <outline text="函数">
+                            <outline text="len函数可以返回键值对的个数，"/>
+                            <outline text="sorted函数可以重排字典，但输出的为键的列表而不再为字典，"/>
+                            <outline text="del函数可以删除键值对key1:values1，">
+<outline text="del函数可以不加括号使用，即del dict1[key1]的形式，但不能作为方法使用，"/>
+                            </outline>
+                        </outline>
+                        <outline text="方法">
+                            <outline text="keys方法可以返回字典中的键的集合，values方法可以返回字典中的值的集合；items方法返回一个多个元组组成的序列，其中的每个元组为字典的一个键值对，">
+<outline text="三者返回的分别为dict_keys、dict_values、dict_items对象；修改字典时，dict_keys、dict_values、dict_items对象会同步变化，"/>
+<outline text="dict_keys、dict_values、dict_items对象可以用for循环遍历，也可以用in操作符来判断键、值是否在字典中，但可执行的操作不同于列表，而更类似于集合，"/>
+<outline text="可以使用list函数将其转换为列表，转换后的列表不会再与字典同步变化，"/>
+                            </outline>
+                            <outline text="get(arg1, arg2)在字典中存在键arg1时返回values1，不存在键arg1时则返回arg2（不指定arg2时则会返回None），"/>
+                            <outline text="，dict1.update(dict2)会用dict2的所有键/值对更新dict1，如果键在两个字典中都存在， 则第二个字典中的值会覆盖第一个字典的值，"/>
+                            <outline text="zip方法">
+<outline text="可以利用dict和zip方法将两个元组组合在一起，创建一个简单的字典，"/>
+                            </outline>
+                        </outline>
+                        <outline text="复制">
+                            <outline text="浅复制">
+<outline text="copy函数可以得到字典的浅副本，若字典中有嵌套列表，则修改浅副本中的嵌套列表的值会导致原字典的同步变化，其他元素的修改则不会产生影响，"/>
+                            </outline>
+                            <outline text="深复制">
+<outline text="copy模块的deepcopy函数可以得到字典的深副本，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="字典应用">
+                        <outline text="判断出现频率">
+                            <outline text="利用字典的键值对应和值的可更新性，可以综合利用for循环和字典，来判断某一对象的出现频率；"/>
+                        </outline>
+                        <outline text="稀疏矩阵">
+                            <outline text="一般的m*n矩阵可以利用嵌套列表来表示为向量的形式，即[[m11, m12...], [m21, m22...]...]，但对于较庞大的，且多个元素为0的矩阵，这种表示方式会较为冗余，"/>
+                            <outline text="可以利用字典和元组索引只存储不为0的元素及其位置，如{(mi, ni) : ki, (mj, nj) : kj...}的形式，可以减少冗余度，"/>
+                        </outline>
+                        <outline text="字典缓存">
+                            <outline text="函数默认不会记录已计算的参数；因此，迭代函数可能会进行很多次重复的从头开始的计算，"/>
+                            <outline text="可以通过让函数记录已经计算的值，并利用字典保存，综合if-else语句，在函数需要计算值时先从字典中查找值是否已经算得，从而直接取值并简化运算，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="集合">
+                    <outline text="组成">
+                        <outline text="无序的多个值组成的序列，由大括号{}括起来，元素间用逗号连接，"/>
+                        <outline text="set函数接受一个列表、元组、字典等序列变量，返回一个集合">
+                            <outline text="列表、元组中的重复变量只会被计数一次——但set函数不会计算嵌套列表中的变量，即嵌套列表会被算作一整个元素，"/>
+                            <outline text="对于字典，set函数只会将字典的键组合为集合，"/>
+                        </outline>
+                        <outline text="集合中的项必须是不可变的、可哈希的，但集合本身是可变的，"/>
+                    </outline>
+                    <outline text="基本操作">
+                        <outline text="数学操作">
+                            <outline text="类似数学中的集合，“|”可获得两个集合的并集， “&amp;”可获得交集，“^”则可以求得属于其中一个但不同时属于两个集合的元素，"/>
+                        </outline>
+                        <outline text="布尔运算">
+                            <outline text="in运算符可以判断元素是否在集合中，"/>
+                        </outline>
+                    </outline>
+                    <outline text="函数与方法">
+                        <outline text="函数：类似列表，可以使用len、min、max等函数，"/>
+                        <outline text="方法：虽然集合可变，但具体方法并不完全等同于列表；">
+                            <outline text="集合需要使用add方法来附加元素，而不是append，"/>
+                            <outline text="集合同样使用remove方法来删除元素，"/>
+                        </outline>
+                    </outline>
+                    <outline text="不可变集合">
+                        <outline text="同set函数类似，forzenset函数同样可以接受一个列表、元组、字典等序列变量，返回一个集合；但返回的集合不可变，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="其它">
+                <outline text="None值">
+                    <outline text="部分计算过程不会显式地输出结果，但运算过程的确发生了，这些过程默认的返回值为None，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="基本操作">
+            <outline text="赋值">
+                <outline text="在python中，=为对新的自变量赋值，而==则更类似传统数学意义上的相等，"/>
+                <outline text="重复赋值">
+                    <outline text="对同一变量进行多次赋值是合法的，python中的等号而并非数学意义上的等同关系，"/>
+                    <outline text="例如x = x + 1的含义为：获得 x 的当前值，与 1 做加法求和，将 x 的值更新为所求的和，结束，"/>
+                </outline>
+            </outline>
+            <outline text="代数运算">
+                <outline text="运算顺序">
+                    <outline text="代码执行顺序为从左到右，从上到下；每一步操作都会为下一步操作的调用产生一个临时对象，"/>
+                    <outline text="等号并非纯数学意义上的等同，而是赋值的含义，"/>
+                </outline>
+                <outline text="算术运算">
+                    <outline text="在python中，*代表乘法，**代表乘方，而^代表“XOR运算符”，"/>
+                    <outline text="运算顺序：括号、指数、乘法/除法、加法/减法，"/>
+                    <outline text="字符串一般不能执行运算，但可被理解的加法、乘法运算（如连接两个字符串）是合法的，"/>
+                </outline>
+                <outline text="其他算数运算">
+                    <outline text="地板除法//，丢弃小数返回整数，"/>
+                    <outline text="求余运算符%，只返回余数（不返回除尽的整数），便于查看能否整除，"/>
+                </outline>
+                <outline text="math包提供了额外的数学运算；cmath则可以对复数进行运算，但返回的结果也为复数，"/>
+            </outline>
+            <outline text="布尔运算">
+                <outline text="仅返回True或False两个结果之一，"/>
+                <outline text="基本关系运算符">
+                    <outline text="==，用于比较两个值是否相等，"/>
+                    <outline text="!=（不等于），&gt;=（大于等于），&lt;=（小于等于）"/>
+                </outline>
+                <outline text="逻辑运算符">
+                    <outline text="and，or，not；其含义与英语中的意思类似，"/>
+                </outline>
+                <outline text="any、all函数">
+                    <outline text="any接受一个布尔值序列（列表、元组等）作为参数，当其中任意一个值为True时返回True，">
+                        <outline text="并非需要直接输入布尔值，也可以输入会输出布尔值的特定语句，"/>
+                        <outline text="例如，any函数可以与生成器表达式一起使用，可以简化for循环的流程，"/>
+                    </outline>
+                    <outline text="all函数同样接受一个布尔值序列（列表、元组等）作为参数，但是只有所有的值都为True时才会返回True，"/>
+                </outline>
+                <outline text="其它">
+                    <outline text="in运算符，接受字符串，若第一个字符串作为子串出现在第二个中，则返回 True，"/>
+                    <outline text="is运算符，接受字符串、列表；若两个字符串、列表“相等”，则返回True，">
+                        <outline text="两个相同的字符串在python中为同一对象，即is和==都会返回True；但两个“相同”的列表在python中则不是同一对象，虽然==会返回True，但is会返回False"/>
+                        <outline text="这里的相同被理解为两个列表的每个对应元素相同， 但仍然分属于两个不同的列表。"/>
+                        <outline text="列表是可变的，除非赋值a=b，这样a、b会同步改变，否则对a的改变不会影响b；相比之下，字符串是不变的，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="复合语句">
+            <outline text="编程语句分类">
+                <outline text="顺序语句（逐个执行每条语句）"/>
+                <outline text="选择语句（根据所给条件判断执行的具体语句）"/>
+                <outline text="循环语句（将某条语句重复执行多次）"/>
+            </outline>
+            <outline text="复合语句">
+                <outline text="python中的复合语句通过冒号和缩进来标识，而不是括号和分号，"/>
+            </outline>
+            <outline text="复合条件">
+                <outline text="if和while语句只能接受一个“条件”，但条件可以为多个布尔表达式的复合，"/>
+                <outline text="对于复杂的任务，可以利用逻辑运算符等方式在一个语句中嵌套多个条件，"/>
+                <outline text="应注意嵌套条件可能难以理解，最好附加一定的注释，"/>
+            </outline>
+            <outline text="if-elif-else语句（选择语句）">
+                <outline text="if condition：">
+                    <outline text="elif condition："/>
+                    <outline text="else："/>
+                </outline>
+                <outline text="组成">
+                    <outline text="中间的条件可以用elif指示，elif语句的数目没有限制，也可以没有elif语句（即if的条件为False时不执行操作）；可以没有else语句，但else语句（如果有）必须在末尾，"/>
+                    <outline text="除了条件，if语句需要有可被执行的主体部分，否则会报错；"/>
+                    <outline text="可以利用pass语句作为主体，无论条件真假都不会执行操作，"/>
+                    <outline text="解释器会逐个检测条件，检测到语句为真后就会执行语句，然后结束任务，不会再检查剩余的语句，"/>
+                </outline>
+                <outline text="continue语句">
+                    <outline text="可以跳过循环内接下来的语句，重新返回while语句的条件判定，"/>
+                </outline>
+            </outline>
+            <outline text="while语句（循环语句）">
+                <outline text="while condition :">
+                    <outline text="假→退出while语句，执行接下来的语句；">
+                        <outline text="理论上while语句也需要else语句作为替代选择，但一般不需要写出else语句，直接写出的替代语句也是合法的，"/>
+                    </outline>
+                    <outline text="真→执行while语句，完成循环后返回，再次判断真假，"/>
+                    <outline text="除了条件，while语句需要有可被执行的主体部分，否则会报错；"/>
+                    <outline text="可以利用pass语句作为主体，无论条件真假都不会执行操作，"/>
+                </outline>
+                <outline text="continue语句">
+                    <outline text="可以跳过循环内接下来的语句，重新返回while语句的条件判定，"/>
+                </outline>
+            </outline>
+            <outline text="for语句（循环语句）">
+                <outline text="组成">
+                    <outline text="for item in sequence：">
+                        <outline text="func（item）"/>
+                    </outline>
+                    <outline text="遍历任何可以迭代（iterable）的对象，对序列中的对象逐个执行对应语句，">
+                        <outline text="例如， 对象可以为列表、字典（键）、元组，也可以为字符串；但不能为整数或浮点数，"/>
+                        <outline text="for语句只会遍历给定的序列，并对给定序列中的对象执行语句，因此有时需要与if语句等组合使用，"/>
+                    </outline>
+                    <outline text="for循环的基本顺序为数列1，2，3...，即序列中的第一、第二、第三个元素，以此类推，"/>
+                </outline>
+                <outline text="元组对象">
+                    <outline text="for循环的对象可以为元组（多个对象），但前提是给定的序列中的对象可以拆分为对应的几组，"/>
+                    <outline text="for循环不能识别嵌套列表，即对嵌套列表进行遍历时，嵌套列表中的元素会被视为一个对象，"/>
+                </outline>
+                <outline text="range函数">
+                    <outline text="range(a, b, c)返回按照c为差值，由a到b-1的range对象，默认a=0，c=1，即range(n)返回range(0, n)，"/>
+                    <outline text="range(0, n)类似于正整数列表[0, 1..., n-1]，但所占用的资源更少，且可以作为for循环需要遍历的序列，"/>
+                </outline>
+                <outline text="enumerate函数">
+                    <outline text="接受一个列表作为参数，返回一个类似字典的enumerate对象；其中“字典的值”为0，1...正整数索引，“字典的键”为列表中的逐个对象，"/>
+                    <outline text="enumerate对象可以作为for循环需要遍历的序列，"/>
+                </outline>
+                <outline text="zip函数">
+                    <outline text="可以从一个或多个可迭代对象中逐一读取对应元素， 并合并为zip对象，"/>
+                    <outline text="若对象的长度不等，则最终生成的zip对象的长度为最短对象的长度，"/>
+                    <outline text="range、enumerate、zip函数生成的对象都可以用list函数转换为列表，但其对象本身就可以用于for循环，因此转换并非必须，"/>
+                </outline>
+                <outline text="其它">
+                    <outline text="条件表达式：将语句写在一整行中，不换行和加入冒号；一般在条件语句（if语句）的分支表达式均比较简单时使用，可以简化代码，"/>
+                    <outline text="列表推导式：利用for语句，直接在方括号中构造新列表，不新建额外的空白列表；对于简单的表达式，可以简化代码并加快for循环的运行速度，"/>
+                    <outline text="（字典推导式：类似列表推导式，将括号改为大括号即可构造新字典），"/>
+                    <outline text="生成器表达式：类似列表推导式，但使用的为圆括号，且构造的对象为生成器（generator）而不是列表，生成器可以用for循环遍历，"/>
+                </outline>
+            </outline>
+            <outline text="try语句（调试语句）">
+                <outline text="try-except-else语句">
+                    <outline text="try语句">
+                        <outline text="try语句没有额外的语法要求，只需要在代码语句前加入try:语句，"/>
+                        <outline text="python从try子句开始顺序执行，如果一切正常，则程序会一直执行下去，并跳过except语句，"/>
+                        <outline text="需要try语句后的代码的成功执行才能执行的代码可以放在else语句后，但也可以没有else语句（即所有语句都写在try语句后），"/>
+                    </outline>
+                    <outline text="except语句">
+                        <outline text="若出现异常，程序会跳出try子句并逐个搜索except子句，判断是否为对应的情况，然后执行对应的except语句并终止程序，"/>
+                        <outline text="一般而言，except语句的目的不是直接触发或打印异常，而是给出异常情况下的其它可选操作，即一般写法为except Exception: print(&quot;error information&quot;)，而不是except：Exception，"/>
+                        <outline text="except语句需要准确的异常判定，即except Exception:中给出的异常需要与执行try语句后可能出现的异常对应，"/>
+                        <outline text="如果异常不能准确对应， 一般程序也可以继续运行，但except后的语句不会被执行，"/>
+                    </outline>
+                </outline>
+                <outline text="Python异常机制">
+                    <outline text="Python异常机制是按照面向对象的规范搭建的，主类为BaseException，"/>
+                    <outline text="子类为SystemExit、KeyboardInterrupt、GeneratorExit和Exception四类，其中主要的异常都被包括在Exception子类中，"/>
+                    <outline text="可以自定义新的异常类，"/>
+                </outline>
+                <outline text="raise语句">
+                    <outline text="可以触发异常，并接受一个详细的错误信息作为可选的实参，"/>
+                    <outline text="如raise IndexError(&quot;Just kidding&quot;) 会触发IndexError: Just kidding，"/>
+                </outline>
+            </outline>
+            <outline text="break语句">
+                <outline text="可以立即终止循环，即循环内的语句和循环外的语句都不会再被执行，"/>
+            </outline>
+        </outline>
+        <outline text="函数（function）">
+            <outline text="定义">
+                <outline text="有命名的，执行某个计算的语句序列；基本结构为名称和语句序列，核心是对参数进行运算并输出结果，"/>
+                <outline text="因此构造函数时应首先明确输入的量是什么，以及希望得到的输出是什么，然后推导中间的可能步骤；"/>
+                <outline text="一般而言，函数解决同一问题的解法和路径可能是多样的，但是输入和输出则一般比较固定；因此，明确输入和输出可以帮助理清逻辑，"/>
+            </outline>
+            <outline text="函数方法">
+                <outline text="算法中可能存在很多重复或类似的操作，而计算机擅长重复执行类似的行为，"/>
+                <outline text="因此，应该尝试将算法中的重复操作定义为一个函数，用函数去描述这一系列操作，"/>
+                <outline text="理论上，每次操作都写出完整的操作语句也可行，但这会导致代码变得冗长；此外，利用函数去描述操作可以辅助思考如何提升算法，从而改善程序，"/>
+                <outline text="然而，对于复杂问题，最好首先想出一个可行（但可能较复杂）的算法，再尝试利用函数去改进，而不是直接从函数的角度去思考问题，"/>
+            </outline>
+            <outline text="自定义函数">
+                <outline text="组成">
+                    <outline text="基本组成def func_name(arg1, arg2...):，"/>
+                    <outline text="python函数利用缩进来判断语句，因此不需要特定符号（如大括号）来表示结尾，但应注意语句间的准确缩进，"/>
+                </outline>
+                <outline text="输入">
+                    <outline text="参数">
+                        <outline text="实参（argument）和形参（parameter）">
+                            <outline text="定义">
+<outline text="实参指具体的（如人为输入的）数据，而形参则是计算机存储的环境中的变量（可以是变量，也可以是函数），"/>
+<outline text="例如，定义函数时输入的def add(t)中的t为形参，而调用时输入的add(3)中的3为实参，"/>
+                            </outline>
+                            <outline text="运算规则">
+<outline text="函数运算时先将实参转化为形参，再调用函数根据形参运算，最后输出结果，"/>
+<outline text="若定义函数时没有指定形参，调用时输入形参就会导致报错，"/>
+                            </outline>
+                            <outline text="变量实参">
+<outline text="除了人为输入的数据，python环境中的变量也可以被用作实参，"/>
+<outline text="对于不可变对象（如元组、 字符串和数值），形参的操作不会影响函数外部的实参的取值，"/>
+<outline text="对于可变对象（如列表、 字典），函数内部对形参做出的改动会改变该实参的具体值，但函数内部对形参的重新赋值不会影响实参，"/>
+                            </outline>
+                        </outline>
+                        <outline text="全局（global）变量与局部（local）变量">
+                            <outline text="定义">
+<outline text="全局变量，属于“__main__”，可以被任何函数访问，在进行过函数运算后也不会消失，但变量的值可能会发生改变；"/>
+<outline text="局部变量，一般在定义函数时引入，仅在函数内部出现，函数运行结束后就会消失，无法被再次调用，"/>
+                            </outline>
+                            <outline text="变量声明">
+<outline text="可以在函数内部使用global函数global arg1，告知函数调用全局变量，"/>
+<outline text="对于不可变对象（如元组、 字符串和数值），声明全局变量后，函数内部形参的操作会改变实参的取值，">
+    <outline text="如果只是要访问函数外的变量， 则不需要将其声明为nonlocal或global，"/>
+</outline>
+                            </outline>
+                            <outline text="其它">
+<outline text="参数命名">
+    <outline text="python默认函数内定义的变量为局部变量，因此理论上局部变量可以与已定义的全局变量重名，"/>
+    <outline text="函数内声明了全局变量时，定义函数时命名的形参与已定义的全局变量不能重名，"/>
+</outline>
+<outline text="过多的全局变量可能会增加函数调试的难度，应注意变量的合理命名与使用，"/>
+                            </outline>
+                        </outline>
+                        <outline text="参数输入">
+                            <outline text="位置参数">
+<outline text="Python默认按定义时形参的位置接受实参，即def func_name(arg1, arg2...):，func_name(a, b...)中的a，b...会分别赋值给arg1，arg2...，"/>
+<outline text="若没有设定默认值，则输入的实参与函数的形参数量不符合时会报错，"/>
+                            </outline>
+                            <outline text="默认参数">
+<outline text="可以为参数设定默认值，如def func_name(arg1, arg2= default2...):，对于设定默认值的形参，若没有外界输入的对应实参，python会按照默认值对函数进行运算，"/>
+<outline text="设置函数时，带有默认值的形参必须在末尾，"/>
+                            </outline>
+                            <outline text="关键字实参">
+<outline text="对于具有多个实参的函数，可以在指定实参取值时加入实参的名称，如func_name(a, arg2 = b...)，"/>
+<outline text="输入实参时，">
+    <outline text="若输入的实参都指定了关键字，则此时可以不按照设定函数的实参顺序输入，"/>
+    <outline text="若既有位置参数也有关键字参数，则关键字参数必须在最后，"/>
+</outline>
+                            </outline>
+                            <outline text="多个输入参数">
+<outline text="* 符号可以汇集多个参数，使函数可以接受任意数量的参数，即def func_name(*arg):会将接收到的实参a，b...组成一个元组传递给函数，"/>
+<outline text="** 符号可以汇集多个关键字参数，使函数可以接受任意数量的关键字参数，即def func_name(**arg):会将输入的关键字和参数汇集到一个字典中（字典的键为多余实参的关键字（形参名称），字典的值为实参）传递给函数，"/>
+<outline text="* 符号和** 符号必须在函数定义参数的最后，且两者不能互相代替，若输入的参数两类都有，则需要同时定义两种方法，"/>
+                            </outline>
+                        </outline>
+                        <outline text="其它注意事项">
+                            <outline text="形参的命名不会影响具体输入的实参，但仍应遵循基本的命名规则，"/>
+                            <outline text="变量和形参都是局限于函数内部的，如果不指定，那么函数结束时变量就会消失，"/>
+                        </outline>
+                    </outline>
+                    <outline text="用户输入">
+                        <outline text="input函数可以暂停程序运行，并等待用户输入（但输入信息并不会触发任务执行，需要按下enter才会触发任务）,"/>
+                        <outline text="input函数会将外界输入赋值给一个变量，默认的赋值为字符串，如有需要，可以使用int或float函数来转换为数值，"/>
+                        <outline text="input函数附带可选的字符串参数，用于提供关于输入信息的提示，"/>
+                    </outline>
+                </outline>
+                <outline text="输出">
+                    <outline text="类型">
+                        <outline text="输出一般包括三种：输出数值，返回数值（但不输出），执行行为（不返回值），"/>
+                        <outline text="在交互模式下，解释器会显示函数的输出；但脚本模式下，返回数值不一定会输出，"/>
+                        <outline text="执行行为不同于返回数值——部分行为会返回“结果”，但这些结果并非具体“数值”，因此无法赋予给一个变量；将无返回值函数的结果赋给一个变量会得到特殊值None（类型None，并非字符串'None'），"/>
+                        <outline text="特定的函数内部运算也会返回None，由于None无法进一步运算，因此在设置函数时应注意避免返回None的操作，"/>
+                    </outline>
+                    <outline text="显示输出">
+                        <outline text="print函数可以显示输出，但不产生返回值（返回None），因此print函数不能用于赋值变量，"/>
+                        <outline text="return函数">
+                            <outline text="可以将函数计算出的数据返回为数值，且return函数后的语句不会再被执行，"/>
+                            <outline text="应尽量保证需要的语句最终以return函数结尾，否则没有以return函数结尾的语句就会输出None（一般不符合设计函数的本来目的），"/>
+                            <outline text="在程序较为复杂时，可以先使用print函数打印出结果，待确认无误后再使用return函数输出结果，"/>
+                        </outline>
+                        <outline text="产生多个输出值">
+                            <outline text="一般而言，函数只能返回一个值；但可以将返回值设置为元组（或列表、字典），则其效果类似于返回多个值，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="注释">
+                    <outline text="以# 标记的语句，或由三引号'''括起来的语句，"/>
+                    <outline text="一般被用在函数的开始位置，向他人说明使用函数时应该了解的关键信息；如函数的作用，不同实参的含义等，"/>
+                    <outline text="很长的程序由于形式语言的固有特性，具有的可读性较差，应该利用自然语言做一定的标记，"/>
+                    <outline text="代码所实现的行为一般较容易理解，因此注释应注重描写代码所表达的隐含意思，如变量的含义或与上下文的联系，"/>
+                    <outline text="设计良好的函数应该是容易解释的，反之，若函数的作用难以解释，则说明函数还有一定的改进空间，"/>
+                </outline>
+            </outline>
+            <outline text="lambda表达式">
+                <outline text="可以看成小型函数，一般函数为def func(arg1): func(arg1)，而lambda表达式为lambda arg1: func(arg1)，即不需要def语句和具体的函数名称，"/>
+                <outline text="若函数的语句较少，则可以利用lambda表达式在行内完成函数定义，而不需要额外定义一个函数，"/>
+                <outline text="lambda表达式会自动产生返回值，所以不需要return语句，"/>
+            </outline>
+            <outline text="函数赋值给变量">
+                <outline text="可以将函数“赋值”给变量，即arg1 = function（不带括号），"/>
+                <outline text="其作用之一为简化函数的名称，即引用函数时可以直接使用arg1(a，b...)，用法等同于使用原来的函数，"/>
+                <outline text="可以结合字典使用，在需要调用多个函数时会有帮助，"/>
+            </outline>
+            <outline text="（装饰器函数）">
+                <outline text="函数可以作为实参传递给其他函数， 还可作为其他函数的返回值回传，"/>
+                <outline text="装饰器可以将一个函数包装到另一个函数中去，"/>
+            </outline>
+            <outline text="（生成器函数）">
+                <outline text="函数内部定义了while或for循环时，可以用yield关键字逐个返回迭代的值，"/>
+                <outline text="当没有可迭代值、遇到空的return语句或函数结束时，生成器函数将停止输出返回值，"/>
+            </outline>
+        </outline>
+        <outline text="类（class）">
+            <outline text="定义">
+                <outline text="类与实例">
+                    <outline text="类指现实世界的“一类”物体，这一“类”中的“实例”在个性上存在差异，但拥有相同的一些共性，因此可以抽象为同一类拥有不同“属性”的总体，"/>
+                    <outline text="例如2，3，4都可以进行+、-运算，都不能除以0；所以可以将其归为整数“类”；2、3、4就是具体的“实例”，"/>
+                    <outline text="python中的数据结构（包括整数、字符串、列表、字典等）本质上就是不同的类，">
+                        <outline text="因此，指定的每一个具体的列表都拥有列表类所有的“属性”，且都可应用列表类所能使用的“方法”，"/>
+                    </outline>
+                    <outline text="根据类来创建对象被称为实例化（instantiation），手动赋值的具体变量则称为类的实例（instance），"/>
+                </outline>
+                <outline text="方法">
+                    <outline text="类中的函数被称为“方法”，“方法”一般会有一些特有的命名、参数和使用规则，但与其它python函数并没有实质上的区别，"/>
+                    <outline text="方法可以理解为现实世界中物体“交互”的方式，即物体能做出的行为，"/>
+                </outline>
+                <outline text="属性">
+                    <outline text="类中的实例所具有的“基本性质”被称为“属性”，即实例所具有的那些共性，"/>
+                </outline>
+            </outline>
+            <outline text="自定义类型">
+                <outline text="class函数与说明">
+                    <outline text="class函数class Class1():"/>
+                    <outline text="说明">
+                        <outline text="用于对类型进行说明的字符串，一般写在最开始的位置，并用三引号'''括起来；这样写出的注释可以使用doc方法访问，即Class1.__doc__（但上述语句不会产生返回值，应使用print函数将其打印出来），"/>
+                        <outline text="对类型进行详细的说明有助于他人的理解，也有助于后期的调试，"/>
+                    </outline>
+                </outline>
+                <outline text="方法与属性">
+                    <outline text="init方法与属性">
+                        <outline text="定义def __init__(self, attr1, attr2...):，">
+                            <outline text="参数">
+<outline text="self参数">
+    <outline text="一般第一个形参命名为self，即指代具体对象本身，"/>
+</outline>
+<outline text="属性">
+    <outline text="init中的其余形参规定了对象的属性（attribute），即与其它方法中的形参不完全相同，"/>
+    <outline text="指定属性与参数的对应后，就可以在其他方法中用点标记法使用实例的属性，即使用self.attr1会返回设置实例时规定的具体属性值，"/>
+</outline>
+<outline text="同自定义函数一样，也可以指定属性的默认值，但指定了默认值的属性必须在最后，"/>
+<outline text="（可以不设置其他属性），"/>
+                            </outline>
+                            <outline text="组成">
+<outline text="init函数的基本组成一般为对属性的指定，即self.attr1 = attr1, self.attr2 = attr2...，"/>
+<outline text="（可以只在init函数的组成中设置属性self.attr_n = attr_n，而不写为init的形参；这样的属性也可以更改，只是不能在设置实例时更改），"/>
+                            </outline>
+                        </outline>
+                        <outline text="使用object1 = class1(attr1, attr2...)，">
+                            <outline text="init函数对应了生成类中的具体对象的方法，且会自动返回一个对象，因此不需要再使用return语句，"/>
+                            <outline text="可以不指定属性，此时init会返回设置的默认值，但不能忽略括号（括号代表对类的使用，不加括号则代表类本身），"/>
+                        </outline>
+                    </outline>
+                    <outline text="方法">
+                        <outline text="定义def func1(self, attr1, attr2...)：，">
+                            <outline text="参数">
+<outline text="类中的方法的第一个形参一般也为self，即指代具体对象本身；"/>
+<outline text="其余参数类似于自定义函数的形参，方法中也可以不设置其余参数，"/>
+<outline text="同自定义函数一样，一般也可以指定形参的默认值，但指定了默认值的形参必须在最后，"/>
+                            </outline>
+                            <outline text="组成">
+<outline text="由于定义类中的方法类似自定义函数，所以把已设置的外部函数进行适当修改后移入类的定义中，即可将外部函数变为一个方法，"/>
+<outline text="不同于init函数，自定义方法不会默认产生返回值，设置时应注意，"/>
+                            </outline>
+                        </outline>
+                        <outline text="使用object1.func1(attr1, attr2...)：，">
+                            <outline text="可以不指定形参，此时方法会返回设置的形参的默认值，但不能忽略括号（括号代表对方法的使用，不加括号则代表方法本身），"/>
+                            <outline text="不同于外部的自定义函数，定义在类中的方法不能直接调用，只能由实例通过方法调用，">
+<outline text="换言之，定义在类外部的函数可以与类中的方法重名，但不合适的命名可能会导致误解，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="属性">
+                        <outline text="设置属性">
+                            <outline text="一般在init函数中设置完所有属性，"/>
+                            <outline text="可以在方法中设置init中没有的新属性，但不调用对应方法时，实例就不会有对应的属性，"/>
+                            <outline text="可以用点标记法给具体实例设置新的属性object1.attr1 = str1，但设置的属性仅有对应实例拥有；不可以用点标记法给类设置新的属性，"/>
+                        </outline>
+                        <outline text="修改属性">
+                            <outline text="可以直接通过点标记法更改属性，即object1.attr1 = str1，但这种方式不常用，"/>
+                            <outline text="一般通过类中的方法接受外界参数，对实例的属性进行修改，"/>
+                        </outline>
+                    </outline>
+                    <outline text="“特殊方法属性”">
+                        <outline text="定义">
+                            <outline text="可以理解为在类中对python原有的“方法”进行重新定义，"/>
+                            <outline text="当对类中的实例应用一些内置方法时，python就会首先调用类中重新定义的方法，"/>
+                        </outline>
+                        <outline text="字符串方法">
+                            <outline text="可以在类中定义__str__函数，当Python请求该类的实例的可读字符串形式时，类就会调用__str__方法，并将其返回值用作请求的字符串，"/>
+                            <outline text="例如，在类中定义了def __str__(self): return(attr1...)后，使用print(object1)时，python就会调用__str__函数，返回由该函数定义的字符串，"/>
+                        </outline>
+                        <outline text="运算符的重新定义">
+                            <outline text="在自定义的类中，可以对基本运算符（+、-、*等）和关系运算符（&lt;、&gt;、==等）的功能进行重新定义，"/>
+                            <outline text="一般目的为使其更符合类中的元素的形式，并非对运算符的功能进行彻底的重新规划，"/>
+                            <outline text="例如，def __add__(self, attr1):可以重新定义加号的作用；重新定义后，对类中的实例，+运算符就会按照自定义的函数起作用，"/>
+                            <outline text="直接替换原有运算符的功能，可能导致需要利用基本运算符时出错，应全面考虑不同的情况，并分别规定不同的运算方式，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="类变量">
+                    <outline text="部分类可能需要多次调用某个常量，如“圆”类可能需要经常调用\pi的值，"/>
+                    <outline text="可以在类中定义对应的常量，即var1 = num1，"/>
+                    <outline text="类中的方法或是类外应用变量时，都需要用点标记法声明Class1.var1，"/>
+                    <outline text="不能通过对实例使用点标记法更改类变量，即object1.var1 = str1只会给object1增加一个新的属性var1，并不会对类变量产生影响；但可以通过对类使用点标记法更改类变量，即使用Class1.var1 = str2，"/>
+                </outline>
+                <outline text="其它">
+                    <outline text="引用其它文件">
+                        <outline text="编写方法时可能需要引入其它的文件（或未引入的库）中的函数，这种情况下一般不在方法中加入引入语句import，而是在库的外部先写出引用语句，"/>
+                    </outline>
+                    <outline text="将类用作属性">
+                        <outline text="对于较复杂的物体，其拥有属性和方法可能很多，这种情况下可以将类的一部分作为一个独立的类提取出来，并用作类的一个属性，"/>
+                    </outline>
+                    <outline text="代码重构">
+                        <outline text="类并不一定必须是现实世界中已有的具体物体，也可能为部分重复代码的抽象总体；"/>
+                        <outline text="例如，某些程序可能会有多个函数对部分变量（一般为全局变量）进行多次调用，而重复的调用可能会导致输出混乱。此时，可以将这些变量封装到一个类中，并将函数转化为方法；这是简化代码的一种方式，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="继承（Inheritance）">
+                <outline text="定义">
+                    <outline text="在现有类的基础上定义新的类，原有的类称为父类，而新类称为子类，"/>
+                </outline>
+                <outline text="应用">
+                    <outline text="“继承”可能是对现实世界情况的反应——例如汽车可以分为电动车、汽油车两类，两类汽车有很多汽车的相同点，但是在动力、续航等性质上仍有着本质性的，不能等同的区别；因此，在这种情况下使用继承是一种较好的方式，"/>
+                    <outline text="然而，对于某些抽象的问题，继承也可能会使得程序更加难读，即与一个方法相关的代码可能被分散在几个模块之中 ，"/>
+                    <outline text="应对每个类和属性做出完整的注释；此外，也可以在方法的开始处使用print函数print(object1.func1)追踪具体执行的方法来自于哪一个类，"/>
+                </outline>
+                <outline text="子类的设置">
+                    <outline text="class函数class Class2(Class1):"/>
+                    <outline text="方法与属性">
+                        <outline text="init方法">
+                            <outline text="定义def __init__(self, attr1, attr2, attr3...):，"/>
+                            <outline text="组成">
+<outline text="super方法super().__init__(attr1, attr2...)，可以继承父类中对属性的定义，而无需重新定义属性，"/>
+<outline text="定义子类的特有属性self.attr3 = attr3，"/>
+                            </outline>
+                        </outline>
+                        <outline text="方法">
+                            <outline text="子类可以直接继承父类的所有方法（即不需要额外的函数语句）；然而，若不在init中继承属性，则依赖于父类中的属性的方法仍然不能使用，"/>
+                            <outline text="（子类也可以直接继承父类中定义的所有变量，但应注意变量的合理命名），"/>
+                            <outline text="继承了父类的属性后，就可以在子类的方法中对父类属性进行修改，"/>
+                        </outline>
+                        <outline text="方法覆盖">
+                            <outline text="若在新的类中重新定义部分方法，则新的定义会覆盖原有的类中的方法的定义；未定义的其他方法则不受影响，"/>
+                            <outline text="在覆盖方法时，应当使新方法的接口与旧方法保持一致，包括接受相同的参数、返回相同的类型等；这可以使能够用于父类的对象的方法，一定可以用于子类，"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="调试">
+                <outline text="类的检查">
+                    <outline text="class属性">
+                        <outline text="使用object1.__class__可以返回一个type对象type1，描述object1所属的类，"/>
+                        <outline text="使用type1.__name__可以返回一个字符串，描述object1的类；而type1.__bases__则可以返回一个元组，描述object1所属的类继承的父类，"/>
+                    </outline>
+                    <outline text="isinstance函数">
+                        <outline text="函数isinstance(arg1, Class1)返回一个布尔值，描述arg1是否为Class1中的实例，"/>
+                        <outline text="python中的“类”的含义十分广泛，即int、list、tuple等数据结构也为一个“类”，"/>
+                    </outline>
+                    <outline text="issubclass函数">
+                        <outline text="函数isinstance(Class1, Class2)返回一个布尔值，描述Class1是否为Class2的子类，"/>
+                    </outline>
+                </outline>
+                <outline text="属性检查">
+                    <outline text="hasattr(object1, attr1)返回一个布尔值，可以用于检测对象是否拥有某个属性，"/>
+                    <outline text="vars(object1)返回一个字典（属性名称：属性取值），可用于查看对象的所有属性；而vars(Class1)则可查看类的所有属性和类变量，"/>
+                </outline>
+            </outline>
+            <outline text="数据类型即对象">
+                <outline text="Python的类型是动态确定的，即同一变量的数据类型会随着程序运行而变化，而不需要事先声明，"/>
+                <outline text="python的一个思想为“所有”变量均为“对象”，即所有的变量都由对应的类定义，">
+                    <outline text="例如，字符串属于str类，布尔值属于bool类，而str和bool则属于type类，"/>
+                </outline>
+                <outline text="“鸭子类型”">
+                    <outline text="相比于Java等对数据结构和类有严格的要求的语言，python更希望强调“实用性”，即通过灵活的应用数据结构和类达到编程的目的，而不是必须遵循严格的定义，执行严格的检查，"/>
+                    <outline text="因此，python中引入了很多异常类型，以保证程序出现错误时解释器可以发现并中断程序；相比之下，Java、C等语言则没有规定这样多的异常，因此在编写时就需要尽量保证程序不出错误，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="模块（module）">
+            <outline text="定义">
+                <outline text="相互关联的函数，类和变量的组合，一般以脚本文件file.py的形式储存，"/>
+                <outline text="若需要在新的程序中使用这些函数，可以直接利用import函数导入模块，而无需再次编写函数代码，"/>
+            </outline>
+            <outline text="基本操作">
+                <outline text="导入">
+                    <outline text="import函数">
+                        <outline text="python内部的函数模块和非内置的包含python代码的文件file.py都可以利用import函数导入，"/>
+                        <outline text="如果模块已经被导入，则再次试图导入模块不会产生行为，即python不会重新读取模块，">
+                            <outline text="若模块在运行过程中被修改，修改内容不会被同步更新，"/>
+                            <outline text="可以利用importlib库中的reload方法重新导入模块importlib.reload()，但可能导致某些问题，"/>
+                            <outline text="最好的方式为重启解释器并重新导入模块，"/>
+                        </outline>
+                    </outline>
+                    <outline text="import as函数">
+                        <outline text="可以改写（一般为简写）模块的名称import numpy as np，便于后续使用，"/>
+                        <outline text="使用模块中的函数时也必须用新指定的名称，模块的原名称无法再使用，"/>
+                    </outline>
+                    <outline text="from import函数">
+                        <outline text="在需要导入某个频繁使用的对象时，可以通过from module import object将模块中的指定对象名称直接导入代码，再次使用该对象时就无须再带模块名称；">
+                            <outline text="然而，对于较长的程序，这样的语句可能使程序变得不容易理解，"/>
+                            <outline text="此外，若两个模块都定义了同一个对象名则会发生命名冲突，且第二个模块中的名称将会替换第一个模块中的名称，"/>
+                        </outline>
+                        <outline text="Python中用前置下划线_func表示私有名称，from import函数不会导入这些语句，"/>
+                    </outline>
+                </outline>
+                <outline text="模块使用">
+                    <outline text="模块函数">
+                        <outline text="使用模块中的函数需要带上模块名称，如numpy.sin()，"/>
+                        <outline text="由于函数与具体的模块绑定，因此可以使用不同模块中的同一名称函数，如numpy.sin()和math.sin()的使用都是合法的，"/>
+                        <outline text="模块中的函数可以直接访问同一模块内定义的其他对象，不需要带上模块名，"/>
+                    </outline>
+                    <outline text="模块类">
+                        <outline text="使用模块中的类与类似使用函数，即同样需要带上模块名称，如module.class()，"/>
+                    </outline>
+                </outline>
+                <outline text="脚本模式运行">
+                    <outline text="一般情况下，我们希望模块被导入后只是增加一些新的函数的定义，但并不运行或输出结果；"/>
+                    <outline text="可以利用if __name__ == '__main__':语句设置作为模块的程序；若程序以脚本的形式运行，则if语句返回True，语句后的代码将被执行；而当程序作为模块被导入时，if语句返回False（此时__name__的值为模块的名称，不再为main），从而代码会被跳过，"/>
+                </outline>
+                <outline text="模块位置">
+                    <outline text="sys模块中的sys.path语句会给出python解释器在执行import语句时会搜索的模块路径，"/>
+                    <outline text="以交互模式执行Python时，sys.path的第一个元素为空字符串，Python会将其视为首先在当前目录中搜索模块，"/>
+                    <outline text="然而，对于脚本模式的操作，上述方法一般不再可行；可以尝试将Python程序要用到的全部模块， 都和程序放在同一目录中；或新建目录用于保存自己的模块，并修改sys.path变量，使之包含该新建目录，"/>
+                    <outline text="细节可以参考Python Library Reference中关于site模块的介绍，"/>
+                </outline>
+            </outline>
+            <outline text="编写模块">
+                <outline text="理论上，“编写模块”不是一个独立的编程过程，编写模块主要指的是编写具体的函数或具体的类，"/>
+                <outline text="一般模块最开始为三引号标记的注释语句，用于描述模块所包含的函数的类型，">
+                    <outline text="添加的注释语句可以使用__doc__方法访问，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="包（package）">
+            <outline text="定义">
+                <outline text="相互关联的模块的组合；相比模块， 包可以更好地组织“大型”的代码集，"/>
+                <outline text="若需要在新的程序中使用这些函数，可以直接利用import函数导入模块，而无需再次编写函数代码，"/>
+                <outline text="（前提条件）：python规定，只有包含__init__.py文件的目录才会被识别为包，因此，一般python的包中的所有目录都会包含一个__init__.py文件，"/>
+            </outline>
+            <outline text="基本操作">
+                <outline text="import语句">
+                    <outline text="类似模块，可以使用import语句导入包，"/>
+                    <outline text="python规定，导入包的顶级模块并不会加载其全部子模块，例如import matplotlib并不会同时导入matplotlib.pyplot，"/>
+                    <outline text="可以通过输入具体的模块名称判断模块是否被导入，"/>
+                </outline>
+                <outline text="（类似外部模块，包内的文件同样需要用import语句才能访问包内其他文件中的对象），"/>
+                <outline text="（__all__属性）"/>
+            </outline>
+        </outline>
+        <outline text="库（library）">
+            <outline text="python中的标准库">
+                <outline text="数据类型库">
+                    <outline text="字符串库（string，re，struct），"/>
+                    <outline text="数值库（numbers，math，random），"/>
+                    <outline text="其它数据库（array，queue，collections）"/>
+                </outline>
+                <outline text="文件库">
+                    <outline text="pathlib，filecmp，pickle，"/>
+                </outline>
+                <outline text="操作系统库">
+                    <outline text="os，time，io，logging，"/>
+                </outline>
+                <outline text="调试库">
+                    <outline text="doctest，pdb，profile，trace，"/>
+                </outline>
+                <outline text="互联网库">
+                    <outline text="socket，email，http.server，"/>
+                </outline>
+            </outline>
+            <outline text="pip方法">
+                <outline text="可以在cmd（powershell）中使用pip语句pip install package安装互联网上发行的库，"/>
+                <outline text="Python文档的“Installing Python Modules”提供了更多信息，"/>
+            </outline>
+            <outline text="（虚拟环境）"/>
+            <outline text="PyPI（Python Package Index）">
+                <outline text="PyPI是Python代码的官方库，包含了适用于各个Python版本的包，"/>
+                <outline text="PyPI中的包默认按照添加日期和名称排列，但可通过类别进行搜索，"/>
+            </outline>
+        </outline>
+        <outline text="程序（py文件）">
+            <outline text="脚本模式与交互模式">
+                <outline text="交互模式：在解释器中直接输入代码并运行，"/>
+                <outline text="脚本模式：将代码保存到文件内，运行解释器并执行脚本，"/>
+                <outline text="脚本模式不会展示结果，而是需要利用print函数等语句才会显示结果，"/>
+            </outline>
+            <outline text="临时程序与长期程序">
+                <outline text="临时程序：运行一段时间并输出结果，运行结束后不保存数据；再次运行时仍以全新状态开始，"/>
+                <outline text="长期程序：维持运行状态，将部分数据记录在存储设备中（例如对硬盘上的文件进行读写）；再次运行时从上次中断的地方继续，"/>
+            </outline>
+            <outline text="运行python脚本">
+                <outline text="命令行方式（Windows）">
+                    <outline text="首先用cd C:\Users\更改powershell的运行目录到脚本文件所在的目录，若目录为当前路径的子目录，则可直接使用cd folder语句（由于Windows的命名原则，目录语句可以不区分大小写），"/>
+                    <outline text="使用python file.py即可运行对应文件，"/>
+                </outline>
+            </outline>
+            <outline text="接受命令行参数">
+                <outline text="sys模块中的sys.argv方法可以接受命令行中传入的参数（一个或多个），并将其存储为一个字符串组成的列表['file.py', 'arg1', 'arg2'...] ，"/>
+                <outline text="（输入、输出的重定向）、（argparse模块的应用）、（fileinput模块的应用），"/>
+            </outline>
+            <outline text="main函数">
+                <outline text="对于较复杂的算法，最好将其写为多个函数和主控函数main()的组合，"/>
+                <outline text="因为main函数所包含的主要为其他函数，所以一般将main函数写在末尾 ，"/>
+            </outline>
+            <outline text="脚本模式运行">
+                <outline text="可以使用if __name__ == '__main__':语句设置条件；"/>
+                <outline text="若程序以脚本的形式运行，则if语句返回True，语句后的代码将被执行；而当程序作为模块被导入时，if语句返回False（此时__name__的值为模块的名称，不再为main），从而语句后的代码会被跳过，"/>
+            </outline>
+        </outline>
+        <outline text="帮助">
+            <outline text="help()函数可以返回输入参数的帮助，"/>
+            <outline text="dir()函数可以列出特定模块中的全部对象，"/>
+            <outline text="globals()函数可以显示与对象相关联的值，"/>
+        </outline>
+        <outline text="调试">
+            <outline text="错误">
+                <outline text="类型">
+                    <outline text="语法错误：python有规定的语法规则，若语法出错则会报错并停止运行；需要多次练习以熟悉规则，形成习惯，"/>
+                    <outline text="语义错误：程序可以被执行，但返回的并非程序员想要的结果；可能是因为语法错误，或者函数调用不当，"/>
+                    <outline text="运行错误"/>
+                </outline>
+                <outline text="错误信息">
+                    <outline text="python会返回错误信息，但是只能返回错误的最后一步；而最后一句出错可能并非语法出错，而是上面的语句出现了语义错误；应该仔细排查变量与函数的设置，分析错误原因，"/>
+                </outline>
+                <outline text="语义错误的可能原因">
+                    <outline text="函数获得的参数有问题，">
+                        <outline text="可以增加一条print语句，打印出函数获得的参数及其类型，便于判断指定的参数，"/>
+                    </outline>
+                    <outline text="函数的中间值或者返回值有问题，">
+                        <outline text="可以在return语句之前增加print语句，便于分析返回值；"/>
+                        <outline text="可以试着用较为简单的取值检查对应结果是否正确，"/>
+                    </outline>
+                    <outline text="函数调用参数和返回值的方式有问题，"/>
+                </outline>
+            </outline>
+            <outline text="对分调试">
+                <outline text="可以试着将代码分为两部分，寻找一个可以检查的中间值，利用return、print语句验证代码是否运行良好，"/>
+                <outline text="如果中间点检查出错了，那么就说明程序的前半部分存在问题。如果没问题，则说明是后半部分出错了，"/>
+                <outline text="理论上，这样可以减少调试的数量；其关键在于合理的对代码进行分割，寻找最容易出错误的地方，"/>
+            </outline>
+            <outline text="参数错误">
+                <outline text="一般情况下，函数所需求的输入参数只在一定范围内才是符合现实的（或符合python运算规律的），但是最初编写函数时可能会忽略这一点，"/>
+                <outline text="可以增加额外的校验函数，判断输入的数值是否合法，"/>
+                <outline text="assert语句可以检查给定的函数，并在失败的情况下返回异常，"/>
+                <outline text="面对参数错误时，应注意调用的对象本身也被视为一个参数，"/>
+            </outline>
+            <outline text="接口与实现分离">
+                <outline text="为了使软件更容易维护，一般采取接口与实现分离的方式，"/>
+                <outline text="对于对象，这意味着一个类提供的方法不应该依赖对象的属性的形式，"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text="其它操作">
+            <outline text="电脑操作">
+                <outline text="路径选择">
+                    <outline text="os模块">
+                        <outline text="查看路径：os.getcwd()函数可以返回当前（绝对）路径，">
+                            <outline text="相对（relative）路径：受运行环境的目录影响，且随环境路径的改变而变化，"/>
+                            <outline text="绝对（Absolute）路径：电脑中文件的路径，与当前环境的目录无关，"/>
+                        </outline>
+                        <outline text="改变路径：可以使用os.chdir('c:\user')函数，">
+                            <outline text="由于Windows的命名原则，目录语句可以不区分大小写，"/>
+                        </outline>
+                        <outline text="新建文件夹：os.makedirs('folder') 会在当前目录新建空文件夹folder，"/>
+                        <outline text="遍历文件：os.walk('c:\user')函数会遍历给定目录下的所有文件，返回一个生成器对象，"/>
+                    </outline>
+                </outline>
+                <outline text="pathlib模块">
+                    <outline text="查看路径：pathlib.Path()函数可以返回当前（相对）路径，"/>
+                </outline>
+                <outline text="中断程序运行">
+                    <outline text="采用Ctrl+C快捷键可以强制终止程序执行，显示为“KeyboardInterrupt”，且不会关闭shell，"/>
+                    <outline text="也可以尝试直接关闭shell进程，"/>
+                </outline>
+                <outline text="input函数">
+                    <outline text="str = input(&quot;arg&quot;)函数接受一个可选参数arg，输出arg和输入框，并将用户的输入存储为到字符串str中，"/>
+                </outline>
+                <outline text="文件操作">
+                    <outline text="打开文件">
+                        <outline text="open('file.txt', mode = 'r')可以打开文件，返回一个file变量；">
+                            <outline text="可选参数mode默认为'r'，即可读模式，">
+<outline text="mode = 'w'可以写入文件（如果文件不存在，那么将创建一个新的文件；若文件已经存在，用写入模式打开它将会清空原来的数据，并从新开始），"/>
+<outline text="mode = 'a'可以将需要写入的数据附加到原文件后，而不会清空原来的数据，"/>
+                            </outline>
+                            <outline text="open语句并不会直接生成变量，可以open语句生成的file变量赋值给一个变量file1，并对变量进行操作，"/>
+                        </outline>
+                        <outline text="文件编码">
+                            <outline text="open函数提供了可选参数errors，用于处理非ASCII字符，默认参数为strict（遇到非ASCII字符时报错，并停止程序），"/>
+                            <outline text="此外，ignore参数会忽略这些字符，而backslashreplace参数则会用用反斜杠转义序列替换字符，"/>
+                        </outline>
+                        <outline text="with关键字（上下文编辑器）">
+                            <outline text="语句with open('file.txt', 'r') as file1:综合了三种操作，">
+<outline text="打开file.txt并将其赋值给变量file1，执行冒号后的语句，关闭文件，"/>
+                            </outline>
+                            <outline text="注意事项">
+<outline text="with关键字后的open语句同样可以接受可选参数，"/>
+<outline text="若不存在file.txt，则with语句会新生成file.txt文件，"/>
+<outline text="with关键字在执行完语句后会关闭文件，若需要进一步的编辑，则需要重新打开文件，"/>
+<outline text="进一步的信息可以查看标准库中contextlib模块的文档， 包括如何创建上下文管理器， 以及对它的各种操控方式，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="文件方法">
+                        <outline text="读取">
+                            <outline text="file1.readlines()可以将文件转换为列表，"/>
+                            <outline text="file1.readline()会读取文件的第一行，返回一个字符串，下次调用则会读取第二行，以此类推，"/>
+                            <outline text="file1.read()可以将文件转换为一个字符串，"/>
+                        </outline>
+                        <outline text="写入">
+                            <outline text="file1.write('string')可以将字符串（只能为字符串）输入至文件中，并返回被写入字符的个数，">
+<outline text="write方法只能用于写入模式('w'或'a')打开的文件，"/>
+<outline text="write方法默认不会换行，可以加入字符'\n'实现换行操作，"/>
+<outline text="可以用str函数将其它值转换为字符串，"/>
+                            </outline>
+                            <outline text="file1.writelines()可以将字符串列表（列表中的元素必须都为字符串）按字符串逐个输入至文件中，不产生返回值，"/>
+                        </outline>
+                        <outline text="file1.close()方法可以关闭文件；若不关闭，则文件直到程序结束时才会关闭，"/>
+                    </outline>
+                    <outline text="struct模块可以用于读取二进制数据，"/>
+                    <outline text="pickle模块和shelve模块可以用于保存对象，"/>
+                </outline>
+                <outline text="json模块">
+                    <outline text="json.dump(var1, file1)将var1中的数据写入file1中，不产生返回值，"/>
+                    <outline text="json.load(file1)可以读取并返回file1中的数据，"/>
+                </outline>
+                <outline text="sys模块"/>
+                <outline text="csv模块"/>
+            </outline>
+            <outline text="网络操作">
+                <outline text="获取（fetching）网络数据">
+                    <outline text="方式">
+                        <outline text="ftp服务器"/>
+                        <outline text="sftp协议"/>
+                        <outline text="http/https协议"/>
+                        <outline text="api"/>
+                    </outline>
+                    <outline text="工具">
+                        <outline text="ftplib模块"/>
+                        <outline text="requests库"/>
+                    </outline>
+                    <outline text="数据形式">
+                        <outline text="json">
+                            <outline text="数据结构">
+<outline text="基本结构：字符串，数值，布尔值，null值，"/>
+<outline text="复杂结构">
+    <outline text="对象（object），类似字典的键值对；“键”只能为字符串，“值”可以为数字等其他数据，"/>
+    <outline text="数组（array），类似列表，"/>
+    <outline text="以上两种数据结构是json的核心，这使得json可以很便捷的通过网络传递信息，"/>
+</outline>
+                            </outline>
+                            <outline text="工具">
+<outline text="json模块"/>
+<outline text="requests模块"/>
+                            </outline>
+                            <outline text="修改">
+<outline text="美观输出（pretty printing）：由于格式简单，json的信息排版可能较为混乱，可以使用pprint模块改善其排版，"/>
+                            </outline>
+                        </outline>
+                        <outline text="xml">
+                            <outline text="数据结构">
+<outline text="xml的数据编排较为复杂，一般以尖括号开始和结束，类似&lt;title&gt; &lt;information...&gt; &lt;/title&gt;，并利用缩进来区分不同组的信息，"/>
+                            </outline>
+                            <outline text="工具">
+<outline text="xmltodict库"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="抓取（scraping）网络数据"/>
+            </outline>
+            <outline text="数据科学">
+                <outline text="数据交互">
+                    <outline text="Jupyter记事本"/>
+                </outline>
+                <outline text="数据分析">
+                    <outline text="pandas库"/>
+                </outline>
+                <outline text="数据库">
+                    <outline text="关系数据库（relational databases）：SQlite，MySQL，PostgreSQL"/>
+                    <outline text="NoSQL数据库：Redis，MongoDB，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="其它">
+            <outline text="编程思想">
+                <outline text="迭代思想">
+                    <outline text="不同于人类，计算机很擅长重复执行同样的简单语句，"/>
+                    <outline text="迭代">
+                        <outline text="迭代的关键在于确定合理的起点与终点，在构造迭代语句时，可以先将进行迭代需要的元素一一列出，"/>
+                        <outline text="一般会发生变化的元素需要被定义为参数；作为参照的元素则可以直接用函数表示出来，而无需引入额外参数，">
+                            <outline text="在迭代语句中，迭代的次数是极为重要的变量，应该尽量详细的分析迭代的多种可能结果，从而对结果进行一个更好的抽象，并用变量描述迭代的次数，"/>
+                            <outline text="可以试着将简化或推广场景（例如从一个字母、固定次数引申到任意字母、次数）以辅助思考，"/>
+                            <outline text="不应强求一次得出结论， 面临的问题较为复杂时，可以先写出简单但可以执行的重复语句，再试着做出简化，"/>
+                        </outline>
+                    </outline>
+                    <outline text="递归">
+                        <outline text="函数可以调用参数和函数，也可以调用自己，"/>
+                        <outline text="若递归达不到基础情形，则会导致无限递归，一般的编程语言会设置无限递归的最大深度，并在达到时报告错误，"/>
+                    </outline>
+                </outline>
+                <outline text="解题方式">
+                    <outline text="同数学类似，试着解决编程问题时也可以采取两条主线，即从已知推导问题、从问题反推回已知，"/>
+                    <outline text="应试着首先找出一个可以的解决方案，再去简化代码，"/>
+                </outline>
+                <outline text="分解复杂问题">
+                    <outline text="复杂的问题往往可以分为多个步骤解决，因此在面临较为复杂的问题时，可以先试着将问题分解为几个特殊化的小问题，并逐个编写特定函数解决，每次只增加和测试少量代码；而不是直接编写一个完整的复杂的函数；"/>
+                    <outline text="在设计函数时应使函数具有可迁移性，即可以用在别的应用之中，"/>
+                    <outline text="应该从一个能够正常运行的程序开始，每次只做一些小改动，并同步进行调试，"/>
+                </outline>
+                <outline text="执行流程">
+                    <outline text="流程总是从程序的第一条语句开始，自顶向下，每次执行一条语句，"/>
+                    <outline text="可以试着画图流程图来分析函数执行的顺序，理清逻辑，">
+                        <outline text="__main__表示最上层堆栈，可以调用其它函数，其他函数之间也会相互调用，"/>
+                        <outline text="__main__管理函数之外的变量，而每个函数的变量都只局限于函数内部，只有相互调用的函数之间才会有变量的传递，"/>
+                        <outline text="如果函数调用时发生错误，Python 会打印出错函数的名字以及调用它的函数的名字，以及调用后面这个函数的名字，一直追溯到__main__为止。"/>
+                    </outline>
+                </outline>
+                <outline text="计算机程序的图解">
+                    <outline text="仅在大脑中推算程序的运行模式可能会显得抽象和难以理解，可以利用图解分析计算机程序的具体运行模式，帮助理清程序运行的逻辑，"/>
+                    <outline text="栈图">
+                        <outline text="描述程序运行的步骤、状态，"/>
+                    </outline>
+                    <outline text="对象图">
+                        <outline text="描述某个对象在运行时的取值的变化，"/>
+                    </outline>
+                    <outline text="类图">
+                        <outline text="描述类与类之间的关系，如引用、继承等，"/>
+                    </outline>
+                </outline>
+                <outline text="函数的精简">
+                    <outline text="函数应尽可能简洁，避免让使用者处理不必要的细节，"/>
+                    <outline text="函数的实质是对多个类似的或重复性的行为的抽象与简化，可以通过画出函数运行的栈图来找到优化函数的方式，并试着通过复合语句精简程序；"/>
+                    <outline text="部分函数可能会执行类似的行为，可以从现有函数中分离出表述相似行为的语句，简化新的函数的编写，"/>
+                </outline>
+                <outline text="搜索">
+                    <outline text="搜索的一般模式为遍历给定序列， 并在找到需要的东西时返回，"/>
+                    <outline text="搜索一般需要for、while语句的组合应用，"/>
+                    <outline text="应注意函数语句中的参数也需要用return函数返回输出值，"/>
+                </outline>
+                <outline text="函数式编程">
+                    <outline text="纯函数：接受一个对象，并返回新的值，不改变输入的对象；"/>
+                    <outline text="修改器：接受一个对象，并对对象中的属性进行部分修改以符合实际（或方便进一步运算），一般不返回值，"/>
+                    <outline text="一般情况下，不建议对输入对象的原始属性进行修改；可以试着寻找需要使用修改器的深层原因，并利用纯函数方式解决，"/>
+                </outline>
+            </outline>
+            <outline text="程序的组成">
+                <outline text="多个输入数据、参数和函数的有序组合（函数需要调用指定的参数，可以是人为给定，或是其他函数的输出）,"/>
+                <outline text="基本步骤：输入、执行（检验）、输出、重复，"/>
+            </outline>
+        </outline>
+    </body>
+</opml>

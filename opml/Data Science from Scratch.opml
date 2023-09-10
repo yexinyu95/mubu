@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Data Science from Scratch</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="basic skills">
+            <outline text="mathematics">
+                <outline text="calculus"/>
+                <outline text="linear algebra"/>
+                <outline text="probability"/>
+                <outline text="statistics"/>
+            </outline>
+            <outline text="python programming">
+                <outline text="basic installation">
+                    <outline text="shell">
+                        <outline text="IPython">
+                            <outline text="interactive full-featured python-shell,"/>
+                            <outline text="could paste space correctly,"/>
+                        </outline>
+                    </outline>
+                    <outline text="libraries">
+                        <outline text="libraries installation">
+                            <outline text="pip(standard package manager)"/>
+                            <outline text="conda(Anaconda's package manager)"/>
+                        </outline>
+                        <outline text="virtual environments">
+                            <outline text="use virtual environment is preferred, because it could avoid probable version conflicts between libraries,"/>
+                            <outline text="such as Anaconda or venv module,"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="code formatting">
+                    <outline text="Python uses tab and space to separate blocks of code, instead of curly braces,">
+                        <outline text="tabs and spaces are different in Python, better not mix use them,"/>
+                        <outline text="space inside parentheses and brackets will be ignored,"/>
+                    </outline>
+                    <outline text="use\to write code in next line, instead of enter/space (especially in interactive mode),"/>
+                    <outline text="use''' can create multi-line strings,"/>
+                </outline>
+                <outline text="data structure">
+                    <outline text="Boolean"/>
+                    <outline text="strings">
+                        <outline text="delimited by single/double quotation marks,"/>
+                        <outline text="use\in string to encode special characters"/>
+                        <outline text="string combination : use &quot;f-string&quot; method f'{str1} {str2}'could combine two string quickly,"/>
+                    </outline>
+                    <outline text="lists">
+                        <outline text="concept : an ordered collection of data(like vector)"/>
+                        <outline text="operator">
+                            <outline text="assignment/multiple assignments"/>
+                            <outline text="arithmetic operator(+)"/>
+                            <outline text="boolean operator(in)"/>
+                        </outline>
+                        <outline text="statements">
+                            <outline text="square brackets[]"/>
+                            <outline text="method : append, sort,"/>
+                            <outline text="function : sorted(argumentsreverse,key), zip,"/>
+                        </outline>
+                    </outline>
+                    <outline text="tuples">
+                        <outline text="concept : unchangeable lists"/>
+                        <outline text="operator">
+                            <outline text="assignment/multiple assignments"/>
+                        </outline>
+                    </outline>
+                    <outline text="dicts">
+                        <outline text="concept : lists contains pairs of values with keys,"/>
+                        <outline text="operator">
+                            <outline text="boolean operator(in)"/>
+                        </outline>
+                        <outline text="method">
+                            <outline text="square brackets[] method"/>
+                            <outline text="getmethod"/>
+                        </outline>
+                    </outline>
+                    <outline text="defaultdict, counters, sets"/>
+                    <outline text="type annotations">
+                        <outline text="python's data structure is not static, so variable declaration is not required,"/>
+                        <outline text="however, &quot;annotate&quot; the type of an variable can make code more readable,"/>
+                        <outline text="such as（`def add(a: int, b: int) -&gt; int: `）">
+                            <outline text="in fact, the annotate(in color) is needless and won't make sense (input a string is still valid),"/>
+                            <outline text="but clear definition is more informative and easier to debug,"/>
+                        </outline>
+                        <outline text=".typingmodule">
+                            <outline text="typing module provides inline annotations,"/>
+                            <outline text="such as from typing import List, Dictmake var1: List[int] = []and var2: Dict[str, int] = {} valid, or python will raise NameError(because Listis not defined),"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="control flow">
+                    <outline text="if-elif-elsestatements"/>
+                    <outline text="whileloop"/>
+                    <outline text="forloop">
+                        <outline text="often used in transforming lists to dicts or changing elements in lists,"/>
+                    </outline>
+                    <outline text="generators(use less resources than lists inforloop),">
+                        <outline text=".yieldoperator, enumeratefunction,"/>
+                        <outline text="often used as index(natural numbers)"/>
+                        <outline text="flaw : only once-used,"/>
+                    </outline>
+                </outline>
+                <outline text="functions">
+                    <outline text="functions take some inputs(arguments) and return outputs after calculating,"/>
+                    <outline text="usedefto define functions,"/>
+                    <outline text="argument packaging : *argsand **kwargs(keyword args) could receive any arguments as a tuple,"/>
+                    <outline text="uselambdacould create short functions,"/>
+                </outline>
+                <outline text="classes(objects)">
+                    <outline text="(practical define)a &quot;group&quot; of things(cats, dogs, etc), always assign to a variable (dog 'Ann') ,"/>
+                    <outline text="(abstract define)a combination of functions,">
+                        <outline text="private method`__func__`,">
+                            <outline text="always used to set default parameter,"/>
+                        </outline>
+                        <outline text="functions(api)func(self, arg1...),"/>
+                    </outline>
+                    <outline text="inherit classes">
+                        <outline text="change or modify &quot;father&quot; classes,"/>
+                    </outline>
+                </outline>
+                <outline text="modules">
+                    <outline text="basic">
+                        <outline text="most features need to useimport packagestatement before using,"/>
+                    </outline>
+                    <outline text="specific modules">
+                        <outline text="random">
+                            <outline text="numbersrandom.seed(), random.random(), random.randrange(),"/>
+                            <outline text="usagesrandom.shuffle(var)(reorder the elements), random.choice(),random.sample()"/>
+                        </outline>
+                        <outline text="re(Regular Expressions)">
+                            <outline text="provide tools to deal with string,"/>
+                            <outline text="booleanre.match, re.search,"/>
+                            <outline text="usagere.split,re.sub,"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="exceptions(errors)">
+                    <outline text="try-except statements"/>
+                    <outline text="assert statements">
+                        <outline text=".assert statements, if statement(always return a boolean) is False, then raise AssertionError,"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="getting data"/>
+        <outline text="database operating"/>
+        <outline text="data processing">
+            <outline text="data cleansing"/>
+            <outline text="data organizing">
+                <outline text="organize lists">
+                    <outline text="data often provided in lists of tuples/lists,"/>
+                    <outline text="usesortmethod of lists,"/>
+                    <outline text="use appendmethod to make new lists,"/>
+                </outline>
+                <outline text="create dict">
+                    <outline text="define the keyandvalueof the dict,"/>
+                    <outline text="use for loop to create the dict,">
+                        <outline text="it's important to find an appropriate way to use the loop,"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="exploring analysis ">
+                <outline text="data description">
+                    <outline text="data statistics: summary, means">
+                        <outline text="make functionsto calculate ststistics"/>
+                    </outline>
+                    <outline text="make groups">
+                        <outline text="separate data to different groups"/>
+                        <outline text="name each group and compute statistics of groups"/>
+                    </outline>
+                </outline>
+                <outline text="data visualization">
+                    <outline text=".matplotlibmodule">
+                        <outline text=".pyplotmodule">
+                            <outline text="importimport matplotlib.pyplot as plt,"/>
+                            <outline text="input data(always lists), "/>
+                            <outline text="plot">
+<outline text=".`plt.plot(var1,var2, setting1,...)`,"/>
+<outline text=".`plt.bar(var1,var2, setting1,...)`,">
+    <outline text="regular bar chart"/>
+    <outline text="histograms"/>
+</outline>
+<outline text=""/>
+                            </outline>
+                            <outline text="decoration">
+<outline text="add titles, x/y labels,"/>
+<outline text="change axis"/>
+                            </outline>
+                            <outline text="display">
+<outline text="use plt.show()to display or plt.savefig()to save, "/>
+                            </outline>
+                        </outline>
+                        <outline text=""/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="data inference ">
+            <outline text="basic inference">
+                <outline text="find connections between data">
+                    <outline text="use iteration(such as forloops) to make dicts,"/>
+                    <outline text="use condition(if-else) to exclude repetitive data,"/>
+                </outline>
+            </outline>
+            <outline text="machine learning">
+                <outline text="methods"/>
+                <outline text="deep learning"/>
+                <outline text="natural language processing"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="Others"/>
+    </body>
+</opml>

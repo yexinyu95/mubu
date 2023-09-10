@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>R_in_Action</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="数据分析">
+            <outline text="基本流程">
+                <outline text="导入数据，数据的探索与清理，拟合统计模型，评估拟合结果，评估预测结果，形成报告，"/>
+            </outline>
+            <outline text="R语言的优势">
+                <outline text="随时更新的统计学方法，"/>
+                <outline text="从不同的数据源导入数据，"/>
+                <outline text="可定制性强的绘图功能，"/>
+            </outline>
+        </outline>
+        <outline text="基础交互">
+            <outline text="电脑文件管理">
+                <outline text="路径">
+                    <outline text="getwd函数可以返回工作目录，"/>
+                    <outline text="setwd('C:/folder')可以更改工作目录，"/>
+                </outline>
+                <outline text="文件">
+                    <outline text="读取数据">
+                        <outline text="read.table函数可以创建一个数据框，并将读取的表格形式的数据输入其中，">
+                            <outline text="read.table函数有多个可选属性，应结合实际分析，"/>
+                        </outline>
+                        <outline text="scan函数可以指定变量的类型，"/>
+                    </outline>
+                    <outline text="存储数据">
+                        <outline text="write.table(object,  file = 'file')可以在文件中写入一个对象，"/>
+                        <outline text="save.image()函数可以保存工作空间（即环境中的变量等），"/>
+                    </outline>
+                    <outline text="脚本文件">
+                        <outline text="source函数可以读取并执行指定的脚本文件，"/>
+                        <outline text="sink函数将脚本输出至对应文件，append=TRUE参数可以将文本追加至文件后，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="R语言环境管理">
+                <outline text="环境变量">
+                    <outline text="ls()函数可以显示环境中的所有变量，">
+                        <outline text="pattern属性可以显示带有某个特定字符的变量，"/>
+                        <outline text="max.level属性可以规定显示对象的级别的数量，尤其在对象中包含数据框、矩阵等复杂对象时，全部显示可能会产生很长的结果，"/>
+                        <outline text="str方法可以显示对象的详细信息，默认显示所有对象，也可以在方法中利用pattern属性显示指定对象的信息，"/>
+                    </outline>
+                    <outline text="rm()函数可以删除指定的对象，">
+                        <outline text="list属性按类别指定需要删除的对象，例如list属性可以与ls函数组合使用，"/>
+                    </outline>
+                    <outline text="options函数可以显示或设置当前选项，"/>
+                </outline>
+                <outline text="？变量声明">
+                    <outline text="R利用“词汇作用域”机制分析对象为全局对象还是局部对象；因此，在R中不需要在函数内进行变量声明，"/>
+                </outline>
+                <outline text="库">
+                    <outline text="R函数一般被封装在库（library）中，存放在安装位置的library目录下，"/>
+                    <outline text="可以直接通过R程序中的“程序包”菜单对包进行操作，也可以利用函数，">
+                        <outline text="search函数可以返回当前环境中已经载入的包，"/>
+                        <outline text="R环境一般在启动时只会加载默认的包，library函数可以载入已下载但未载入的包，"/>
+                        <outline text="install.package函数可以安装对应的包，update.packages可以更新已经安装的包，installed.packages函数会列出安装的包以及它们的信息，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="数据输入">
+            <outline text="赋值">
+                <outline text="R中的默认赋值符号为&lt;-（箭头方向相反也可以）；虽然可以用等号赋值，但在部分情况下可能会出现问题，"/>
+                <outline text="可以用分号；来隔开同一行中的不同命令语句，"/>
+            </outline>
+            <outline text="基本数据结构">
+                <outline text="R中的基本数据结构包括向量、矩阵、数组、数据框、列表等，">
+                    <outline text="向量是用于存储数值型、字符型或逻辑型数据的一维数组。">
+                        <outline text="执行组合功能的函数c()可用来创建向量（类似python中用()输入的元组和[]输入的列表，但R中需要用函数c，）"/>
+                    </outline>
+                    <outline text="矩阵是一个二维数组，且每个元素都需要有相同的模式（数值型、字符型或逻辑型）">
+                        <outline text="matrix函数可以用于创建矩阵；基本参数为矩阵数值（序列），可选参数nrow和ncol可以指定行和列的维数， byrow可以指定矩阵应当按行填充还是按列填充 ，"/>
+                    </outline>
+                    <outline text="数组是扩展的矩阵，可以理解为n个有序的二维矩阵的组合，">
+                        <outline text="array函数可以用于创建数组；基本参数为数组数值（序列），可选参数dimensions为一个数值型向量，给出了各个维度下标的最大值，"/>
+                    </outline>
+                    <outline text="数据框类似数组，但其中的元素可以有不同的模式，">
+                        <outline text="data.frame函数可以创建数据框，"/>
+                        <outline text="names函数可以将给定的标签逐个赋给给定的向量中的元素，"/>
+                    </outline>
+                </outline>
+                <outline text="布尔值">
+                    <outline text="同python类似，==、&lt;、&gt;分别表示等于、小于和大于，"/>
+                    <outline text="双不等号a&lt;x&lt;b是合法的，但是会按照运算顺序从左到右逐个执行；为了返回正确的结果，应该使用&amp;符号（表示逻辑上的“与”）连接两个不等式，"/>
+                </outline>
+            </outline>
+            <outline text="其他数值">
+                <outline text="NA表示缺失数据，Inf/-Inf表示无穷值，NaN表示非数字值，"/>
+                <outline text="转义字符：\n表示新行， \b为退格；可以通过?Quotes了解更多，"/>
+            </outline>
+            <outline text="序列">
+                <outline text="输入序列">
+                    <outline text="c函数可以接受多个数值作为参数并返回一个向量序列，"/>
+                    <outline text="（scan函数可以提供输入框，并读取用键盘输入的数据）"/>
+                </outline>
+                <outline text="生成序列">
+                    <outline text="规律序列">
+                        <outline text="a：b可以用于产生整数序列，"/>
+                        <outline text="seq函数则可以按照指定间距产生序列，rep函数可以创建所有元素都相同的向量，sequence函数可以创建连续的整数序列，"/>
+                        <outline text="gl函数接受两个参数k、n，生成n*k个变量的序列，分为k个水平，每个水平重复n次，">
+                            <outline text="length参数可以指定产生数据的个数（仅简单切割或重复n*k变量序列），"/>
+                            <outline text="label参数可以指定每个水平的因子的名字，"/>
+                        </outline>
+                    </outline>
+                    <outline text="随机数">
+                        <outline text="计算机生成的随机数采用的是固定的算法，可以通过set.seed函数设置特定的种子，以产生特定的随机数，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="导入数据">
+                <outline text="可以参考在http://cran.r-project.org/doc/manuals/R-data.pdf下载的R Data Import/Export，"/>
+                <outline text="Stat/Transfer软件可在34种数据格式之间进行转换，其中包括R中的数据格式 ，"/>
+            </outline>
+        </outline>
+        <outline text="数据整理/运算">
+            <outline text="对象的属性与转换">
+                <outline text="基本属性">
+                    <outline text="基本属性一般可以分为两类，类型和长度，"/>
+                    <outline text="类型主要为数值型， 字符型， 复数型和逻辑型 ；mode函数可以返回对象的类型，"/>
+                    <outline text="长度指对象中元素的数目；length函数可以返回对象的长度，"/>
+                </outline>
+                <outline text="数据类型转换">
+                    <outline text="is函数结合numeric、character等方法可以判断输入的变量是否为对应数据类型，并返回TRUE或FALSE；"/>
+                    <outline text="as函数结合numeric、character等方法可以将输入的变量转换为对应的数据类型，"/>
+                </outline>
+            </outline>
+            <outline text="基本运算">
+                <outline text="数字运算">
+                    <outline text="向量也可以进行常规的算数运算（如+\-等）；向量长度不等时虽然也可计算，但得到的结果可能与预计不符，"/>
+                </outline>
+                <outline text="数据框的运算">
+                    <outline text="order函数可以对数据框进行排序，"/>
+                    <outline text="merge函数可以依据参数by指定的标识横向合并两个数据框；"/>
+                    <outline text="cbind函数可以直接横向合并两个矩阵或数据框，rbind函数则可以纵向合并两个数据框，"/>
+                </outline>
+                <outline text="逻辑值的运算">
+                    <outline text="R可以对逻辑值进行运算（TRUE当成1，FALSE当成0），"/>
+                    <outline text="可以用于计算某些特定事件的频率；例如判断数据超过某个界限的程度，可以先用表达式将数据逐个转换为对应的逻辑值，再利用数学符号进行运算，"/>
+                </outline>
+            </outline>
+            <outline text="数学函数运算">
+                <outline text="基本数学函数，">
+                    <outline text="运算函数：abs、sqrt、cos/sin、log等，"/>
+                    <outline text="统计函数：mean、median、var等，"/>
+                </outline>
+                <outline text="概率函数">
+                    <outline text="R可以产生来自多种不同分布的随机序列，函数的基本形式为rfunction(n, θ1, θ2, ...)，function为具体分布名称，n为需要的数据个数，θ为分布的参数，">
+                        <outline text="部分分布函数具有默认参数值；而对于没有默认参数值的分布函数，则需要手动输入参数，否则会报错，"/>
+                        <outline text="dfunc可以返回随机变量对应的pdf的值，pfunc返回随机变量对应的cdf的值，qfunc则返回分位数对应的随机变量值，"/>
+                    </outline>
+                </outline>
+                <outline text="统计分析函数">
+                    <outline text="summary函数可以返回统计量的一个概述，包括最小值、最大值、四分位数和数值型变量的均值，以及因子向量和逻辑型向量的频数统计。"/>
+                    <outline text="scale函数接受一个数值型向量，并返回均值为0、标准差为1的标准化变量，"/>
+                    <outline text="table函数可以生成频数频率表，"/>
+                </outline>
+            </outline>
+            <outline text="重编码">
+                <outline text="首先应确定有错误的或未记录的值，并统一编码为缺失值（NA），">
+                    <outline text="在变量后加上[]的赋值语句仅在[]内的语句为TRUE时执行赋值，"/>
+                    <outline text="is.na()函数接受一个变量并返回一个同样大小的变量，其中缺失值的位置被改写为TRUE，而不是缺失值的位置则为FALSE。"/>
+                    <outline text="R中的缺失值（NA）不同于无穷大的数（Inf）和不能计算的数（NaN），因而不能用is.na函数判断；此外，缺失值是无法进行比较的，即不能用布尔等式==判断，"/>
+                    <outline text="R函数默认不会排除NA，因此若数据中有NA，则计算的结果也为NA；部分函数提供了可选参数na.rm = TRUE，从而可以在计算前移除缺失值；细节可以参考函数的帮助文档，"/>
+                </outline>
+                <outline text="然后一般需要按一定规律，将连续的值划分为多个区间，">
+                    <outline text="within函数类似with函数，但可以对数据框进行修改，"/>
+                </outline>
+            </outline>
+            <outline text="选择指定数据">
+                <outline text="下标系统">
+                    <outline text="向量、矩阵和数据框中的元素都可以使用下标系统来访问，">
+                        <outline text="[i, j]表示第i行第j个元素，[i:j]选择第i到第j个元素——应注意，R中的下标从1开始，而不是0，"/>
+                        <outline text="$符号可以选择给定数据框中的某个特定变量，"/>
+                        <outline text="&amp;符号可以连接两个布尔值，类似and，"/>
+                    </outline>
+                </outline>
+                <outline text="指定数据框">
+                    <outline text="attach函数可以将指定数据框添加到搜索路径中，再使用数据时可以直接输入变量名而不需要利用$符号指定数据框；detach函数可以将数据框从搜索路径中移除，">
+                        <outline text="若环境中已有其它的同名全局变量，则R将优先处理全局变量；因此一般建议只在分析单独的数据框且不太可能有多个同名对象时使用attach函数，"/>
+                    </outline>
+                    <outline text="with函数接受一个数据框和一组语句，语句只会针对指定数据框执行；然而语句中产生的变量为临时变量，在需要时，可以用&lt;&lt;-赋值符号使其保存到全局环境中，"/>
+                </outline>
+                <outline text="随机样本">
+                    <outline text="sample函数可以从数据集中（有放回或无放回地）抽取大小为n的一个随机样本。"/>
+                </outline>
+                <outline text="因子">
+                    <outline text="factor函数可以将不同的类别值转换为整数并存储起来，"/>
+                    <outline text="函数的默认顺序为字母表顺序，可以通过levels参数自定义顺序，"/>
+                </outline>
+                <outline text="数据删除">
+                    <outline text="在某一列的下标之前加一个减号（–）就会剔除那一列， 也可以通过将需要删除的列设为NULL来删除这些列，"/>
+                </outline>
+            </outline>
+            <outline text="语句">
+                <outline text="R中的for语句和while语句通过（）接受条件（而不是：），">
+                    <outline text="R中的for语句效率不高，因此一般利用apply函数来实现重复操作，"/>
+                </outline>
+                <outline text="if-else语句和简化版的ifelse语句同样通过（）接受条件，"/>
+                <outline text="switch语句根据表达式的值选择语句执行，"/>
+            </outline>
+            <outline text="其它">
+                <outline text="transform函数接受一个数据集和具体运算作为参数，根据具体运算在原有数据集后加上新的数据向量，并返回新的数据集，"/>
+                <outline text="edit函数可以调出允许手动输入数据的文本编辑器；但需要首先建立一个（空白的）数据框（或矩阵）；fix函数也可以调出文本编辑器，"/>
+                <outline text="expression函数可以构造一个表达式且不立刻计算，eval函数可以利用环境中给定的变量取值计算表达式，"/>
+            </outline>
+            <outline text="“泛型函数”">
+                <outline text="函数可以用同样的语句接受不同类型的参数，并且根据参数的具体类型返回不同的结果，"/>
+                <outline text="例如，summary函数可以返回较为详细的汇总信息，names函数可以返回统计分析得到的不同结果的名称，residuals函数可以返回残差，"/>
+            </outline>
+        </outline>
+        <outline text="绘图">
+            <outline text="基本操作">
+                <outline text="x11函数可以打开一个空白的绘图窗口；没有激活的绘图窗口时，高级绘图函数也会自动开启一个新的窗口，"/>
+                <outline text="dev函数可以用来管理绘图窗口">
+                    <outline text="list方法可以查看所有激活的窗口，set方法可以变更当前激活的窗口；new方法可以打开新的窗口，而off方法则可以关闭指定的窗口，"/>
+                    <outline text="高级绘图函数在创建新图形时，一般会覆盖原先的图形；可以通过dev函数开启多个窗口来创建多个图形，"/>
+                </outline>
+            </outline>
+            <outline text="图形组合">
+                <outline text="layout函数接受一个矩阵参数，将图形窗口分割为多个部分，"/>
+                <outline text="par函数">
+                    <outline text="图形参数mfrow=c(nrows, ncols)可以创建行数为nrows，列数为ncols的图形矩阵（按行填充），mfcol参数则可以创建按列填充的图形矩阵，"/>
+                    <outline text="fig参数可以在小区域创建单幅图形，"/>
+                    <outline text="？参数no.readonly=TRUE可以生成一个可以修改的当前图形参数列表，"/>
+                </outline>
+            </outline>
+            <outline text="绘图函数">
+                <outline text="高级绘图函数">
+                    <outline text="plot函数可以根据x，y的取值绘制散点图，其中x、y向量的长度必须相等，">
+                        <outline text="type参数可以自定义绘制点、线，"/>
+                    </outline>
+                    <outline text="barplot可以创建条形图，boxplot可以创建箱线图，pie可以创建饼图，hist可以创建直方图，dotchart可以创建点图，"/>
+                </outline>
+                <outline text="低级绘图函数">
+                    <outline text="部分绘图函数只能在现存的图形上加入新的图形，而不能直接开启新的窗口并直接绘图；"/>
+                    <outline text="title函数可以添加标题，axis函数可以创建自定义坐标轴，abline函数可以添加参考线， legend函数可以添加图例；"/>
+                    <outline text="text、mtext函数可以添加文本，plotmath函数可以添加数学符号，"/>
+                </outline>
+                <outline text="绘图参数">
+                    <outline text="par函数可以用于设定图形的特征，"/>
+                    <outline text="除了利用其它绘图函数之外，高级绘图函数也支持对部分绘图参数的自定义，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="统计分析">
+            <outline text="统计假设">
+                <outline text="基本概念">
+                    <outline text="统计假设是统计分析和推断的基础，面对数据时，一般需要先用探索性分析检验某些重要的假设是否满足，"/>
+                    <outline text="尽管部分统计过程对偏离默认假设的数据具有一定的稳定性（robust），但对数据进行检验仍然是重要的，"/>
+                    <outline text="数据的图形表达可以很好的帮助理解问题的统计本质，"/>
+                </outline>
+                <outline text="基本统计量">
+                    <outline text="累计频率F，分位数Yα，y的密度值（似然度）">
+                        <outline text="累计频率即F（y）=P（Y≤y），"/>
+                        <outline text="分位数Yα的计算与累计频率相反，即给定累计频率对应的y值，"/>
+                        <outline text="y的密度即pdf对应的y值，这个值并没有太多理论意义，但可以作为似然函数的值（L=Πf(y)）来进行推断，"/>
+                    </outline>
+                </outline>
+                <outline text="正态性假设">
+                    <outline text="正态分布具有较优良的性质，这体现在仅用两个参数就可以完全的描述分布；此外，中心极限定理保证了正态分布的使用的广泛性，"/>
+                    <outline text="统计量">
+                        <outline text="pnorm可以用于计算累计频率，参数为（y，mean=μ， sd=σ2），"/>
+                        <outline text="qnorm可以用于计算分位数，参数为（y，mean=μ， sd=σ2），"/>
+                        <outline text="dnorm可以用于计算y的密度值，参数为（y，mean=μ， sd=σ2），"/>
+                    </outline>
+                    <outline text="图形方法">
+                        <outline text="直方图：可以用来检验数据的分布是否基本对称，">
+                            <outline text="hist函数可以用于生成直方图，"/>
+                        </outline>
+                        <outline text="正态分位数-分位数图（Q-Q图）：？，若样本来自于正态分布，则图形会表现为一条直线（截距为μ，斜率为σ），">
+                            <outline text="qqnorm和qqplot函数（需要car包）可以输出q-q图，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="独立性假设">
+                    <outline text="如果变量之间不独立，那么就会使得估计出现一定的误差（例如均值可能会明显偏大或偏小，而方差则会明显偏小），"/>
+                    <outline text="散点图或线性回归图可以用来评估变量之间的独立性；若数据是按照事件手机的，则可以绘制时间序列图来检查是否存在自相关，"/>
+                    <outline text="综合来看，一般难以仅用观测数据来评估独立性；更重要的是对数据的采集方法的分析，"/>
+                </outline>
+                <outline text="方差齐性检验">
+                    <outline text="对于正态分布，方差相等时的推断较为容易，而方差不等时的推断则比较复杂，所以很多推断都建立在方差相等的基础上；因此，在分析数据前一般需要对方差进行检验，"/>
+                    <outline text="bartlett.test可以用来进行方差齐性检验；此外，R中也提供了其它检验方法（如Fligner-Killeen检验（fligner.test()函数）和Brown-Forsythe检验（HH包中的hov()函数）），"/>
+                    <outline text="方差齐性分析对离群点非常敏感。可利用car包中的outlierTest()函数来检测离群点，"/>
+                </outline>
+            </outline>
+            <outline text="探索性数据分析">
+                <outline text="在进行数据分析前，应当首先对数据可能的分布、数据间的潜在关系和数据中可能存在的问题（如缺失值、离群值等）进行初步的探索性分析，"/>
+                <outline text="单组数据">
+                    <outline text="直方图可以直观的展示数据的分布情况，并且可以通过其形状拟合pdf的图形；然而，直方图的形状多少会受到分组个数的影响，因此可能导致误判，"/>
+                    <outline text="分位数图可以更准确的反应数据的分布，但其形状反映的为cdf的图形，因此并不如直方图一样直观，"/>
+                    <outline text="箱型图可以直观的展示出数据集的主要统计量（均值、中位数、四分位数等），也可以显示出可能的离群值；此外，中位数和平均值的位置也可以用来判断分布是否近似对称，"/>
+                </outline>
+                <outline text="多组数据">
+                    <outline text="Q-Q图：比较两组数据的分布；">
+                        <outline text="若两个分布相同，则Q-Q图就会基本形成一条斜率为1、截距为0的直线（y=x）；若形成的图形斜率为1，但截距不为0（y=x+b），则说明两个分布的均值相差一个常数，但标准差相近；若形成的图形斜率不为1，但截距为0（y=kx），则说明两个分布的均值存在比值关系，但标准差相近；"/>
+                        <outline text="若Q-Q图不能形成一条直线，则说明两个分布之间存在着较大的差异，"/>
+                    </outline>
+                    <outline text="双变量散点图：分析两组数据之间的相关性，">
+                        <outline text="线性相关是数据间最基础的关系，但并非任意存在相关的两组数据都的相关性都为线性，直接拟合线性关系可能会导致误判，可以考虑加入局部回归线来辅助分析，"/>
+                    </outline>
+                    <outline text="双变量散点图矩阵：对多组数据进行初步分析，">
+                        <outline text="其中，矩阵的对角线元素（aii）处展示的为各组数据的直方图；矩阵的其它元素（aij）展示的则是第i个因素和第j个因素的双变量散点图，"/>
+                        <outline text="需要注意，双变量散点图只能对两个变量间的关系进行初步判断，但多个变量之间往往存在交互关系，而这一点难以从散点图中直接看出，"/>
+                    </outline>
+                    <outline text="分类双变量散点图">
+                        <outline text="为了排除多因素间的可能交互作用，可以选取一个因素为分类变量，并在该变量的每个水平下绘制另外两个变量的双变量散点图，">
+                            <outline text="例如，臭氧浓度受到温度、风速的综合影响；如果希望分析风速对臭氧浓度的影响，就可以将温度划分为多个区间，再在每个区间内分别绘制臭氧浓度-风速双变量散点图，"/>
+                        </outline>
+                    </outline>
+                    <outline text="变量转换">
+                        <outline text="在双变量散点图中，原始数据可能没有表现出明显的关系。此时可以对某个变量进行转换，"/>
+                        <outline text="例如，部分散点图中数据点会较密集的分布在某一区域，这可能是因为x/y变量的取值范围差异较大；因此可以采取对取值范围较大的变量取对数，以缩小其取值范围，再进一步分析变量间的可能关系，"/>
+                        <outline text="幂变换是一种常用的变换，其形式为y'=y^λ；λ可以取多个值（如2、1/2、-1等）；可以通过尝试多个不同的λ值，以使变换后的变量的正态Q-Q图更接近于正态分布，并得出最适合的λ值，">
+                            <outline text="对数变换可以看作λ=0时的特殊的幂变换，"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="统计学思维">
+                <outline text="现实数据一般较为复杂，多种模型都可能对观测数据进行比较准确的描述，因而不应武断的对某个模型的准确度做出判断，"/>
+                <outline text="可证伪性是十分重要的，相比于模型可以解释的关系，模型所没能解释的差异也应该得到准确的度量。"/>
+                <outline text="传统的数学思维的核心是演绎推理，即从给定的信息开始，通过严谨的逻辑推断得到结论；虽然统计学也是基于数学的学科，但是统计学更偏重归纳推理，即通过给定的信息对可能的后果做出推测，并利用其它信息对推测进行证实或证伪，"/>
+            </outline>
+            <outline text="统计推断">
+                <outline text="统计学的目的是试图寻找可能产生所观测到的数据的概率分布。一般情况下，一个概率分布可以用有限个参数来确定，因此寻找到可能的概率分布以后，关键点就变为了寻找参数的具体取值，"/>
+                <outline text="样本统计量">
+                    <outline text="样本均值、样本方差、样本标准误（se、σ/n^(1/2))"/>
+                </outline>
+                <outline text="总体参数的估计（点估计与置信区间）">
+                    <outline text="中心极限定理指出，对任意随机变量，当样本量足够大时，样本均值的分布都近似于正态分布，且其均值为总体均值，方差为总体方差/样本量，">
+                        <outline text="“足够大”的样本量并非指某个精确数字，模拟数据显示，不同的分布收敛于正态分布的速度不同，因此不应盲目的相信n多大就足够的具体建议，"/>
+                    </outline>
+                    <outline text="然而，一般总体均值和方差都是未知数；考虑用样本方差估计总体方差，则分布由正态分布变为t分布，其参数（自由度）为n-1，"/>
+                    <outline text="总体的方差可以用样本的方差估计；若样本来自于正态分布，则样本方差和总体方差的比值为服从卡方分布的变量，其参数（自由度）为n-1，"/>
+                </outline>
+                <outline text="bootstrap（自助法）">
+                    <outline text="原因：部分情况下，样本的准确分布不确定，因而难以对统计量进行建模和参数估计，"/>
+                    <outline text="需求：样本应有一定的代表性，且样本量比较大，"/>
+                    <outline text="基本原理：将样本看成总体， 从样本中再进行随机抽样；然后，就可以利用新生成的多个“样本”计算希望得到的统计量的取值，并建立置信区间，">
+                        <outline text="若分布可以看作近似正态的，则可以考虑利用t分位数来构造置信区间；t区间可以得到很好的理论支撑，但其稳定性不足，"/>
+                        <outline text="若对分布的了解不足，则可以依据自举统计量的百分点构造置信区间；百分比区间的稳定性较强，但很难用统计理论进行分析，"/>
+                    </outline>
+                    <outline text="boot包提供了关于自助法的函数，"/>
+                </outline>
+                <outline text="假设检验">
+                    <outline text="检验的类别：单样本t检验、双样本t检验、Welch的t检验；单侧假设检验、双侧假设检验，"/>
+                    <outline text="检验的基本过程">
+                        <outline text="建立竞争性的两个假设、确定可接受的错误概率α、确定水平α对应的拒绝域、计算统计量的值、判断是否接受假设，"/>
+                    </outline>
+                    <outline text="非参数假设检验">
+                        <outline text="非参数检验的基本方法为秩变换，即利用数据的排序来替换其取值，"/>
+                        <outline text="wilcox符号检验（检验单样本的位置测量是否等于某个特定数值）、秩和检验（检验双样本的中位数是否相等）"/>
+                        <outline text="统计学家Box指出，在进行统计检验时，数据不满足正态性假设所带来的误差要小于数据间不能满足独立性所带来的误差。换言之，他认为应该保证实验设计和数据收集过程的独立性，而不是致力于推导非正态情境下的其它推断方式，"/>
+                    </outline>
+                    <outline text="检验的参数">
+                        <outline text="作者认为，不应混淆p值和水平α之间的区别。首先，p值虽然可以用于拒绝零假设，但不能用于接受某个备择假设（一般备择假设为复合假设）；其次，p值与样本的关系密切，因此一次检验得到的p值的大小与假设的正确性程度没有直接联系，换言之，人们可能会高估p值的含义。因此，作者建议使用水平α，只要数据落入由α确定的拒绝域就对假设做出判断，"/>
+                        <outline text="在确定水平α之后，一般还需要确定功效β；β的取值一般与样本量有关，因此可以由希望得到的β值确定需要调查的样本量n，"/>
+                        <outline text="作者指出，对功效β的理解也有一定的争议。有的统计学家认为，若检验的结果为接受H0，则功效β也应提供一些支持H0的证据；然而，备择假设一般是一组假设，而且功效β要受到样本数量的影响。因此，β值与p值一样，其所提供的信息不应被过度解读。"/>
+                    </outline>
+                </outline>
+                <outline text="单因素方差分析">
+                    <outline text="t检验难以对多组需要比较的数据进行检验。首先，需要多次t检验才能考虑到所有组的数据；其次，在多组相交的检验中发生错误I的概率会增加。因此，一般利用方差分析方法来检验多组数据，"/>
+                    <outline text="基于假设检验的解释">
+                        <outline text="假设：H0（各个均值都相等）vs H1（存在某个均值不等）"/>
+                        <outline text="检验统计量">
+                            <outline text="若H0为真，则代表组内样本均值与总体均值很接近，且组内的方差也与总体方差接近——换言之，即各个组之间的方差接近于0——因此，方差分析的直观统计量为组间方差/组内方差（MSG/MSE）。经计算，在H0成立时，该统计量具有自由度为（k-1，N-k）的F分布，"/>
+                        </outline>
+                        <outline text="方差分析的假定">
+                            <outline text="理论上，方差分析检验对残差有一定的要求：正态分布、方差相等、相互独立。Q-Q图可以用来检验正态性，S-L图可以用来检验方差齐性；相比之下，独立性的评估则比较困难，一种方法是绘制多组残差-均值图，观察残差的分布是否会随均值的变化而变化，"/>
+                            <outline text="在实际调查中，残差数据一般很难完美满足方差分析的要求。对此，常用的方法是对响应变量做幂变换；然而，部分变换可能会得到分布完美的数据，但对数据的解释会产生困难，"/>
+                        </outline>
+                        <outline text="多重比较">
+                            <outline text="相比于方差分析的零假设，研究者更希望分析不同的水平之间的具体差异的特征；多重比较可以用于逐个比较每组均值之间的差异，"/>
+                            <outline text="多重比较从某种意义上类似于重复进行多组t检验，因而面临的问题也是水平α的增加。一种解决问题的方式为Bonferroni方法，即设置αt=α/C。其中，C为需要进行的检验次数，αt为设置每次检验的水平，α希望控制的总体水平。"/>
+                            <outline text="Tukey-HSD检验，Fisher-LSD检验，"/>
+                            <outline text="虽然存在多种改善多重比较的检验方法，但是仍有研究者指出，不应对检验得到的结果过于自信，因为水平α的变化会使置信区间变宽，从而增加了不确定性；此外，多重比较的准确性也会受到样本量的影响，"/>
+                            <outline text="multcomp包中的glht()函数提供了多重均值比较更为全面的方法，既适用于线性模型，也适用于广义线性模型。"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="帮助">
+            <outline text="?function，help(function)和help('function')函数都可以调出关于指定函数的帮助，"/>
+            <outline text="默认情况下，help函数只会搜索默认的包；">
+                <outline text="将try.all.package属性设置为TRUE，可以对所有包进行搜索，"/>
+                <outline text="package属性可以在具体的包中搜索函数的帮助，"/>
+            </outline>
+            <outline text="apropos函数可以在被载入的包中搜索含有指定字符串的函数，"/>
+            <outline text="example函数可以返回指定函数的使用示例，"/>
+        </outline>
+    </body>
+</opml>

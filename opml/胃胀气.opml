@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>胃胀气</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="运动">
+            <outline text="卷腹、举腿、平板支撑，"/>
+            <outline text="训练量无需过大（每天一次，一周6天），动作细节也无需过于严格，但应保证肌肉的“发力时间”足够，"/>
+            <outline text="应避免穿过于紧身的衣服，"/>
+        </outline>
+        <outline text="饮食">
+            <outline text="习惯">
+                <outline text="最好饭前洗手，"/>
+                <outline text="吃饭一定要慢，保证细嚼慢咽，"/>
+                <outline text="饭后贴墙站10-15分钟，"/>
+            </outline>
+            <outline text="食物">
+                <outline text="适量">
+                    <outline text="饮食可能存在阈值，即达到一定程度之后，再吃少量的食物就会导致较长时间的肠胃不适，"/>
+                    <outline text="应保证不吃到很撑，"/>
+                    <outline text="吃完后短时间内不能再吃东西，不能再喝酸奶，饮料等，也应尽量不喝水，"/>
+                </outline>
+                <outline text="应主要避免盐和脂肪的摄入">
+                    <outline text="盐和脂肪可能会导致严重不适，碳水化合物也会导致不适，但阈值较高，"/>
+                </outline>
+                <outline text="避免的食物">
+                    <outline text="食材">
+                        <outline text="红薯/紫薯、土豆、板栗等淀粉类食物；"/>
+                        <outline text="山楂，柿子，椰子，西梅/西梅干，"/>
+                        <outline text="其它：韭菜、菌菇、秋葵，"/>
+                    </outline>
+                    <outline text="食物制品">
+                        <outline text="碳酸饮料，"/>
+                        <outline text="含大量水的米糊/豆浆，"/>
+                        <outline text="含奶油的食物，"/>
+                    </outline>
+                </outline>
+                <outline text="少吃的食物">
+                    <outline text="食材">
+                        <outline text="芋头，山药，"/>
+                        <outline text="杂粮类（黑麦，黄豆等）"/>
+                        <outline text="南瓜，西兰花，"/>
+                        <outline text="水果（果糖）：主要是榴莲，芒果，丑橘/橙，"/>
+                    </outline>
+                    <outline text="食物制品">
+                        <outline text="咖啡，巧克力，"/>
+                        <outline text="糖醇类食物（饼干），"/>
+                        <outline text="果干/果酱，番茄酱，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text="嚼口香糖部分时候可以缓解胀气的问题，但不应将其作为常态，"/>
+        <outline text=""/>
+    </body>
+</opml>

@@ -1,0 +1,3 @@
+- [[Data Science from Scratch]]
+- [[computer age statistics]]
+-

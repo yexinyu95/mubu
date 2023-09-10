@@ -1,0 +1,34 @@
+- 数学分析
+	- 极限
+	  collapsed:: true
+		- 普通
+		- 分式
+		- 矩阵
+	- 一元微分
+	  collapsed:: true
+		- 普通
+		- 分式
+		- 矩阵
+	- 一元积分
+	  collapsed:: true
+		- 普通
+		- 分式
+		- 矩阵
+	- 多元微分
+	  collapsed:: true
+		- 普通
+		- 分式
+		- 矩阵
+	- 多元积分
+	  collapsed:: true
+		- 普通
+		- 分式
+		- 矩阵
+	- 级数
+	  collapsed:: true
+		- 普通
+		- 分式
+		- 矩阵
+- 线性代数
+- 概率统计
+- [[Data_science]]

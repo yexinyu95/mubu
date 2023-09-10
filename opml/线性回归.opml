@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>线性回归</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="一元线性回归">
+            <outline text="线性回归基础">
+                <outline text="变量间的关系"/>
+                <outline text="回归模型"/>
+                <outline text="回归数据"/>
+                <outline text="回归函数"/>
+                <outline text="回归误差"/>
+                <outline text="标准误差回归模型"/>
+            </outline>
+            <outline text="回归参数和相关性参数的推断">
+                <outline text="回归参数β1、β0，"/>
+                <outline text="回归参数的置信区间"/>
+                <outline text="广义线性回归"/>
+                <outline text="描述性回归分析"/>
+                <outline text="标准回归模型"/>
+            </outline>
+            <outline text="模型的诊断与补救措施">
+                <outline text="残差的诊断"/>
+                <outline text="正态性检验"/>
+                <outline text="F检验"/>
+                <outline text="模型的变换（Box-Cox变换）"/>
+            </outline>
+            <outline text="参数的同时估计">
+                <outline text="β1、β0的同时估计，"/>
+                <outline text="估计误差带来的影响"/>
+            </outline>
+            <outline text="（矩阵知识）">
+                <outline text="矩阵与向量"/>
+                <outline text="矩阵与向量的运算"/>
+                <outline text="特殊类型的矩阵"/>
+                <outline text="矩阵的秩"/>
+                <outline text="多维随机变量（随机向量）"/>
+                <outline text="矩阵形式的线性回归"/>
+            </outline>
+        </outline>
+        <outline text="多元线性回归">
+            <outline text="多元线性回归I">
+                <outline text="矩阵回归模型"/>
+                <outline text="广义线性回归"/>
+                <outline text="回归的相关系数"/>
+                <outline text="回归的残差与方差分析"/>
+                <outline text="回归参数的推断"/>
+                <outline text="对新随机变量的估计"/>
+                <outline text="模型的诊断和补救措施"/>
+            </outline>
+            <outline text="多元线性回归II">
+                <outline text="回归的额外残差的检验（部分βi = 0时）"/>
+                <outline text="回归相关性的检验（部分βi = 0时）"/>
+                <outline text="复共线性和其影响"/>
+            </outline>
+            <outline text="量化回归模型">
+                <outline text="多项式回归模型"/>
+                <outline text="交互回归模型"/>
+            </outline>
+            <outline text="模型的选择和验证">
+                <outline text="建立模型的步骤"/>
+                <outline text="模型选择标准"/>
+                <outline text="判断模型的可行性"/>
+            </outline>
+            <outline text="模型的诊断">
+                <outline text="加性模型"/>
+                <outline text="离群值的分析"/>
+                <outline text="帽子矩阵"/>
+                <outline text="强影响值（DFFITS，Cook距离，DFBETAS）"/>
+                <outline text="多重共线性的诊断"/>
+            </outline>
+            <outline text="模型的补救措施">
+                <outline text="加权最小二乘回归"/>
+                <outline text="岭回归"/>
+                <outline text="稳健回归"/>
+                <outline text="局部加权回归"/>
+                <outline text="回归树"/>
+                <outline text="Bootstrap算法"/>
+            </outline>
+            <outline text="非线性回归">
+                <outline text="逻辑斯蒂回归"/>
+                <outline text="泊松回归"/>
+                <outline text="广义线性模型"/>
+            </outline>
+        </outline>
+        <outline text="其它">
+            <outline text="（时间序列回归）"/>
+            <outline text="实验设计"/>
+            <outline text="单因子方差分析">
+                <outline text="多重比较"/>
+                <outline text="ANOVA的诊断和补救措施"/>
+            </outline>
+            <outline text="多因子方差分析">
+                <outline text="相同样本两因子方差分析"/>
+                <outline text="不同样本两因子方差分析"/>
+                <outline text="协方差分析"/>
+                <outline text="随机实验方差分析"/>
+                <outline text="多因子方差分析"/>
+                <outline text="交互模型分析"/>
+            </outline>
+            <outline text="特殊实验设计">
+                <outline text="巢式设计"/>
+                <outline text="重复设计和相关性设计"/>
+                <outline text="拉丁方设计"/>
+                <outline text="响应面分析法"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+    </body>
+</opml>

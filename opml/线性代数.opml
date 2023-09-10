@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>线性代数</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="行列式">
+            <outline text="行列式的概念"/>
+            <outline text="行列式的计算">
+                <outline text="行列式的性质">
+                    <outline text="行列式的行、列等同，因此求解时应综合考虑行变换和列变换，"/>
+                    <outline text="基本性质：D = D^T，k倍相加，对换两行/列行列式变号，"/>
+                    <outline text="若行列式的某行/列的所有元素都可以表示为两个数的和，则可将行列式写为两个行列式之和，">
+                        <outline text="表现为|\alpha_1 + \beta,\alpha_2...,\alpha_n| = |\alpha_1,\alpha_2...,\alpha_n| +  |\beta,\alpha_2...,\alpha_n|，"/>
+                    </outline>
+                    <outline text="数乘行列式 = 数乘行列式的某一行/列，">
+                        <outline text="表现为|kA| = k^n|A|； |k\alpha_1,\alpha_2...,\alpha_n| = k|\alpha_1,\alpha_2...,\alpha_n| ，"/>
+                    </outline>
+                </outline>
+                <outline text="行列式按行（列）展开定理"/>
+                <outline text="计算技巧">
+                    <outline text="消元的主要目的为凑0，但同一行/列的其他元素也需要进行运算，"/>
+                    <outline text="常用行列式">
+                        <outline text="上、下三角形行列式的值都是其对角线元素的积（不需要考虑正负），"/>
+                        <outline text="副对角线行列式的值需要考虑正负，"/>
+                    </outline>
+                    <outline text="三对角线行列式">
+                        <outline text="逐行/列相加/相减，（并非一定从首行开始）"/>
+                        <outline text="每行/列都加至某行，"/>
+                        <outline text="化简后用展开公式，"/>
+                    </outline>
+                    <outline text="n阶行列式">
+                        <outline text="若难以直接求解，可以考虑利用递推公式或数学归纳法求解，"/>
+                        <outline text="展开时可以备注行列式阶数，避免失误，"/>
+                    </outline>
+                </outline>
+                <outline text="综合其它知识">
+                    <outline text="方阵的行列式可以进行整体运算，应注意与矩阵的乘法、单位矩阵的恒等变形的综合，"/>
+                    <outline text="kE+B/kB+E型行列式与相似矩阵，特征值的综合，"/>
+                    <outline text="|A| = |A^T|，应注意与特征值行列式的综合，"/>
+                </outline>
+                <outline text="抽象行列式的计算"/>
+            </outline>
+            <outline text="余子式与代数余子式">
+                <outline text="Aij的取值与aij无关，所以特定（代数）余子式的和可以看作某个行列式的值，因此可以尝试构造行列式简化计算，"/>
+                <outline text="应注意构造新行列式不同于对原行列式进行变换，变换后的行列式也可以较快的算出特定的ΣAij，但此时的Aij已经不再为原行列式的Aij，"/>
+                <outline text="A* 由代数余子式组成，">
+                    <outline text="求出A* 就可以求得所有的Aij，但A* 一般不易求解，"/>
+                    <outline text="A* 的排列（Aij的排列）与原矩阵不同，而是与原矩阵的转置相同，">
+                        <outline text="a_{ij} = -A_{ij} 等价于 A^T = -A^* ，"/>
+                        <outline text="两侧取行列式，可知|A| = (-1)^n |A|^{(n-1)}，"/>
+                    </outline>
+                    <outline text="由A* 的排列，可知ΣA_{ii} = Σλ_{A^*} ，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="矩阵">
+            <outline text="矩阵的定义：m行n列数表"/>
+            <outline text="特殊矩阵">
+                <outline text="零矩阵、单位矩阵、数量矩阵"/>
+                <outline text="对角矩阵、上/下三角矩阵"/>
+                <outline text="对称矩阵、反对称矩阵"/>
+                <outline text="正定矩阵、正交矩阵"/>
+                <outline text="等价矩阵、相似矩阵、合同矩阵"/>
+                <outline text="秩为1的矩阵"/>
+            </outline>
+            <outline text="矩阵的运算及运算规律">
+                <outline text="线性运算">
+                    <outline text="同型矩阵才可以进行加、减运算，"/>
+                    <outline text="数乘矩阵 = 数乘矩阵中的每个元素，数乘行列式 = 数乘行列式的某一行/列，">
+                        <outline text="表现为|kA| = |k\alpha_1,k\alpha_2...,k\alpha_n| =k^n|A|，"/>
+                    </outline>
+                </outline>
+                <outline text="转置"/>
+                <outline text="矩阵乘法、方阵的幂">
+                    <outline text="定义：A^0 = E, A^{-k} = (A^{-1})^k = (A^k)^{-1}，"/>
+                    <outline text="消去律：若AB = 0，且A可逆（或列满秩），则有B = 0，"/>
+                    <outline text="矩阵多项式">
+                        <outline text="由于A^k与A可交换，所以矩阵多项式的运算类似于数字x，"/>
+                        <outline text="且对于对角矩阵Λ，多项式可等同于每个对角元素的数字多项式的计算，"/>
+                    </outline>
+                    <outline text="性质">
+                        <outline text="一般(AB)^k = A(BA)^{k-1}B \neq A^kB^k，"/>
+                        <outline text="若A^n \neq 0，则对任意i ＜ n都有A^i \neq 0，"/>
+                    </outline>
+                </outline>
+                <outline text="运算技巧">
+                    <outline text="单位矩阵">
+                        <outline text="E = E^2 = E^n；E = A*A^{-1} = (AB)*(AB)^{-1}，"/>
+                        <outline text="矩阵运算包括数乘和矩阵乘法，数字1和单位矩阵E的作用并不相同，但有1*A = EA =A，计算时应注意，"/>
+                    </outline>
+                    <outline text="幂的运算">
+                        <outline text="若A= B+C，B^kC / BC^k = 0/E，则可以考虑用展开式求A的幂，"/>
+                        <outline text="秩为1的矩阵必定可以拆为非零行向量、列向量的乘积 ；因此对于秩为1的矩阵，可以通过拆分矩阵的方式计算幂，"/>
+                        <outline text="求出低次幂寻找规律，"/>
+                        <outline text="利用特征值和特征向量A^n \alpha = \lambda ^n \alpha，即A^n 有特征值\lambda ^n和与A相同的特征向量α，"/>
+                        <outline text="对角矩阵的幂等同于对角线元素aii的幂，所以可以尝试通过相似对角化求相似对角矩阵，求出原矩阵的幂，"/>
+                    </outline>
+                    <outline text="可以尝试用求平方的方式转化题目条件，尤其对于向量构成的矩阵，"/>
+                    <outline text="对于高阶幂的矩阵等式，可以考虑构造递推公式，"/>
+                </outline>
+            </outline>
+            <outline text="方阵的运算">
+                <outline text="对于矩阵等式，可以考虑两侧求行列式、求伴随、求逆矩阵的方法，"/>
+                <outline text="方阵乘积的行列式">
+                    <outline text="一般AB \neq BA（矩阵），但总有|AB| = |A| *|B| = |BA|（数字），"/>
+                </outline>
+                <outline text="伴随矩阵">
+                    <outline text="定义：E* = E，0* = 0，"/>
+                    <outline text="伴随矩阵的性质"/>
+                    <outline text="矩阵不一定可逆，但一定有伴随矩阵，"/>
+                </outline>
+                <outline text="逆矩阵">
+                    <outline text="矩阵可逆的充分必要条件"/>
+                    <outline text="利用伴随矩阵求逆矩阵"/>
+                    <outline text="利用初等变换求逆矩阵"/>
+                    <outline text="判断方法：寻找（） = E / kE，"/>
+                </outline>
+            </outline>
+            <outline text="分块矩阵及其运算">
+                <outline text="矩阵的分块">
+                    <outline text="抽象矩阵相乘时，应注意矩阵/向量表达式之间的转换，"/>
+                    <outline text="即将矩阵写为行向量\begin{pmatrix} \alpha_1^T \\ \alpha_2^T \\ ... \\ \alpha_n^T \end{pmatrix} ，或列向量\begin{pmatrix}\alpha_1 &amp; \alpha_2 &amp; ... &amp; \alpha_n \end{pmatrix} 的形式， 便于分析与运算，"/>
+                    <outline text="有时也需要将向量写为数值，即\alpha^T = (a_1,  a_2...,a_n)，尤其对于方程组的解x^T = (x_1,  x_2...,x_n)，应根据题目和矩阵运算法则分析，"/>
+                    <outline text="应注意，分块后的小块矩阵也要满足矩阵乘法法则，"/>
+                </outline>
+                <outline text="矩阵的组合">
+                    <outline text="直接论证矩阵等式有困难时，可以考虑将矩阵扩充为大的分块矩阵以寻找思路，"/>
+                    <outline text="可以综合行阶梯形矩阵和行最简形矩阵，分块矩阵的秩的性质等结论分析，"/>
+                </outline>
+            </outline>
+            <outline text="矩阵的初等变换">
+                <outline text="初等矩阵">
+                    <outline text="单位矩阵经过一次（任意）初等变换得到的矩阵，"/>
+                    <outline text="初等矩阵均可逆，但行列式一般不相同，"/>
+                </outline>
+                <outline text="行阶梯形矩阵、行最简形矩阵、标准型"/>
+                <outline text="矩阵的等价">
+                    <outline text="初等变换可以用初等矩阵的乘积表示，"/>
+                    <outline text="初等矩阵一定为方阵，但任意矩阵都可以进行初等变换，即变换用的行/列初等矩阵阶数可能不同，"/>
+                </outline>
+            </outline>
+            <outline text="矩阵的秩">
+                <outline text="定义、初等变换的性质，"/>
+                <outline text="三个主要定理（矩阵的运算），"/>
+                <outline text="方程组的解的推论">
+                    <outline text="分别讨论方阵与非方阵，">
+                        <outline text="方阵、方阵的转置：可逆（满秩）、不可逆，"/>
+                        <outline text="非方阵">
+                            <outline text="判断行数（m）、列数（n）的大小关系（m &lt; n，m &gt; n）；分析R ≤ min(m, n) 的限制，"/>
+                            <outline text="行（方程）满秩、列（未知数）满秩，"/>
+                            <outline text="非方阵的转置，"/>
+                        </outline>
+                    </outline>
+                    <outline text="分别讨论齐次与非齐次，">
+                        <outline text="齐次：唯一零解、无穷多解，">
+                            <outline text="若A列满秩，则有R(A) = n，"/>
+                        </outline>
+                        <outline text="非齐次：无解、唯一解、无穷多解，">
+                            <outline text="若A行满秩，则有R(A) = R(A, b)（线性无关向量的延伸组），">
+<outline text="充分条件，"/>
+<outline text="非齐次必定有解，但不一定为唯一解，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="（矩阵方程）"/>
+                </outline>
+                <outline text="分块矩阵的秩"/>
+                <outline text="矩阵与向量组的秩"/>
+            </outline>
+        </outline>
+        <outline text="向量">
+            <outline text="向量的概念（n维向量）"/>
+            <outline text="向量的运算">
+                <outline text="加法和数乘"/>
+                <outline text="向量的内积"/>
+            </outline>
+            <outline text="向量组">
+                <outline text="向量组的维度、个数，"/>
+                <outline text="向量组与矩阵的相互表示，"/>
+            </outline>
+            <outline text="向量的线性组合">
+                <outline text="前提：只有同维数的向量才可以进行线性组合，"/>
+                <outline text="分析线性组合、考虑线性相关性时，若题目没有明确提及，则应考虑 0 向量的情况，"/>
+                <outline text="线性表示（任意实数）">
+                    <outline text="定义"/>
+                    <outline text="等价向量组">
+                        <outline text="定义：向量组A、B可以互相线性表示，"/>
+                        <outline text="矩阵的等价不同于向量组的等价 → 向量的分量顺序不能改变，但矩阵可进行列/行变换，">
+                            <outline text="对于同型矩阵，r(A) = r(B)可以说明A、B等价；但即使对于同维数、同个数的向量组，r(A, B)也可能大于r(A)、r(B) ，"/>
+                            <outline text="因此向量组等价的充要条件为r(A) = r(B) = r(A, B)，"/>
+                        </outline>
+                        <outline text="反之，向量组的等价也不同于矩阵的等价 → 等价向量组由线性组合定义，因此可以拥有不同的向量个数，但等价矩阵必须为同型矩阵，"/>
+                    </outline>
+                    <outline text="线性表示的定理">
+                        <outline text="线性表示与方程组的解">
+                            <outline text="向量β可以由向量组A线性表示\leftrightarrow 非齐次线性方程组Ax = β有解，即r(A) = r(A,b)，"/>
+                            <outline text="向量组B可以由向量组A线性表示\leftrightarrow 矩阵方程AX = B有解，即r(A) = r(A,B)"/>
+                        </outline>
+                        <outline text="若向量组A能由向量组B线性表示，则有r(A) ≤ r(B)，">
+                            <outline text="若r(A) ＞ r(B)，则向量组A不能由向量组B线性表示，"/>
+                            <outline text="但向量组A不能由向量组B线性表示，不能说明r(A)、r(B)之间的关系（可能A、B中向量的分量顺序不同），应寻找其它条件，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="线性相关与线性无关（非零实数）">
+                    <outline text="定义"/>
+                    <outline text="向量组线性相关、线性无关的定理">
+                        <outline text="若向量组A(α1, α2,... αn)线性无关，向量组(α1, α2,... αn, β)线性相关，则可知r(A) = r(A,β) = n，即β可由A唯一线性表示，"/>
+                        <outline text="若含多数向量的向量组可由含少数向量的向量组线性表示，则多数必相关（秩 ≤ 少数＜多数），"/>
+                        <outline text="m ＞n 时，m个n维向量构成的向量组一定线性相关，">
+                            <outline text="可用于构造反例来反证，如n + 1个n维向量一定线性相关，"/>
+                        </outline>
+                        <outline text="若向量组A中的向量两两正交，则向量组A必定线性无关，"/>
+                    </outline>
+                    <outline text="向量组线性相关、线性无关的判别">
+                        <outline text="基本方法">
+                            <outline text="定义：向量的线性组合，">
+<outline text="一般需要化简到kiαi = 0的形式，才能由αi ≠ 0说明必有ki = 0，"/>
+                            </outline>
+                            <outline text="构造矩阵，利用矩阵的运算法则和矩阵的秩，"/>
+                            <outline text="构造方程组，"/>
+                        </outline>
+                        <outline text="技巧">
+                            <outline text="抽象向量组">
+<outline text="可以考虑取零向量等特殊值来辅助推断，但不能作为论证方式，"/>
+<outline text="可以考虑用具体符号来表示向量组，并利用方程组进行运算，"/>
+<outline text="可以设置极大无关组来利用秩的信息，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="向量组的秩">
+                <outline text="定义：向量组的最大无关组所含的向量个数，">
+                    <outline text="按定义，向量组的秩与向量维度无关；但向量组的秩仍不能大于向量维度，"/>
+                </outline>
+                <outline text="向量组的极大线性无关组及求解方法">
+                    <outline text="定义：A0线性无关，且可表示A中任意一个向量；"/>
+                    <outline text="求解（具体矩阵）：将向量表示为矩阵（应注意求解的为列向量还是行向量），再转化为行最简型矩阵，"/>
+                    <outline text="类似求方程组的基础解系，"/>
+                </outline>
+                <outline text="向量组的秩与矩阵的秩之间的关系（三秩相等）"/>
+            </outline>
+            <outline text="线性无关向量组的正交规范化的施密特方法"/>
+            <outline text="（基变换、坐标变换、过渡矩阵）"/>
+            <outline text="（规范正交基的概念及性质）"/>
+        </outline>
+        <outline text="线性方程组">
+            <outline text="方程组的构造"/>
+            <outline text="方程组的应用（利用解的性质与结构，推断矩阵、向量问题）"/>
+            <outline text="解的分析">
+                <outline text="解的判定">
+                    <outline text="齐次线性方程组有非零解的充分必要条件"/>
+                    <outline text="非齐次线性方程组有解的充分必要条件：无解、唯一解、无穷多解"/>
+                </outline>
+                <outline text="解的结构">
+                    <outline text="齐次线性方程组解的结构">
+                        <outline text="解、基础解系、通解">
+                            <outline text="解（向量）：可使方程组Ax = 0 / Ax = β成立的任意一个向量，"/>
+                            <outline text="解空间（向量组） → 基础解系（向量组）：齐次线性方程组的解集（解空间）的最大无关组，"/>
+                            <outline text="通解（向量）：基础解系的线性组合形式（含参数），"/>
+                        </outline>
+                        <outline text="基础解系的性质">
+                            <outline text="基本性质">
+<outline text="解：其中的每个向量都是方程的解，"/>
+<outline text="最大无关组：基础解系向量组线性无关，且可表示任意解，即其秩为n - r(A)，"/>
+<outline text="定理：对于m*n矩阵A（m为方程个数，n为未知数个数），若r(A) = r，则Ax = 0的解的向量组的秩为n - r，"/>
+                            </outline>
+                            <outline text="一般基础解系不唯一，所以通解也不唯一，"/>
+                            <outline text="0解必为齐次方程组的解，但不能作为基础解系，"/>
+                        </outline>
+                    </outline>
+                    <outline text="非齐次线性方程组解的结构与通解">
+                        <outline text="非齐次线性方程组的通解 = 齐次方程组的通解（含参数） + 非齐次线性方程组的（任意）一个特解（不含参数），"/>
+                        <outline text="非齐次线性方程组可能存在无穷多解，但一般无法直接解出含参数项的基础解系，而是只能解出特解，"/>
+                        <outline text="所以非齐次线性方程组没有基础解系的概念，而是只有通解的概念，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="求解（具体方程组）">
+                <outline text="克拉默法则求解线性方程组"/>
+                <outline text="初等行变换求解线性方程组">
+                    <outline text="（定理：任意矩阵总可经初等行变换转换为行阶梯形矩阵）"/>
+                    <outline text="首先经初等行变换变为行阶梯形矩阵（可能有分式，但变量关系较清楚）"/>
+                    <outline text="求解齐次通解">
+                        <outline text="分析方程的秩，解向量的秩"/>
+                        <outline text="分析主变量">
+                            <outline text="每个方程（每行）的第一个未知量为主变量，这一行的其它未知量为自由变量，"/>
+                            <outline text="方程组的主变量个数一般与矩阵的秩相同，"/>
+                        </outline>
+                        <outline text="赋值自由变量">
+                            <outline text="一般采用0，1赋值，只有一个自由变量时应赋值1，"/>
+                            <outline text="赋值后，方程组应变为有唯一解的 m 个主变量 m 个方程的 m 元一次方程组，"/>
+                            <outline text="求解新的方程组（而不是分别求解方程），"/>
+                        </outline>
+                        <outline text="得到带有待定参数的通解，"/>
+                    </outline>
+                    <outline text="求解非齐次特解">
+                        <outline text="只需要求解一个特解，即特解的形式较为自由，但仍需求解方程组（而不是分别求解方程），"/>
+                        <outline text="可以取自由变量为0，并求解主变量的取值，"/>
+                    </outline>
+                    <outline text="验算">
+                        <outline text="保证齐次的基础解系的每个解向量都是解，"/>
+                        <outline text="保证非齐次的特解是非齐次的解，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="抽象方程组的解">
+                <outline text="解的判断：秩、行列式、向量的线性相关性，"/>
+                <outline text="解的结构：齐次、非齐次；解向量的秩，"/>
+                <outline text="解的证明">
+                    <outline text="基础解系的性质（解、最大无关组）"/>
+                    <outline text="设出解向量/通解β，证明β可由基础解系组线性表示，"/>
+                </outline>
+            </outline>
+            <outline text="公共解与同解">
+                <outline text="公共解">
+                    <outline text="一般方法为联立方程组，求联立方程组的解，"/>
+                    <outline text="也可分别求解每个方程组，得到基础解系，再令解向量（通解形式）相同，求待定参数间的关系，"/>
+                </outline>
+                <outline text="同解">
+                    <outline text="先分析每个方程组的性质（方程个数、秩），"/>
+                    <outline text="求解其中一个方程组得到基础解系，"/>
+                    <outline text="将基础解系代入另一个方程组，"/>
+                    <outline text="最后应验算是否符合全部条件，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="特征值和特征向量">
+            <outline text="特征值和特征向量">
+                <outline text="定义">
+                    <outline text="Ax = λx；(A - λE)x = 0，"/>
+                    <outline text="推论">
+                        <outline text="若A的各行元素之和均为k，则表明A*\begin{pmatrix} 1 \\ 1 \\ ... \\ 1 \end{pmatrix} = k *\begin{pmatrix} 1 \\ 1 \\ ... \\ 1 \end{pmatrix}，即A有特征值k和对应的特征向量\begin{pmatrix}1 &amp; 1 &amp; ... &amp; 1 \end{pmatrix} ^T，"/>
+                        <outline text="对于关系式A \alpha = \lambda \alpha，可以考虑递推关系的构造，如A*A \alpha = A*\lambda \alpha =\lambda *A\alpha=\lambda ^2 \alpha ，即A^2 有特征值\lambda ^2和特征向量α，"/>
+                        <outline text="矩阵/特征值多项式：由于特征向量α ≠ 0，结合特征值的定义，可以将矩阵多项式φ（A）转化为特征值多项式φ（λ）；对于等式φ（A）= 0，可由φ（λ）= 0解出所有特征值（但不能说明重根的个数），"/>
+                    </outline>
+                </outline>
+                <outline text="特征值">
+                    <outline text="求解：|A - λE| = 0；行列式的运算（综合行列式的性质）"/>
+                    <outline text="特征值行列式尽量不进行分数运算（容易出错），"/>
+                    <outline text="求解时应注意λ多项式的倍数之间的关系，"/>
+                    <outline text="特征值可以全为0，"/>
+                    <outline text="可以将矩阵A拆为易于求特征值的矩阵多项式，并利用特征值的性质推算出A的特征值，"/>
+                </outline>
+                <outline text="特征向量">
+                    <outline text="求解">
+                        <outline text="(A - λE)x = 0；齐次线性方程组的解（基础解系）"/>
+                    </outline>
+                    <outline text="性质">
+                        <outline text="特征向量不唯一"/>
+                        <outline text="矩阵A的同一特征值对应的特征向量的（非零）线性组合，仍为该特征值对应的特征向量，"/>
+                        <outline text="矩阵A的m重特征值最多对应m个线性无关的特征向量，">
+                            <outline text="逆命题：若对非零向量α1，α2有Aα1 = λα1，Aα2 = λα2，且α1、α2线性无关，则 λ必为A的二重特征值，"/>
+                        </outline>
+                        <outline text="矩阵A的不同特征值对应的特征向量一定线性无关，">
+                            <outline text="不同特征值对应的特征向量组成的向量组同样线性无关，"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="相似矩阵">
+                <outline text="定义：若存在可逆矩阵P使AP = PB，则称A与B相似，">
+                    <outline text="A不一定可逆，但A可逆时B一定也可逆，"/>
+                    <outline text="矩阵可以和任意矩阵相似，但没有直接方法求解；可以通过定义AP = PB，或者寻找中介矩阵（一般为对角矩阵\Lambda）求解，"/>
+                </outline>
+                <outline text="性质（必要条件）"/>
+                <outline text="相似对角化">
+                    <outline text="充分必要条件：n阶矩阵A存在n个线性无关的特征向量（可组成可逆矩阵P），">
+                        <outline text="推论：矩阵A的m重特征值需要有m个线性无关的特征向量；即m重特征值对应的齐次方程组的基础解系的秩为n - m，"/>
+                        <outline text="充分条件：n阶矩阵A存在n个不同的特征值，"/>
+                    </outline>
+                    <outline text="矩阵的相似对角化">
+                        <outline text="若\Lambda = kE，则由相似定义，其相似矩阵必有A = P^{-1} \Lambda P = k P^{-1} E P = kE，即单位矩阵只和自己相似；换言之，若矩阵A的n个特征值全都相同，且A可以相似对角化，则A一定为kE，"/>
+                    </outline>
+                    <outline text="相似对角化的可逆矩阵P">
+                        <outline text="P的求解：特征值、特征向量的求解，"/>
+                        <outline text="对于线性无关的向量组，应考虑构造可逆矩阵P（计算相似矩阵），"/>
+                        <outline text="对于等式AP = PB，">
+                            <outline text="若P不由特征向量组成，等式仍可能成立，但矩阵B一般不是对角矩阵，"/>
+                            <outline text="若P由特征向量的线性组合构成，">
+<outline text="不同特征值对应的特征向量的（非零）线性组合不再为矩阵的特征向量，但是矩阵P可逆时，仍可能有AP = PB；只是矩阵B一般不是对角矩阵，"/>
+<outline text="同一特征值对应的特征向量的（非零）线性组合，仍然为该特征值的特征向量，所以矩阵P可逆时必有AP = ΛB，"/>
+                            </outline>
+                            <outline text="由于特征向量不唯一，所以利用P 、Λ反求矩阵A时应注意其他限制条件，如特征值的重根，实对称矩阵特征向量正交等，否则可能求出的矩阵不完全符合题意，"/>
+                        </outline>
+                        <outline text="由于A, A^{-1}, A^*的特征向量相同，所以其相似对角化的可逆矩阵P也相同，但得到的对角矩阵不同，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="实对称矩阵">
+                <outline text="特征值、特征向量的性质"/>
+                <outline text="实对称矩阵的相似对角矩阵">
+                    <outline text="定理：若A、B均为实对称矩阵，则A \sim B \leftrightarrow \lambda_A = \lambda_B，">
+                        <outline text="对于任意相似矩阵，特征值相同的必要条件总是成立，"/>
+                        <outline text="但特征值相同的矩阵可能不相似；例如，矩阵A为对角矩阵，但矩阵B无法相似对角化，即没有足够的线性无关的特征向量，则A、B不相似，"/>
+                    </outline>
+                    <outline text="定理：实对称矩阵必有正交矩阵Q，使Q^{-1}AQ = Q^TAQ =\Lambda ，">
+                        <outline text="由正交矩阵的定义，可以正交矩阵必定可逆，且Q^{-1} = Q^T，"/>
+                        <outline text="（没有正交矩阵的条件时，Q^{-1} 、 Q^T不能等同），"/>
+                        <outline text="Q由特征向量正交单位化后组成，所以Q不唯一，"/>
+                    </outline>
+                    <outline text="若有可逆矩阵P使P^{-1}AP =\Lambda ，则P不一定为正交矩阵，">
+                        <outline text="实对称矩阵的k重特征值对应的特征向量的秩一定为k，但不一定正交；"/>
+                        <outline text="实对称矩阵的不同特征值对应的特征向量一定正交，但不一定为单位向量，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="二次型">
+            <outline text="二次型的概念">
+                <outline text="代数形式、代数性质（平方非负）"/>
+                <outline text="矩阵表示x^TAx，">
+                    <outline text="二次型唯一对应一个对称矩阵（但可以对应多个非对称的矩阵），"/>
+                    <outline text="矩阵运算"/>
+                    <outline text="二次型的秩（正、负惯性指数），"/>
+                </outline>
+                <outline text="二次型的标准形和规范形"/>
+            </outline>
+            <outline text="二次型的变换">
+                <outline text="用正交变换化二次型为标准形">
+                    <outline text="特征值与特征向量→相似矩阵→施密特正交化→正交矩阵"/>
+                    <outline text="正交变换的性质"/>
+                </outline>
+                <outline text="用配方法化二次型为标准形">
+                    <outline text="合同变换的性质"/>
+                    <outline text="基本思路为先将x1全部算入y1中，再将x2全部算入y2中，最后保证y3中x3的系数不为0；但不应受此限制，应根据二次型的形式具体分析，"/>
+                    <outline text="交叉项一般更重要，"/>
+                    <outline text="对于不含平方项的二次型，可以先令x1 = y1 + y2，x2 = y1 - y2做出平方项，再进行配方，"/>
+                    <outline text="配方时应注意保证行列式不为0，有时配成的标准型中可能没有y3，但仍要保证变换中y3对应的特定的x的系数不为0，"/>
+                    <outline text="没有要求正交变换时，可以考虑利用配方法转换二次型，"/>
+                </outline>
+                <outline text="将二次型转化为规范型">
+                    <outline text="配方法直接化为规范型"/>
+                    <outline text="正交变换得到的对角矩阵化为规范型"/>
+                </outline>
+            </outline>
+            <outline text="合同矩阵">
+                <outline text="定义：C^TAC = B ，或AC = (C^T)^{-1}B，即C需要为可逆矩阵，"/>
+                <outline text="惯性定理：二次型经坐标变换后， 正、负惯性指数不变，"/>
+            </outline>
+            <outline text="正定二次型">
+                <outline text="正定矩阵"/>
+                <outline text="正定的判别"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="其它"/>
+    </body>
+</opml>

@@ -1,0 +1,266 @@
+- workflow of Statistical Inference
+	- question
+	  collapsed:: true
+		- find the what needs to infer
+		- define the random variable and scalar
+		- define the population and sample
+		- make an abstract of problems,
+		- find the similar question model
+	- data
+	  collapsed:: true
+		- samples collection and classification
+		- calculate statistics(numerical summary of data)
+			- mean, variation, standard error, etc.
+		- graphics description
+	- model
+	  collapsed:: true
+		- find (population's) probability model
+			- Parametric Model
+			- (non-parametric model)
+		- estimate/calculate the parameter(through samples/statistics)
+			- frequentist ways
+			- Bayesian ways
+	- inference
+	  collapsed:: true
+		- make the inference
+		- estimate the accuracy/error
+- algorithm and inference
+	- difference
+	  collapsed:: true
+		- algorithm : adventurous, provide evidence to inference,
+		- inference : care more about accuracy,
+	- computer age
+	  collapsed:: true
+		- computer boost the pace of algorithm,
+			- enormous and new types of data,
+			- compute power to deal with data,
+		- while inference is fall behind,
+	- example
+		- regression
+		  collapsed:: true
+			- classical
+				- algorithm: least squares estimates, linear models,
+				- accuracy: standard errors(95% coverage intervals)
+			- computer age
+				- algorithm: lowess regression, polynomial models (change with data)
+				- accuracy: bootstrap(resampling), "bootstrap standard deviation",
+				- comparison: more flexible, less accuracy
+		- hypothesis test
+		  collapsed:: true
+			- classical
+				- algorithm: two-sample t test(t statistic), Normal distribution/t distribution
+				- accuracy: p-value/ significance level,
+				- flaw: null distribution might be wrong, causality with enormous data(one thousand examples or more)
+			- computer age
+				- "false-discovery rate"
+- Classic Statistical Inference
+	- common
+	  collapsed:: true
+		- model : probability densities family(f)
+		- observe : sample(x)
+		- infer : parameter(\mu)
+	- statistic models
+	  collapsed:: true
+		- parametric models
+		  collapsed:: true
+			- overview
+				- the dimension of parameter is small(5-20)
+				- easy to compute
+			- uni-variate families
+			  collapsed:: true
+				- most common: discrete(Poisson, binomial); continuous(normal, gamma, beta)
+				- feature
+					- have various of connection between,
+					- have different sample spaces
+			- multi-variate families
+				- multi-variate normal distribution(continuous)
+					- high-dimension statistics : mean vector(\mu), covariance matrix(\Sigma),
+					- could be obtained by linear transformations of vectors from standard multi-variate normal distribution,
+						- while $(z_1, z_2, ..., z_n)$ is independent, $(x_1, x_2, ..., x_n)$(after transforming) might not be independent,
+					- conditional distributions are still normal,
+					- (Bayesian)posterior distribution is normal if prior distribution is normal,
+				- multinomial distribution(discrete)
+					- concept : experiments only have a finite number of results(discrete values),
+					- relationship between multinomial distribution and Poisson,
+					- conditional distribution given the sum is still multinomial,
+					- provide a model for nonparametric inference,
+		- exponential families
+		  collapsed:: true
+			- a re-write of probability functions
+				- connection in distribution family with different parameters
+			- form : $e^{{\alpha}^T Y(X) } *e^{ψ(\alpha)}*f_0(x)$,
+				- α is “natural” parameter (vector)
+					- "expectation" parameter $\beta = E_{\alpha}(Y)$,
+					- β is a one-to-one function of α,
+				- Y is “sufficient statistic”(vector)
+				- ψ is normalizing function(set integral to 1)
+			- application
+				- Repeated sampling : likelihood function(of any sample size n) has the "same" shape,
+				- Estimation : mle for β is Y, while mle for α is the one-to-one function(usually lacks closed form) of β,
+				- Statistic : ψ("cumulant generating function") could be used to calculate statistics(mean and variance) of Y by derivatives,
+	- frequentist inference
+	  collapsed:: true
+		- overview
+		  collapsed:: true
+			- parameters are fixed, samples may change(in future surveys)
+			- use algorithms to find "optimality" estimations
+		- workflow
+		  collapsed:: true
+			- suppose samples coming from a fixed population
+			- population has a fixed distribution(while unknown)
+			- methods to estimate the distribution
+			  collapsed:: true
+				- plug-in principle(moments)
+				- Taylor-series approximation(delta method)
+				- maximum likelihood theory
+				- bootstrap
+				- pivotal statistics
+			- optimality estimations
+			  collapsed:: true
+				- Neyman–Pearson lemma
+					- an optimum hypothesis-testing algorithm,
+					- Error Probabilities(\alpha, \beta) and the Power Function,
+				- fisher inference
+					- Fisher information bound(I(\theta)),
+			- use the estimated distribution to inference
+			  collapsed:: true
+				- probabilistic accuracy,
+		- flaw
+		  collapsed:: true
+			- “Selection bias”/“regression to the mean”
+			- require different algorithms for different inference problems
+			- the capabilities of that theory is limited under larger data sets and more complicated inferential questions in computer age.
+			- need a broadening of connections with other methods.
+	- Bayesian inference
+	  collapsed:: true
+		- overview
+			- samples are fixed, parameters may change(by prior information)
+			- "only" rely on samples been observed
+		- workflow
+			- suppose population has a fixed distributionf(x;\mu),
+			- find the prior density$g_1(\mu)$,
+			- combine the prior density and sample $x = (x_1,x_2,...)$ to calculate the "joint probability"$h(x,\mu)$,
+			- calculate the posterior density of parameter$g_2(\mu;x)$,
+				- calculate tactics : the formula of joint probability can be rewriting as likelihood function, prior density and a constant,
+			- use the posterior density to inference
+		- "uninformative" prior densities
+			- uniform distribution $g(\theta) = \dfrac{1}{2},-1< \theta<1$,
+				- may not uniform with different parameters because \theta doesn't appear in formula,
+			- Jeffrey's prior$g(\theta)= \sqrt {I(\theta)}$,
+				- improper(integral not equal to one)
+				- defined by fisher information
+				- not suitable for multi-parameter distributions
+			- shrinkage prior $g(\theta) = 1 - |\theta|$,
+				- favor small values of theta
+		- flaw
+			- prior density may unavailable, hard to calculate or not convincing(such as subjectivity) in computer-age's high-dimensional problems
+	- Fisherian inference
+	  collapsed:: true
+		- summary
+			- fundamental : likelihood function
+			- accuracy : Fisher information
+			- inference rules : conditional inference, permutation and randomization,
+		- likelihood
+			- likelihood function(L) and log form(l),
+			- MLE
+				- estimate:$\mu$ maximizes $l(\mu)$,
+				- different cases : unique solution, unique solution but cannot calculate, not exist, multiple maximizers,
+			- advantage
+				- easy to use and suits different situations
+				- good probability properties(nearly unbiased in large-sample situations)
+				- useful in Bayesian's inference
+			- downside
+				- need numerical calculation at most times
+				- could be misleading in problem involving many parameters
+		- Fisher information
+			- uni-variate families
+				- score function : derivative of lnL(θ),
+				- Fisher information
+				- MLE's approximately distribution$N(\theta, \dfrac{1}{nI_\theta})$,
+			- multi-variate families
+				- score function(vector) : gradient of lnL(μ1, μ2, ...μn),
+				- Fisher information(matrix)
+				- MLE's approximately distribution$N_p(\mu, \dfrac{1}{nI_\mu})$,
+				- "nuisance parameter"
+					- $σ^2_{(μ_1)}$ will be affected by μ2, ...μn,
+					- μ2, ...μn unknown : calculate from whole Fisher information matrix,
+					- μ2, ...μn known : only need to calculate μ1's Fisher information,
+			- samples' joint information and population's information
+			- Cramer-Rao lower bound
+		- conditional inference
+			- estimate on the "observed" data
+			- advantages
+				- focus more on parameters
+					- ancillary statistic
+						- contains no "direct" information, while has influence on inference,
+						- such as samples's size to samples' joint distribution,
+				- simpler to calculate
+			- downsides
+				- loss of information(in ancillary statistic)
+		- permutation and randomization
+			- randomization : randomly assigning the experimental units to the possible treatment groups(while sometimes not feasible),
+			- permutation : resampling ALL(not in groups) data points and calculate each t-values, inference on statistics of these t-values,
+		- (fiducial inference)
+- Early Computer-Age Methods(regression)
+	- background
+		- large data sets,
+		- enhanced computation capabilities,
+		- combine the virtues of the two ways of (classic) inference
+	- Empirical Bayes
+		- opinion
+			- prior distribution unavailable,
+			- use frequency(or "experience") to estimate distribution,
+		- Robbin's formula
+			- $E(\theta|x) = \dfrac{(x+1)f(x+1)} {f(x)}$,
+			  collapsed:: true
+				- f(x) is _marginal_ distribution of x, and could be estimate by frequency$(y_x / N)$,
+				- calculate : $E(\theta|x) = \int _{0}^{\infty} \theta h(\theta|x)d\theta = \dfrac{\int _{0}^{\infty} \theta t(x|\theta)g(\theta) d\theta} {f(x)}$,
+					- t(x|θ) is the "original" distribution of x,
+					- g(θ) is prior distribution of θ,
+					- h(θ|x) is posterior distribution of θ,
+				- if θ can write in the function t, such as Poisson, then$E(\theta|x) =\dfrac{(x + 1)\int _{0}^{\infty}  t(x + 1|\theta + 1)g(\theta) d\theta} {f(x)}= \dfrac{(x+1)f(x+1)} {f(x)}$,
+			- features
+			  collapsed:: true
+				- inference only from experience(empirical), don't need prior distribution,
+					- the large samples _themselves_ actually provides information of the distribution,
+				- require "large" amounts of samples, otherwise it may biased with "small"(such as x is nearly to 1) count samples,
+		- Missing-Species Problem
+			- target
+				- observing time(t) is the random variable,
+				- sample(x) is the number of each "species" in a given period(t),
+				- estimate E(t) for future observation,
+			- estimate: $E(t) = y_1t + y_2t^2 + y_3t^3 -...$,
+				- suppose the population of _all_ species is S(not appear in final formula),
+				- suppose each xi's appearance has a Poisson distribution,
+				- yi could estimate by Robbin's formula,
+	- James–Stein Estimation and Ridge Regression
+	- Generalized Linear Models and Regression Trees
+	- Survival Analysis and the EM Algorithm
+	- The Jackknife and the Bootstrap
+	- Bootstrap Confidence Intervals
+	- Cross-Validation and Cp Estimates of Prediction Error
+	- Objective Bayes Inference and MCMC
+- Twenty-First-Century Topics(machine learning algorithm)
+	- Large-Scale Hypothesis Testing and FDRs
+	- Sparse Modeling and the Lasso
+	- Random Forests and Boosting
+	- Neural Networks and Deep Learning
+	- Support-Vector Machines and Kernel Methods
+	- Inference After Model Selection
+	- Empirical Bayes Estimation Strategies
+-
+- symbols
+	- μαλξθρπχβΔσΣΨΣΦψφω
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- Others
+-

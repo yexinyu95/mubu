@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>考研英语解题</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="完形填空">
+            <outline text="大致阅读全文">
+                <outline text="把握文章主题、作者观点，"/>
+                <outline text="了解文章结构（总分、总分总等），判断每段的含义，"/>
+            </outline>
+            <outline text="局部结构">
+                <outline text="每个段落都有相对独立性，应分清句子间的逻辑关系， "/>
+                <outline text="局部语义并非仅局限于本句，仍应该联系上下文分析含义，"/>
+                <outline text="（时间信息定位），"/>
+            </outline>
+            <outline text="类比推理">
+                <outline text="结构复现">
+                    <outline text="应注意逻辑连词、标点符号，"/>
+                    <outline text="相同的语句结构应使用相同类型的词，"/>
+                </outline>
+                <outline text="词汇复现">
+                    <outline text="在不同的语句、段落中，作者可能用不同的词汇阐述类似的现象，"/>
+                </outline>
+            </outline>
+            <outline text="常用连词背诵"/>
+            <outline text="跳过较难题目，先完成其它题；等文章填充的较为完整后再返回分析难题，"/>
+        </outline>
+        <outline text="阅读理解A">
+            <outline text="分析文章">
+                <outline text="文章结构">
+                    <outline text="一般为议论文，即论点——论据/论证——结尾点题， "/>
+                </outline>
+                <outline text="句子理解">
+                    <outline text="把握句子的主要结构（主谓宾），判断句子的主要基调，"/>
+                    <outline text="判断不同的副词的含义，">
+                        <outline text="谓语附带的副词，"/>
+                        <outline text="逻辑连词，递进、转折、总结等，"/>
+                    </outline>
+                    <outline text="特殊语法">
+                        <outline text="倒装句、省略句、虚拟语气，"/>
+                    </outline>
+                </outline>
+                <outline text="结合上下文">
+                    <outline text="类比（结构复现）、虚拟语气（虚拟情景）、设问（反问）、借用他人观点，"/>
+                </outline>
+            </outline>
+            <outline text="分析题目">
+                <outline text="考察对象：作者、文章中的人物，"/>
+                <outline text="具体状态：过去、现状、建议（未来），"/>
+                <outline text="隐含信息分析">
+                    <outline text="作者在句子前后对隐含信息做出的解释，句子间的逻辑结构，相同含义/结构的句子的复现，（标点符号的使用），"/>
+                    <outline text="综合文章的主旨与作者的态度，"/>
+                </outline>
+                <outline text="细节分析">
+                    <outline text="分清具体的主语与谓语，"/>
+                    <outline text="避免过分推理">
+                        <outline text="对主语不做整体性引申，分清问题设问的专属对象，"/>
+                        <outline text="不做“反义”引申，"/>
+                        <outline text="不做因果推理，"/>
+                        <outline text="不依据常识推理，"/>
+                    </outline>
+                    <outline text="分清所有条件，不能有条件的遗漏，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="翻译（阅读理解C）">
+            <outline text="将段落拆分为短句，按句翻译，"/>
+            <outline text="将句子拆分为主要结构/从句，先尝试按原文顺序进行整句翻译，"/>
+            <outline text="核心为表达清楚含义">
+                <outline text="可以根据句意将短句补充为完整语义的长句；长句可以拆分为多个短句，也可以用破折号——、括号（）插入句中，"/>
+                <outline text="可以将按照句意引申词义以阐述句意，但不能随意省略、修改原文词汇，"/>
+                <outline text="对不理解的词，应根据文章主题和上下文推测后翻译，"/>
+            </outline>
+        </outline>
+        <outline text="写作">
+            <outline text="小作文">
+                <outline text="书信写作">
+                    <outline text="信头（对收信人的称呼）">
+                        <outline text="Dear Mr./Mrs.，；Dear friends，"/>
+                        <outline text="To whom it may concern，"/>
+                    </outline>
+                    <outline text="正文">
+                        <outline text="首段（2-3句）">
+                            <outline text="回应题目">
+<outline text="建议信、邀请信、推荐信、咨询信">
+    <outline text="正式（不了解收信人）： I am writing this letter to do sth"/>
+    <outline text="非正式（认识的收信人）：直接表达含义，形式可以不严谨，"/>
+    <outline text="I'm so delighted (to hear) that you do sth."/>
+    <outline text="I am glad to do sth."/>
+    <outline text="I am pleased to do sth."/>
+    <outline text="It is my honor to do sth."/>
+    <outline text="Thank you (very much) for (doing) sth"/>
+    <outline text="I'd like to congratulate you for doing sth."/>
+    <outline text="Congratulate on your sth"/>
+    <outline text="I'd like to extend our welcome to you."/>
+    <outline text="I'd like to recommend sth"/>
+    <outline text="Here are some suggestions (on how to do sth)"/>
+</outline>
+<outline text="道歉信">
+    <outline text="I am very sorry that I cannot attend the meeting we arranged before. If there was any inconvenience, please forgive me."/>
+    <outline text="Please accept my apologies for (doing) sth."/>
+</outline>
+<outline text="投诉信">
+    <outline text="I am writing to complain about sth."/>
+    <outline text="I am writing to request a (full) refund of sth."/>
+</outline>
+<outline text="其它">
+    <outline text="in/with regard to sb/sth 关于..."/>
+    <outline text="on behalf of sth 代表..."/>
+</outline>
+                            </outline>
+                            <outline text="表达清楚含义/情感即可，无需过多细节，"/>
+                        </outline>
+                        <outline text="主体（4-5句）">
+                            <outline text="具体分析两点，">
+<outline text="可以从主观/客观角度分析，"/>
+<outline text="尽量简略，突出重点即可，"/>
+                            </outline>
+                            <outline text="可以不使用连接词，">
+<outline text="to begin with,"/>
+<outline text="moreover/ furthermore,"/>
+<outline text="besides /In addition,"/>
+                            </outline>
+                            <outline text="词组">
+<outline text="suggestions可数，advice不可数，"/>
+<outline text="it is advisable to do sth"/>
+<outline text="a fulfilling college life"/>
+                            </outline>
+                        </outline>
+                        <outline text="结尾（1-2句）">
+                            <outline text="与首段呼应，"/>
+                            <outline text="建议">
+<outline text="I hope you find these suggestions useful/helpful."/>
+<outline text="Hope you will enjoy it."/>
+                            </outline>
+                            <outline text="感谢">
+<outline text="I/It would be grateful if you could do sth."/>
+<outline text="We will feel greatly honored to have you there."/>
+<outline text="We will appreciate it if you could do sth,"/>
+                            </outline>
+                            <outline text="询问">
+<outline text="I am looking forward for your confirmation."/>
+<outline text="If my arrangement does not suit your schedule, please tell me."/>
+<outline text="Please feel free to contact me for further discussions."/>
+<outline text="Anyone interested please contact us by..."/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="结束">
+                        <outline text="Yours sincerely，"/>
+                        <outline text="签名，"/>
+                    </outline>
+                </outline>
+                <outline text="告示写作">
+                    <outline text="标题（居中）">
+                        <outline text="一般只写NOTICE，有时也可以加上表示信息的定语，"/>
+                    </outline>
+                    <outline text="主体">
+                        <outline text="告示可以写为一整段，也可以分为两到三段，"/>
+                        <outline text="写作逻辑与书信类似，即首先表明目的，再具体描述细节；"/>
+                        <outline text="告示的细节一般更注重客观的地点、时间等因素，"/>
+                    </outline>
+                    <outline text="结束">
+                        <outline text="签名，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="大作文">
+                <outline text="第一段：描述图表（2-3句）">
+                    <outline text="描述准确即可，不需要过多展开，"/>
+                    <outline text="1">
+                        <outline text="the line graph ; pie/ bar chart; table"/>
+                        <outline text="presents information about... ;"/>
+                        <outline text="compare the ... in 2013 and 2018 (from 2013 to 2018)"/>
+                    </outline>
+                    <outline text="2">
+                        <outline text="可以大概描述信息，用括号给出具体数字，"/>
+                        <outline text="静态">
+                            <outline text="主要">
+<outline text="over half of the respondents do sth."/>
+<outline text="sth account for the largest proportion."/>
+<outline text="sth is students' main purpose"/>
+                            </outline>
+                            <outline text="次要">
+<outline text="sth and sth constitute n% and n% respectively,"/>
+<outline text="sth, sth and other purposes respectively account for n%, n% and n%"/>
+                            </outline>
+                            <outline text="不显著">
+<outline text="By comparison, no more than n% of people do sth."/>
+<outline text="Other factors make up n%."/>
+<outline text="The remaining n% was attributed to sth."/>
+<outline text="sth is the least frequently mentioned reason."/>
+                            </outline>
+                        </outline>
+                        <outline text="动态">
+                            <outline text="增加">
+<outline text="sth increased considerably from a to b (in both periods),"/>
+<outline text="sth rises annually from n% in 2011 to n% in 2012,"/>
+<outline text="The biggest increase occurs in , with the rate n% higher than ."/>
+<outline text="there was only a moderate increase in sth."/>
+                            </outline>
+                            <outline text="下降">
+<outline text="sth experienced a slowdown in 2014."/>
+<outline text="The proportion of ... declined/dropped from ... to ..."/>
+<outline text="sb were less willing to do sth"/>
+<outline text="The biggest drop of sth were seen in,"/>
+                            </outline>
+                            <outline text="平缓">
+<outline text="the percentage of sth did not change remarkably."/>
+<outline text="but this group still represent the smallest section (of sth)"/>
+                            </outline>
+                            <outline text="预期">
+<outline text="sth will continue to grow at a high rate."/>
+<outline text="the growth will slow down as sth/ unless sth."/>
+<outline text="This trend is projected to persist, (reaching a in b)"/>
+<outline text="The figure of sth will possibly remain stable (at n)."/>
+<outline text="sth will remain insignificant."/>
+                            </outline>
+                            <outline text="连接词">
+<outline text="In the meanwhile,"/>
+<outline text="At the same time/period,"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="第二段和第三段的划分并非十分严格，"/>
+                <outline text="基本思路为分析图表现象产生的原因，和分析现象可能带来的影响或对未来的预期，"/>
+                <outline text="第二段：分析图表（5-6句）">
+                    <outline text="分析图表的主要话题（旅游、博物馆、运动等）"/>
+                    <outline text="从两个方面展开">
+                        <outline text="一般基于图表所表述的主要信息、突出信息；可以适当拓展但不能跑题，"/>
+                        <outline text="应尝试从趋势产生的原因的角度思考，并结合客观条件，"/>
+                        <outline text="尽量使用短句；可以不展开细节，关键在于准确表述，"/>
+                    </outline>
+                    <outline text="主观态度">
+                        <outline text="积极">
+                            <outline text="sb prefer to do"/>
+                            <outline text="sb are increasingly willing to do"/>
+                            <outline text="sth has become a willing choice (for more people)"/>
+                            <outline text="sth prompted sb to do sth for"/>
+                            <outline text="gain competitive edge when finding jobs"/>
+                        </outline>
+                        <outline text="中性">
+                            <outline text="this idea is changing gradually,"/>
+                            <outline text="It is natural that.../for sb to do sth"/>
+                            <outline text="more attention would be paid to factors as (price, service...)"/>
+                        </outline>
+                    </outline>
+                    <outline text="客观事实">
+                        <outline text="积极">
+                            <outline text="as the living standard improves,"/>
+                            <outline text="sth is beneficial and necessary for"/>
+                            <outline text="Owing to less financial stress,"/>
+                            <outline text="Another motive is"/>
+                            <outline text="with the development of national economy,"/>
+                            <outline text="with the support of government's relevant policies,"/>
+                        </outline>
+                        <outline text="消极">
+                            <outline text="sth also presents challenges."/>
+                            <outline text="the increasingly intense competition in (the job market)"/>
+                            <outline text="sth used to be among their primary concerns."/>
+                            <outline text="sth impose heavy economic burden on sb."/>
+                        </outline>
+                        <outline text="中性">
+                            <outline text="because of the joint effects of"/>
+                        </outline>
+                    </outline>
+                    <outline text="连接">
+                        <outline text="another conclusion from the data is that..."/>
+                    </outline>
+                </outline>
+                <outline text="第三段：自己看法（2-3句）">
+                    <outline text="分析趋势可能引起的影响，给出自己的意见与建议，"/>
+                    <outline text="预期1">
+                        <outline text="it is advisable to do ... if possible."/>
+                        <outline text="... can make ... more fulfilling."/>
+                        <outline text="sb. should learn to strike a balance."/>
+                    </outline>
+                    <outline text="预期2">
+                        <outline text="Predictably, sth will continue to grow at a high rate."/>
+                        <outline text="the growth will slow down as sth/ unless sth."/>
+                        <outline text="This trend is projected to persist, (reaching a in b)"/>
+                        <outline text="The figure of sth will possibly remain stable (at n)."/>
+                        <outline text="sth will remain insignificant."/>
+                    </outline>
+                    <outline text="其它">
+                        <outline text="the risk of sth should be also considered."/>
+                    </outline>
+                    <outline text="连接">
+                        <outline text="In conclusion，"/>
+                        <outline text="in this sense，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="其它">
+            <outline text="句子分割">
+                <outline text="找出句子主体结构，"/>
+                <outline text="分析从句的修饰对象，"/>
+                <outline text="分析词汇的修饰对象，">
+                    <outline text="部分语句倒装后可能会“省略”副词，"/>
+                </outline>
+            </outline>
+            <outline text="判断词义">
+                <outline text="词性分析（名词、形容词/副词、动词）：分清动名词作为动词进行时还是形容词/名词，"/>
+                <outline text="词性转换：部分单词在英语语句中可以理解为名词，但翻译成汉语时则需要写为动词，"/>
+                <outline text="词义引申：比喻的具体含义，词汇含义的引申，"/>
+                <outline text="副词">
+                    <outline text="部分需要通过与副词相连的词汇将副词翻译出来，"/>
+                    <outline text="部分副词可以不翻译出来，"/>
+                    <outline text="部分副词可能具有不同的意思，应根据行文逻辑推测其含义，"/>
+                </outline>
+            </outline>
+            <outline text="补充省略信息">
+                <outline text="语态信息，汉语没有语态变化，因此需要将英语的语态翻译出来，"/>
+                <outline text="语气信息，如祈使句、强调句中的“正是”，“只有”等，"/>
+                <outline text="补充主语（省略的主语，代词指代的主语（这，有人，我们，人们），被动句的主语），"/>
+                <outline text="补充谓语，"/>
+                <outline text="补充宾语，如谓语修饰的是主语的某种特性，但英语可能只写出了主语，"/>
+            </outline>
+            <outline text="逻辑重组">
+                <outline text="英语一般有大量的从句，而汉语则主要为短句；可以将长句拆分为短句，并补充主语（代词）"/>
+                <outline text="英语的被动结构较多，汉语则不常用被动语态；所以一般需要将被动的主语、宾语位置交换回来，但有时也可用汉语的被动，"/>
+                <outline text="否定句，部分词汇只是为了表达否定态度，而并非原来的具体含义，"/>
+            </outline>
+        </outline>
+    </body>
+</opml>

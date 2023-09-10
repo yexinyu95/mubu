@@ -1,0 +1,152 @@
+- basic skills
+	- mathematics
+		- calculus
+		- linear algebra
+		- probability
+		- statistics
+	- python programming
+		- basic installation
+			- shell
+				- IPython
+					- interactive full-featured python-shell,
+					- could paste space correctly,
+			- libraries
+				- libraries installation
+					- pip(standard package manager)
+					- conda(Anaconda's package manager)
+				- virtual environments
+					- use virtual environment is preferred, because it could avoid probable version conflicts between libraries,
+					- such as Anaconda or venv module,
+		- code formatting
+			- Python uses tab and space to separate blocks of code, instead of curly braces,
+				- tabs and spaces are different in Python, better not mix use them,
+				- space inside parentheses and brackets will be ignored,
+			- use\to write code in next line, instead of enter/space (especially in interactive mode),
+			- use''' can create multi-line strings,
+		- data structure
+			- Boolean
+			- strings
+				- delimited by single/double quotation marks,
+				- use\in string to encode special characters
+				- string combination : use "f-string" method f'{str1} {str2}'could combine two string quickly,
+			- lists
+				- concept : an ordered collection of data(like vector)
+				- operator
+					- assignment/multiple assignments
+					- arithmetic operator(+)
+					- boolean operator(in)
+				- statements
+					- square brackets[]
+					- method : append, sort,
+					- function : sorted(argumentsreverse,key), zip,
+			- tuples
+				- concept : unchangeable lists
+				- operator
+					- assignment/multiple assignments
+			- dicts
+				- concept : lists contains pairs of values with keys,
+				- operator
+					- boolean operator(in)
+				- method
+					- square brackets[] method
+					- getmethod
+			- defaultdict, counters, sets
+			- type annotations
+				- python's data structure is not static, so variable declaration is not required,
+				- however, "annotate" the type of an variable can make code more readable,
+				- such as（`def add(a: int, b: int) -> int: `）
+					- in fact, the annotate(in color) is needless and won't make sense (input a string is still valid),
+					- but clear definition is more informative and easier to debug,
+				- .typingmodule
+					- typing module provides inline annotations,
+					- such as from typing import List, Dictmake var1: List[int] = []and var2: Dict[str, int] = {} valid, or python will raise NameError(because Listis not defined),
+		- control flow
+			- if-elif-elsestatements
+			- whileloop
+			- forloop
+				- often used in transforming lists to dicts or changing elements in lists,
+			- generators(use less resources than lists inforloop),
+				- .yieldoperator, enumeratefunction,
+				- often used as index(natural numbers)
+				- flaw : only once-used,
+		- functions
+			- functions take some inputs(arguments) and return outputs after calculating,
+			- usedefto define functions,
+			- argument packaging : *argsand **kwargs(keyword args) could receive any arguments as a tuple,
+			- uselambdacould create short functions,
+		- classes(objects)
+			- (practical define)a "group" of things(cats, dogs, etc), always assign to a variable (dog 'Ann') ,
+			- (abstract define)a combination of functions,
+				- private method`__func__`,
+					- always used to set default parameter,
+				- functions(api)func(self, arg1...),
+			- inherit classes
+				- change or modify "father" classes,
+		- modules
+			- basic
+				- most features need to useimport packagestatement before using,
+			- specific modules
+				- random
+					- numbersrandom.seed(), random.random(), random.randrange(),
+					- usagesrandom.shuffle(var)(reorder the elements), random.choice(),random.sample()
+				- re(Regular Expressions)
+					- provide tools to deal with string,
+					- booleanre.match, re.search,
+					- usagere.split,re.sub,
+		- exceptions(errors)
+			- try-except statements
+			- assert statements
+				- .assert statements, if statement(always return a boolean) is False, then raise AssertionError,
+- getting data
+- database operating
+- data processing
+	- data cleansing
+	- data organizing
+		- organize lists
+			- data often provided in lists of tuples/lists,
+			- usesortmethod of lists,
+			- use appendmethod to make new lists,
+		- create dict
+			- define the keyandvalueof the dict,
+			- use for loop to create the dict,
+				- it's important to find an appropriate way to use the loop,
+	- exploring analysis
+		- data description
+			- data statistics: summary, means
+				- make functionsto calculate ststistics
+			- make groups
+				- separate data to different groups
+				- name each group and compute statistics of groups
+		- data visualization
+			- .matplotlibmodule
+				- .pyplotmodule
+					- importimport matplotlib.pyplot as plt,
+					- input data(always lists),
+					- plot
+						- .`plt.plot(var1,var2, setting1,...)`,
+						- .`plt.bar(var1,var2, setting1,...)`,
+							- regular bar chart
+							- histograms
+						-
+					- decoration
+						- add titles, x/y labels,
+						- change axis
+					- display
+						- use plt.show()to display or plt.savefig()to save,
+				-
+- data inference
+	- basic inference
+		- find connections between data
+			- use iteration(such as forloops) to make dicts,
+			- use condition(if-else) to exclude repetitive data,
+	- machine learning
+		- methods
+		- deep learning
+		- natural language processing
+-
+-
+-
+-
+-
+- Others
+-

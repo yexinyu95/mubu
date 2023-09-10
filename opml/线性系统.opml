@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>线性系统</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="概述">
+            <outline text="数据的线性代换（linear system）">
+                <outline text="定义">
+                    <outline text="接受一组数据(variable)，经过一定的变换（变换参数coefficient），输出另一组数据，"/>
+                    <outline text="此处的数据量可能非常的大，"/>
+                </outline>
+                <outline text="特征">
+                    <outline text="（数乘）persevering multiplication：kx→ky，"/>
+                    <outline text="（可加性）persevering addition：x1 + x2 = y1 + y2，"/>
+                    <outline text="线性系统没有对输入和输出做出严格要求，"/>
+                </outline>
+                <outline text="适用性">
+                    <outline text="很多数据的转换都是线性系统，"/>
+                    <outline text="多元一次方程组（linear equation）就是最基础的线性系统，"/>
+                    <outline text="微积分也是线性系统，导数具有数乘和可加性，定积分同样（微积分的基本性质），"/>
+                    <outline text="物理电路（串联，并联；电流，电压）也是线性系统，"/>
+                </outline>
+            </outline>
+            <outline text="线性代换">
+                <outline text="是否能得到需求的输出？"/>
+                <outline text="得到输出的方法是否唯一？"/>
+                <outline text="如何寻找输出方法？"/>
+                <outline text="determinant（D）行列式的角度，"/>
+                <outline text="eigenvalue，eigenvector，对线性系统的简化描述，"/>
+            </outline>
+        </outline>
+        <outline text="向量（vector）">
+            <outline text="（低维向量的几何意义）"/>
+            <outline text="概述">
+                <outline text="有序排列的数字（element），或数据（component），"/>
+            </outline>
+            <outline text="向量集合">
+                <outline text="同维度的向量可以看成一组，或一个集合（set），"/>
+            </outline>
+            <outline text="向量空间的定义">
+                <outline text="在高等数学中，称具有以下运算规则的数组为“向量”；而并非“向量”具有以下的线性运算规则，"/>
+            </outline>
+            <outline text="基本运算">
+                <outline text="一般而言，只有同维度的向量才可以进行运算，"/>
+                <outline text="向量的数乘"/>
+                <outline text="向量的加法">
+                    <outline text="加法规律：交换律，结合律，"/>
+                    <outline text="零向量，所有元素都为0的向量，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="矩阵（matrix）">
+            <outline text="定义">
+                <outline text="m个n维向量的组合，"/>
+                <outline text="一般称为m行（rows）n列（columns）的数组，即m x n矩阵（先行后列），"/>
+                <outline text="当m = n时称为方阵（square），"/>
+            </outline>
+            <outline text="元素表示（index）">
+                <outline text="称第i行第j列的元素为Aij（先行后列），"/>
+            </outline>
+            <outline text="特殊矩阵">
+                <outline text="零矩阵：所有元素都为0的矩阵，可以不是方阵"/>
+                <outline text="单位矩阵I（identity matrix）">
+                    <outline text="单位矩阵都是方阵，"/>
+                    <outline text="对角线元素都为1，其它元素都为0，"/>
+                </outline>
+            </outline>
+            <outline text="运算">
+                <outline text="代数运算">
+                    <outline text="只有同型的矩阵才可以进行代数运算，如加减、数（标量）乘，"/>
+                    <outline text="定义数乘矩阵为数乘以每一个元素，"/>
+                    <outline text="规律：交换律，结合律，"/>
+                </outline>
+                <outline text="转置（transpose）">
+                    <outline text="将原矩阵的行向量变为列向量，或将Aij元素变为Aji元素，"/>
+                    <outline text="规律">
+                        <outline text="交换律，结合律，"/>
+                        <outline text="(A^T)^T = A，(A+B)^T  = A^T + B^T，"/>
+                    </outline>
+                </outline>
+                <outline text="乘法">
+                    <outline text="Ax = b，可以看为x向量经过线性变换A，变为b向量，"/>
+                    <outline text="可以将矩阵分块，看为x向量的每个xi元素经过一个向量变换，变为b向量中的另一个元素bi，"/>
+                    <outline text="“前行后列，乘完相加”，即左乘矩阵的行数需要等于右乘矩阵的列数，"/>
+                    <outline text="规律：结合律，数乘规律；但没有交换律，"/>
+                    <outline text="定理（唯一性）">
+                        <outline text="对于m x n矩阵A/B，若对任意n维向量γ，总有Aγ=Bγ，则必有A = B，"/>
+                        <outline text=" 证明：可取n维向量分别为单位向量e1，e2...，则可以得到必有a1 = b1，a2 = b2...，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="（方程组）有解的条件">
+            <outline text="线性系统的表示">
+                <outline text="n元一次方程组，"/>
+                <outline text="矩阵乘法Ax = b，"/>
+                <outline text="向量的线性组合Ax = a1x1 + a2x2 +...+ anxn = b，"/>
+            </outline>
+            <outline text="解的结构">
+                <outline text="有解（consistent）">
+                    <outline text="唯一解（唯一零解）"/>
+                    <outline text="无穷多解"/>
+                </outline>
+                <outline text="无解（inconsistent）"/>
+            </outline>
+            <outline text="线性组合（combination）">
+                <outline text="v = c1u1 + c2u2 +...+ ckuk"/>
+                <outline text="ci为标量（scalar），称为线性组合的参数（coefficient），"/>
+            </outline>
+            <outline text="span（扩张空间）">
+                <outline text="向量组的所有线性组合的集合，"/>
+                <outline text="可以理解为可由该向量组线性表示的所有向量，"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+    </body>
+</opml>

@@ -1,0 +1,6 @@
+- \https://www.baidu.com/s?ie={inputEncoding}&wd=%s
+- \http://s.taobao.com/search?q=%s
+- \http://www.zhihu.com/search?q=%s
+- \http://search.jd.com/Search?keyword=%s&enc=utf-8
+- \http://www.coolapk.com/search?q=%s
+- \http://www.bilibili.tv/search?keyword=%s

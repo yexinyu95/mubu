@@ -1,0 +1,146 @@
+title:: computer_science_illuminated
+
+- overview and history
+	- computing system
+		- information
+			- bit_binary number system
+			- character_information we use(numbers, letters, etc)
+		- hardware
+			- input devices(like keyboard),
+			- computer
+				- gates and circuits
+				- CPU
+				- memory
+			- output devices(like printers),
+		- software
+			- programming language
+				- managing data
+			- operating system
+				- interact with computer
+			- application
+				- solve specific problems
+		- network/communication
+			- conmmunicating with other devices
+			- information secure
+		- limitations of computers
+	- history of hardware
+		- computers
+			- turing machine
+			- IBM's Harvard Mark I, ENIAC, EDVAC, UNIVAC I
+			- 'memory' to storage information, from vacuum tube to transistor,
+			- 'integrated circuits' combines transistor and other components in one board, make them cheaper, smaller and faster,
+			- 'terminal', an input/output device,
+			- machine language, instructions to tell the computer how to compute,
+		- parallel computing
+			- increase the speed of execution,
+			- types
+				- SIMD (single-instruction,multiple-data-stream) , one step in a program can be separated into multiple pieces, and those pieces can be executed simultaneously on several individual processors.
+				- MIMD (multiple-instruction, multiple-data-stream) , different steps of a program can be executed simultaneously on different machines.
+			- Software designed for parallel machines is different from software designed for sequential machines, which means programmers have to rethink the coding,
+		- network
+			- from connecting different computers to sharing information,
+			- cloud computing
+	- history of software
+		- machine language
+			- long strings of binary digits, such as 00110011,
+			- eventually, every program that is executed on a computer must be in the form of the computer’s machine language,
+		- assembly language
+			- use 'translators' to 'translate' each machine-language instruction to easy-reading codes,
+			- FORTRAN, COBOL, Lisp,
+		- high-level language
+			- enable same programs running on different computers.
+			- use 'compiler' to translated into machine instructions to be executed,
+		- operating system
+			- allocate computer resources to different programs
+		- software
+			- enable not-programmer user to finish some works through the computer
+			- Object-oriented design
+				- structured design is based on a hierarchy of tasks, object-oriented design is based on a hierarchy of data objects.
+				- structured programming: BASIC, C and C++ are introduced,
+		- Internet
+			- World Wide Web, a universal Internet document center,
+			- HTML, a language for formatting documents,
+- information system
+	- Number systems and binary
+		- basics
+			- arithmetic operation, integer, natural numbers,
+		- number system
+			- base
+				- the foundational value of a number system
+				- base 2(0,1) is 'binary', base 8 is 'octal', base 10(0,1,2...9) is 'decimal', and base 16 is 'hexadecimal',
+				- base n only has n-1 digits, base 10 does not has symbol for '10'(10 is made by 1 and 0) ,
+			- number transformation
+				- polynomial method
+					- number 10110 in base 2
+						- written as 1*2^4 + 0*2^3 + 1*2^2 + 1*2^1 + 0*2^0 = 22 in base 10,
+					- number 123 in base 8
+						- written as 1*8^2 + 2*8^1 +3 = 73 in base 10,
+				- transform from base 10
+					- find the nearest power of base, delete the base, find the nearest power of the reminder, and so on,
+					- number 22 is 16(2^4) + 6(reminder), 6 is 4(2^2) + 2(reminder), 2 is 2^1, so that 22 is 2^4 + 2^2 + 2^1,
+			- arithmetic operation
+				- adding in binary is similar to decimal('carry and borrow' method)
+					- we can convert the number back to decimal to check whether we are correct,
+				- 8 and 16 is 2's power, so binary, octal and hexadecimal has special relationship,
+		- binary digit(bit)
+			- each storage location within a computer can have only one of two states,
+			- so each storage unit is called a 'binary digit', or 'bit' for short.
+	- data representation
+		- overview
+			- data/information
+				- data, basic/raw values, always unstructured,
+				- information, processed and organized data, could be used to solve problems,
+			- analog and digital
+			- limits of computer
+		- basic data types
+			- numerical
+			- text(string)
+		- others
+			- audio
+			- graphic
+			- video
+- computer hardware
+	- computing hardware
+		- gate
+		- circuit
+			- integrated circuit
+		- CPU
+	- storing hardware
+		- memory
+	- parallel computing
+- computer software
+	- computer language(code)
+		- machine language
+		- assembly language
+			- computing problems
+				- algorithm
+				- recursive
+				- iteration
+			- data structure
+		- high-level programming language
+			- object-oriented programming
+	- operating system
+		- hardware allocation
+			- CPU\memory
+		- software allocation
+			- file systems
+	- software/application
+		- database
+		- Artificial Intelligence
+		- simulation
+- communication(network)
+	- network protocol
+	- network address
+	- World Wide Web
+	- Computer Security
+-
+-
+-
+- Limitations of Computing
+-
+-
+-
+-
+-
+-
+- Others

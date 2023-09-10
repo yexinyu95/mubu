@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>computer age statistics</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="workflow of Statistical Inference">
+            <outline text="question">
+                <outline text="find the what needs to infer"/>
+                <outline text="define the random variable and scalar"/>
+                <outline text="define the population and sample"/>
+                <outline text="make an abstract of problems"/>
+                <outline text="find the similar question model"/>
+            </outline>
+            <outline text="data">
+                <outline text="samples collection and classification"/>
+                <outline text="calculate statistics(numerical summary of data)">
+                    <outline text="mean, variation, standard error, etc."/>
+                </outline>
+                <outline text="graphics description"/>
+            </outline>
+            <outline text="model">
+                <outline text="find (population's) probability model">
+                    <outline text="Parametric Model"/>
+                    <outline text="(non-parametric model)"/>
+                </outline>
+                <outline text="estimate/calculate the parameter(through samples/statistics)">
+                    <outline text="frequentist ways"/>
+                    <outline text="Bayesian ways"/>
+                </outline>
+            </outline>
+            <outline text="inference">
+                <outline text="make the inference"/>
+                <outline text="estimate the accuracy/error"/>
+            </outline>
+        </outline>
+        <outline text="algorithm and inference">
+            <outline text="difference">
+                <outline text="algorithm : adventurous, provide evidence to inference,"/>
+                <outline text="inference : care more about accuracy,"/>
+            </outline>
+            <outline text="computer age">
+                <outline text="computer boost the pace of algorithm,">
+                    <outline text="enormous and new types of data,"/>
+                    <outline text="compute power to deal with data,"/>
+                </outline>
+                <outline text="while inference is fall behind,"/>
+            </outline>
+            <outline text="example">
+                <outline text="regression">
+                    <outline text="classical">
+                        <outline text="algorithm: least squares estimates, linear models,"/>
+                        <outline text="accuracy: standard errors(95% coverage intervals)"/>
+                    </outline>
+                    <outline text="computer age">
+                        <outline text="algorithm: lowess regression, polynomial models (change with data)"/>
+                        <outline text="accuracy: bootstrap(resampling),  &quot;bootstrap standard deviation&quot;,"/>
+                        <outline text="comparison: more flexible, less accuracy"/>
+                    </outline>
+                </outline>
+                <outline text="hypothesis test">
+                    <outline text="classical">
+                        <outline text="algorithm: two-sample t test(t statistic), Normal distribution/t  distribution"/>
+                        <outline text="accuracy: p-value/ significance level,"/>
+                        <outline text="flaw: null distribution might be wrong, causality with enormous data(one thousand examples or more)"/>
+                    </outline>
+                    <outline text="computer age">
+                        <outline text="&quot;false-discovery rate&quot;"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Classic Statistical Inference">
+            <outline text="common">
+                <outline text="model : probability densities family(f)"/>
+                <outline text="observe : sample(x)"/>
+                <outline text="infer : parameter(\mu)"/>
+            </outline>
+            <outline text="statistic models">
+                <outline text="parametric models">
+                    <outline text="overview">
+                        <outline text="the dimension of parameter is small(5-20)"/>
+                        <outline text="easy to compute"/>
+                    </outline>
+                    <outline text="uni-variate families">
+                        <outline text="most common: discrete(Poisson, binomial); continuous(normal,  gamma, beta)"/>
+                        <outline text="feature">
+                            <outline text="have various of connection between,"/>
+                            <outline text="have different sample spaces"/>
+                        </outline>
+                    </outline>
+                    <outline text="multi-variate families">
+                        <outline text="multi-variate normal distribution(continuous)">
+                            <outline text="high-dimension statistics : mean vector(\mu), covariance matrix(\Sigma),"/>
+                            <outline text="could be obtained by linear transformations of vectors from standard multi-variate normal distribution,">
+<outline text="while (z_1, z_2, ..., z_n) is independent, (x_1, x_2, ..., x_n)(after transforming) might not be independent,"/>
+                            </outline>
+                            <outline text="conditional distributions are still normal,"/>
+                            <outline text="(Bayesian)posterior distribution is normal if prior distribution is normal,"/>
+                        </outline>
+                        <outline text="multinomial distribution(discrete)">
+                            <outline text="concept : experiments only have a finite number of results(discrete values),"/>
+                            <outline text="relationship between multinomial distribution and Poisson,"/>
+                            <outline text="conditional distribution given the sum is still multinomial,"/>
+                            <outline text="provide a model for nonparametric inference,"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="exponential families">
+                    <outline text="a re-write of probability functions">
+                        <outline text="connection in distribution family with different parameters"/>
+                    </outline>
+                    <outline text="form : e^{{\alpha}^T Y(X) } *e^{ψ(\alpha)}*f_0(x),">
+                        <outline text="α is “natural” parameter (vector)">
+                            <outline text="&quot;expectation&quot; parameter \beta = E_{\alpha}(Y),"/>
+                            <outline text="β is a one-to-one function of α,"/>
+                        </outline>
+                        <outline text="Y is “sufficient statistic”(vector)"/>
+                        <outline text="ψ is normalizing function(set integral to 1)"/>
+                    </outline>
+                    <outline text="application">
+                        <outline text="Repeated sampling : likelihood function(of any sample size n) has the &quot;same&quot; shape,"/>
+                        <outline text="Estimation : mle for β is Y, while mle for α is the one-to-one function(usually lacks closed form) of β,"/>
+                        <outline text="Statistic : ψ(&quot;cumulant generating function&quot;) could be used to calculate statistics(mean and variance) of Y by derivatives,"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="frequentist inference">
+                <outline text="overview">
+                    <outline text="parameters are fixed, samples may change(in future surveys)"/>
+                    <outline text="use algorithms to find &quot;optimality&quot; estimations"/>
+                </outline>
+                <outline text="workflow">
+                    <outline text="suppose samples coming from a fixed population"/>
+                    <outline text="population has a fixed distribution(while unknown)"/>
+                    <outline text="methods to estimate the distribution">
+                        <outline text="plug-in principle(moments)"/>
+                        <outline text="Taylor-series approximation(delta method)"/>
+                        <outline text="maximum likelihood theory"/>
+                        <outline text="bootstrap"/>
+                        <outline text="pivotal statistics"/>
+                    </outline>
+                    <outline text="optimality estimations">
+                        <outline text="Neyman–Pearson lemma">
+                            <outline text="an optimum hypothesis-testing algorithm,"/>
+                            <outline text="Error Probabilities(\alpha, \beta) and the Power Function,"/>
+                        </outline>
+                        <outline text="fisher inference">
+                            <outline text="Fisher information bound(I(\theta)),"/>
+                        </outline>
+                    </outline>
+                    <outline text="use the estimated distribution to inference">
+                        <outline text="probabilistic accuracy,"/>
+                    </outline>
+                </outline>
+                <outline text="flaw">
+                    <outline text="“Selection bias”/“regression to the mean”"/>
+                    <outline text="require different algorithms for different inference problems"/>
+                    <outline text="the capabilities of that theory is limited under larger data sets and more complicated inferential questions in computer age."/>
+                    <outline text="need a broadening of connections with other methods."/>
+                </outline>
+            </outline>
+            <outline text="Bayesian inference">
+                <outline text="overview">
+                    <outline text="samples are fixed, parameters may change(by prior information)"/>
+                    <outline text="&quot;only&quot; rely on samples been observed"/>
+                </outline>
+                <outline text="workflow">
+                    <outline text="suppose population has a fixed distributionf(x;\mu),"/>
+                    <outline text="find the prior densityg_1(\mu),"/>
+                    <outline text="combine the prior density and samplex = (x_1,x_2,...) to calculate the &quot;joint probability&quot;h(x,\mu),"/>
+                    <outline text="calculate the posterior density of parameterg_2(\mu;x),">
+                        <outline text="calculate tactics : the formula of joint probability can be rewriting as  likelihood function, prior density and a constant,"/>
+                    </outline>
+                    <outline text="use the posterior density to inference"/>
+                </outline>
+                <outline text="&quot;uninformative&quot; prior densities">
+                    <outline text="uniform distribution g(\theta) = \dfrac{1}{2},-1&lt; \theta&lt;1,">
+                        <outline text="may not uniform with different parameters because \theta doesn't appear in formula,"/>
+                    </outline>
+                    <outline text="Jeffrey's priorg(\theta)= \sqrt {I(\theta)},">
+                        <outline text="improper(integral not equal to one)"/>
+                        <outline text="defined by fisher information"/>
+                        <outline text="not suitable for multi-parameter distributions"/>
+                    </outline>
+                    <outline text="shrinkage prior g(\theta) = 1 - |\theta|,">
+                        <outline text="favor small values of theta"/>
+                    </outline>
+                </outline>
+                <outline text="flaw">
+                    <outline text="prior density may unavailable, hard to calculate or not convincing(such as subjectivity) in computer-age's high-dimensional problems"/>
+                </outline>
+            </outline>
+            <outline text="Fisherian inference">
+                <outline text="summary">
+                    <outline text="fundamental : likelihood function"/>
+                    <outline text="accuracy : Fisher information"/>
+                    <outline text="inference rules : conditional inference, permutation and randomization,"/>
+                </outline>
+                <outline text="likelihood">
+                    <outline text="likelihood function(L) and log form(l),"/>
+                    <outline text="MLE">
+                        <outline text="estimate: \mumaximizesl(\mu),"/>
+                        <outline text="different cases : unique solution, unique solution but cannot calculate,  not exist, multiple maximizers,"/>
+                    </outline>
+                    <outline text="advantage">
+                        <outline text="easy to use and suits different situations"/>
+                        <outline text="good probability properties(nearly unbiased in large-sample situations)"/>
+                        <outline text="useful in Bayesian's inference"/>
+                    </outline>
+                    <outline text="downside">
+                        <outline text="need numerical calculation at most times"/>
+                        <outline text="could be misleading in problem involving many parameters"/>
+                    </outline>
+                </outline>
+                <outline text="Fisher information">
+                    <outline text="uni-variate families">
+                        <outline text="score function : derivative of lnL(θ),"/>
+                        <outline text="Fisher information"/>
+                        <outline text="MLE's approximately distributionN(\theta, \dfrac{1}{nI_\theta}),"/>
+                    </outline>
+                    <outline text="multi-variate families">
+                        <outline text="score function(vector) : gradient of lnL(μ1, μ2, ...μn),"/>
+                        <outline text="Fisher information(matrix)"/>
+                        <outline text="MLE's approximately distributionN_p(\mu, \dfrac{1}{nI_\mu}),"/>
+                        <outline text="&quot;nuisance parameter&quot;">
+                            <outline text=".σ^2_{(μ_1)} will be affected by μ2, ...μn,"/>
+                            <outline text="μ2, ...μn unknown :  calculate from whole Fisher information matrix,"/>
+                            <outline text="μ2, ...μn known : only need to calculate μ1's Fisher information,"/>
+                        </outline>
+                    </outline>
+                    <outline text="samples' joint information and population's information"/>
+                    <outline text="Cramer-Rao lower bound"/>
+                </outline>
+                <outline text="conditional inference">
+                    <outline text="estimate on the &quot;observed&quot; data"/>
+                    <outline text="advantages">
+                        <outline text="focus more on parameters">
+                            <outline text="ancillary statistic">
+<outline text="contains no &quot;direct&quot; information, while has influence on inference,"/>
+<outline text="such as samples's size to samples' joint distribution,"/>
+                            </outline>
+                        </outline>
+                        <outline text="simpler to calculate"/>
+                    </outline>
+                    <outline text="downsides">
+                        <outline text="loss of information(in ancillary statistic)"/>
+                    </outline>
+                </outline>
+                <outline text="permutation and randomization">
+                    <outline text="randomization : randomly assigning the experimental units to the possible treatment groups(while sometimes not feasible),"/>
+                    <outline text="permutation : resampling ALL(not in groups) data points and calculate each t-values, inference on statistics of these t-values,"/>
+                </outline>
+                <outline text="(fiducial inference)"/>
+            </outline>
+        </outline>
+        <outline text="Early Computer-Age Methods(regression)">
+            <outline text="overview">
+                <outline text="combine the virtues of the two ways of (classic) inference"/>
+            </outline>
+            <outline text="Empirical Bayes">
+                <outline text="background ">
+                    <outline text="Large parallel data sets,"/>
+                </outline>
+                <outline text="opinion">
+                    <outline text="exception of θ could be estimate from frequency when prior distribution unavailable, "/>
+                </outline>
+                <outline text="Robbin's formula">
+                    <outline text=".E(\theta|x) = \dfrac{(x+1)f(x+1)} {f(x)}, while f(x) could be estimate by frequency(y_x / N),"/>
+                    <outline text="may biased with &quot;small&quot;(such as x is nearly to 1) count samples,"/>
+                    <outline text="exception of θ : E(\theta|x) = \int _{0}^{\infty} \theta h(\theta|x)d\theta = \dfrac{\int _{0}^{\infty} \theta t(x|\theta)g(\theta) d\theta} {f(x)}=\dfrac{\int _{0}^{\infty} \theta t(x|\theta)g(\theta) d\theta} {\int _{0}^{\infty}  t(x|\theta)g(\theta) d\theta},"/>
+                    <outline text="t(x|θ) is the &quot;traditional&quot; distribution of x, f(x) is marginal distribution of x, g(θ) is prior distribution of θ, h(θ|x) is posterior distribution of θ, "/>
+                    <outline text=""/>
+                </outline>
+            </outline>
+            <outline text=""/>
+            <outline text=""/>
+            <outline text="James–Stein Estimation and Ridge Regression "/>
+            <outline text="Generalized Linear Models and Regression Trees "/>
+            <outline text="Survival Analysis and the EM Algorithm "/>
+            <outline text="The Jackknife and the Bootstrap "/>
+            <outline text="Bootstrap Confidence Intervals "/>
+            <outline text="Cross-Validation and Cp Estimates of Prediction Error "/>
+            <outline text="Objective Bayes Inference and MCMC "/>
+        </outline>
+        <outline text="Twenty-First-Century Topics(machine learning algorithm)">
+            <outline text="Large-Scale Hypothesis Testing and FDRs"/>
+            <outline text="Sparse Modeling and the Lasso"/>
+            <outline text="Random Forests and Boosting"/>
+            <outline text="Neural Networks and Deep Learning"/>
+            <outline text="Support-Vector Machines and Kernel Methods"/>
+            <outline text="Inference After Model Selection"/>
+            <outline text="Empirical Bayes Estimation Strategies"/>
+        </outline>
+        <outline text=""/>
+        <outline text="symbols">
+            <outline text="μαλξθρπχβΔσΣΨΣΦψφω"/>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="Others"/>
+    </body>
+</opml>

@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>统计学习方法</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="一、统计学习概论">
+            <outline text="定义">
+                <outline text="可以分为两个基本过程，首先基于给定的数据构建概率统计模型（学习），然后运用模型对新的数据进行推断，"/>
+            </outline>
+            <outline text="前提（统计学假设）">
+                <outline text="同类数据具有一定的统计规律性，可以用统计学方法处理；如数据独立同分布，模型属于某个假设空间，且空间中具有一个最优模型，"/>
+            </outline>
+            <outline text="模型的建立">
+                <outline text="监督学习方法">
+                    <outline text="定义：从标注数据中学习预测模型，其目的为寻找输入和输出之间的关系，"/>
+                    <outline text="基本组成">
+                        <outline text="输入空间（实际的数据），特征空间（将数据区分开的特征的集合，一般由向量表示，有时与输入空间相同），输出空间；空间所包含变量可以为离散或连续，"/>
+                    </outline>
+                    <outline text="概率假设">
+                        <outline text="概率模型">
+                            <outline text="包括决策树、朴素贝叶斯、隐马尔可夫模型、条件随机场、概率潜在语义分析、潜在狄利克雷分配、高斯混合模型等，"/>
+                            <outline text="概率模型可以表示为条件概率分布的形式，即输出变量在给定输入变量下的条件分布，"/>
+                            <outline text="概率模型可以利用加法规则和乘法规则进行推理，"/>
+                        </outline>
+                        <outline text="非概率模型">
+                            <outline text="包括感知机、支持向量机、k近邻、k均值、潜在语义分析，神经网络等，"/>
+                            <outline text="非概率模型一般为广义的函数形式，即输出变量与输入变量的关系，没有确定的概率分布形式、参数等，"/>
+                        </outline>
+                    </outline>
+                    <outline text="基本过程">
+                        <outline text="选择：确定需要应用的算法、模型类别（生成模型、判别模型）等，"/>
+                        <outline text="学习：通过给定的数据，由算法拟合具体的概率模型，"/>
+                        <outline text="预测：通过学习的模型，由新的输入得出预测的输出，"/>
+                        <outline text="评价：如果模型的预测能力好，那么模型拟合得到的输出应该与实际输出差异较小；"/>
+                        <outline text="优化：一般给定的数据同时包含了输入和输出空间，所以模型可以通过不断学习，优化预测的模型，"/>
+                    </outline>
+                    <outline text="拓展：半监督学习、主动学习，"/>
+                </outline>
+                <outline text="无监督学习方法">
+                    <outline text="从无标注数据中学习预测模型，其基本逻辑类似于监督学习，但目的为分析数据中可能的潜在逻辑，而不是具体的输出数据，"/>
+                </outline>
+                <outline text="强化学习方法">
+                    <outline text="定义：从连续得到的数据中学习最优策略，即数据空间随时间变化，而并非预先给定的确定空间，"/>
+                    <outline text="马尔可夫决策过程">
+                        <outline text="由（有限）状态、（有限）动作、状态转移概率（函数）、奖励函数、衰减系数组成，"/>
+                        <outline text="联系：下一个状态仅依赖于前一个状态与动作，其关系由状态转移概率函数给出；下一个状态得到的奖励同样仅依赖于前一个状态与动作，其关系由奖励函数γ=γ(A,S)表示，"/>
+                        <outline text="策略：状态（自变量）与动作的函数，一般为条件概率P(A|S)，"/>
+                        <outline text="价值函数：从某一状态开始，策略得到的奖励的数学期望，"/>
+                        <outline text="动作价值函数：从某一状态和动作开始，策略得到的奖励的数学期望，"/>
+                    </outline>
+                    <outline text="具体方法">
+                        <outline text="模型方法：基于马尔可夫模型，预测概率转移函数和奖励函数，以求解使价值函数最大化的策略，"/>
+                        <outline text="无模型方法：直接通过策略函数（条件概率）的预测，求解使价值函数最大化的策略，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="模型的评价">
+                <outline text="优良性">
+                    <outline text="损失函数">
+                        <outline text="用来确定模型基于输入值得到的输出与实际输出的差异，"/>
+                        <outline text="常用的有0-1损失函数、平方损失函数、绝对值损失函数、对数损失函数等，"/>
+                    </outline>
+                    <outline text="风险函数">
+                        <outline text="损失函数的期望值被称为风险函数，"/>
+                        <outline text="实际情况下，具体概率分布是未知的，因此风险函数理论上无法计算；一般通过经验风险函数估计期望风险函数，"/>
+                        <outline text="经验风险函数为模型关于训练数据集的平均损失，"/>
+                    </outline>
+                    <outline text="风险函数的度量">
+                        <outline text="经验风险最小化（ERM）">
+                            <outline text="最优模型为使经验风险最小化的模型，"/>
+                            <outline text="当模型是条件概率分布、损失函数是对数损失函数时，经验风险最小化等价于极大似然估计，"/>
+                            <outline text="然而，样本容量很小时，使经验风险最小化的模型可能会产生&quot;过拟合&quot; 现象，"/>
+                        </outline>
+                        <outline text="结构风险最小化（SRM）">
+                            <outline text="在经验风险模型的基础上增加了表示模型复杂度的正则化项，其形式为定义在假设空间上的泛函，一般与模型的复杂度成正比，"/>
+                            <outline text="贝叶斯估计中的最大后验概率估计是结构风险最小化的一个实例，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="误差">
+                    <outline text="训练误差为模型关于训练数据集的损失，一般基于损失函数；测试误差则指模型关于测试数据集的平均损失，"/>
+                    <outline text="训练误差可以用于优化模型，但实际应用中一般更重视测试误差，一般将学习方法对未知数据的预测能力称为泛化能力，"/>
+                </outline>
+            </outline>
+            <outline text="模型的优化">
+                <outline text="过拟合">
+                    <outline text="一般情况下，（未知的）实际模型的复杂度是确定的，我们希望拟合出的模型的复杂度与实际模型相同；如果只追求模型的预测能力，那么预测出的模型的复杂度一般会高于实际模型，这种现象称为过拟合，"/>
+                    <outline text="对于实际模型，一般随着复杂度的增加，训练误差呈递减趋势并趋向于0，但测试误差则呈U型曲线，说明了模型过于复杂时的过拟合现象带来的偏差，模型虽然可以很好的拟合训练数据集，但其泛化能力不足，即对测试数据的预测能力较差。其原因在于测试数据中可能存在着很多噪声，"/>
+                    <outline text="正则化">
+                        <outline text="正则化是结构风险最小化策略的实现，即在经验风险模型上加入正则化项；正则化项一般为模型复杂度的单调递增函数，例如模型参数向量的范数（长度），"/>
+                    </outline>
+                </outline>
+                <outline text="泛化能力">
+                    <outline text="定义：模型对未知数据的预测能力 ；一般通过测试模型对具体数据的误差来评价泛化能力，但实际数据的数量有限，所以从理论上分析也是十分重要的，"/>
+                    <outline text="泛化误差">
+                        <outline text="模型对未知数据预测的误差，即损失函数的期望值，"/>
+                    </outline>
+                    <outline text="泛化误差上界">
+                        <outline text="一般为样本容量的递减函数，假设空间容量的递增函数，"/>
+                    </outline>
+                </outline>
+                <outline text="算法优化">
+                    <outline text="算法指确定求解最优模型的计算过程，"/>
+                    <outline text="一般情况下，问题没有解析形式的解，即需要利用数值方法求解；寻找全局最优解的方法可以通过改进算法得到优化，"/>
+                </outline>
+                <outline text="交叉验证">
+                    <outline text="样本数据充足时，可以将数据集随机分为三部分，训练集、验证集和测试集。训练集用来训练模型，验证集用于模型的选择，而测试集用于最终对学习方法的评估。对于由训练集得到的不同复杂度的模型，选择对验证集有最小预测误差的一个。"/>
+                    <outline text="样本数据不足时，可以利用交叉验证的方式，其实质为对数据的重复利用，"/>
+                    <outline text="简单交叉验证">
+                        <outline text="即对数据集的直接切分，"/>
+                    </outline>
+                    <outline text="S折交叉验证">
+                        <outline text="随机将数据分为S个互不相交、大小相同的子集；"/>
+                        <outline text="利用S-1个子集的数据训练模型，利用余下的自己测试模型；"/>
+                        <outline text="将这一过程对可能的S种选择重复进行，"/>
+                        <outline text="选出S次评测中平均测试误差最小的模型，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="模型的应用">
+                <outline text="分类">
+                    <outline text="定义：输出变量为有限个离散值，输入变量的形式不限，"/>
+                    <outline text="评价：分类准确率，即分类器正确分类的样本数与总样本数之比；"/>
+                    <outline text="具体方法：感知机、朴素贝叶斯等，"/>
+                    <outline text="实例：文本分类，不同类型的文章一般会含有不同的专业词汇，可以通过机器学习，根据文章中所含有的特征词汇，对文章进行分类，"/>
+                </outline>
+                <outline text="回归">
+                    <outline text="定义：预测输入变量与输出变量之间的关系，一般为两者之间的具体函数关系，"/>
+                    <outline text="分类：一元、多元、线性、非线性等，"/>
+                </outline>
+                <outline text="标注"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text="二、感知机">
+            <outline text="目的">
+                <outline text="分类：接受多个特征向量作为输入，输出特征向量对应的类别（±1），"/>
+            </outline>
+            <outline text="方法">
+                <outline text="y=sgn(w·x+b)，"/>
+                <outline text="x为输入向量，w为加权值，b为误差项，"/>
+                <outline text="sgn为符号函数，&gt;0时为1，&lt;0时为-1，"/>
+            </outline>
+            <outline text="策略">
+                <outline text="线性可分性">
+                    <outline text="对于数据集T（x，y），若存在某个规则w·x+b可以正确的划分所有的xi，则称数据集T为线性可分数据集，"/>
+                </outline>
+                <outline text="损失函数">
+                    <outline text="定义：误分类点到超平面S的距离的和，即-Σyi(w·xi+b)/||w||，xi∈M，">
+                        <outline text="yi为分类数据；由于xi为误分类点，所以w·xi+b&gt;0时yi为-1，w·xi+b&lt;0时yi为1，"/>
+                        <outline text="||w||为L2范数，即向量w的长度，"/>
+                        <outline text="M为误分类点的集合，"/>
+                        <outline text="可知，损失函数是非负的，且为参数w,b的可导函数，易于分析，"/>
+                    </outline>
+                    <outline text="对于数据集（xi，yi），寻找参数w，b，使损失函数最小化，"/>
+                </outline>
+            </outline>
+            <outline text="算法">
+                <outline text="随机梯度下降法">
+                    <outline text="原始形式">
+                        <outline text="算法A2.1">
+                            <outline text="输入：训练数据集T，学习率η"/>
+                            <outline text="运算">
+<outline text="选取初值w0，b0，"/>
+<outline text="选取数据（xi，yi），">
+    <outline text="if yi(w·xi+b)≤0，">
+        <outline text="w &lt;- w +ηyixi"/>
+        <outline text="b  &lt;- b + ηyi，"/>
+    </outline>
+    <outline text="（xi，yi） &lt;- （xj，yj）"/>
+</outline>
+                            </outline>
+                            <outline text="输出：参数w，b，"/>
+                        </outline>
+                        <outline text="描述">
+                            <outline text="η为学习率（0＜η≤1），取值由人为指定，"/>
+                            <outline text="yixi为损失函数L关于参数w的梯度，yi为损失函数L关于参数b的梯度，"/>
+                            <outline text="通过迭代，可以使损失函数极小化，"/>
+                            <outline text="利用不同的初值或选取不同的误分类点，感知机算法可能得到不同的解，"/>
+                        </outline>
+                        <outline text="（证明）算法的收敛性">
+                            <outline text="Novikoff定理：对于线性可分的数据集T，存在可将数据集完全正确分开的满足条件||w||=1的超平面；且存在γ＞0，使算法的误分类次数k满足k≤（R/γ）^2，R=max||xi||，"/>
+                            <outline text="定理表明，对于线性可分的数据集，误分类的次数存在上界，即感知机学习算法的原始形式的迭代是收敛的。"/>
+                        </outline>
+                    </outline>
+                    <outline text="对偶形式">
+                        <outline text="算法A2.2">
+                            <outline text="输入：训练数据集T，学习率η"/>
+                            <outline text="运算">
+<outline text="选取初值α←0，b←0，"/>
+<outline text="选取数据（xi，yi），">
+    <outline text="if yi(Σαiyjxj * xi+b)≤0，">
+        <outline text="αi &lt;-  αi +η"/>
+        <outline text="b  &lt;-  b + ηyi，"/>
+    </outline>
+    <outline text="（xi，yi） &lt;- （xk，yk）"/>
+</outline>
+                            </outline>
+                            <outline text="输出：向量α（α1,α2……αi）（i≤N），参数b，"/>
+                        </outline>
+                        <outline text="描述">
+                            <outline text="将参数w、b表示为（xi，yi）的线性组合，类似于w=α1*(xi，yi)+α2*(xi，yi)+α3*(xi，yi)+……，通过不同的(xi，yi)修正向量α(α1,α2……)的取值，"/>
+                            <outline text="αi=ni*η为人为指定，最后可由w=Σαiyixi，b=Σαiyi算出参数w、b的取值，"/>
+                            <outline text="算法不需要具体的向量取值，只需要向量xi、xj（i≠j）之间的内积；因此可以将内积计算出来并利用将矩阵形式存储，称为Gram矩阵，"/>
+                        </outline>
+                        <outline text="（证明）：可以证明，对偶形式的感知机算法也是收敛的，并且也可能存在多个不同的解，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="三、k近邻法">
+            <outline text="k近邻">
+                <outline text="目的">
+                    <outline text="分类：接受多个特征向量作为输入，输出特征向量对应的不同类别，"/>
+                </outline>
+                <outline text="方法">
+                    <outline text="首先学习已分类的数据集，然后针对给定的数据X，寻找X在已分类的数据集中的k个最近邻的数据，这些近邻的数据中多数属于某个类，就把该输入实例分为这个类。"/>
+                </outline>
+                <outline text="策略">
+                    <outline text="距离函数，">
+                        <outline text="一般使用欧式距离（即L2范数），但也可使用其它范数，"/>
+                    </outline>
+                    <outline text="k的取值，计算与X最邻近的k个点，将包括这些点的X的邻域记为Nk（x），">
+                        <outline text="k的取值是k近邻法中的主要影响因素；小的k值可以缩小近似误差，但会增大估计误差，而大的k值则会缩小估计误差，增大近似误差，">
+                            <outline text="近似误差即类似的点的分类，估计误差即分类不明确的点的分类，"/>
+                        </outline>
+                        <outline text="一般选取较小的k值，通常使用交叉验证法来选取最优的k值，"/>
+                    </outline>
+                    <outline text="分类决策规则，并由此决定X的类别；">
+                        <outline text="一般采用“多数表决”的方式，在选取0-1损失函数时，“多数表决”可以最小化误分类率，"/>
+                    </outline>
+                    <outline text="k近邻法没有显式的学习过程，"/>
+                </outline>
+                <outline text="算法A3.1">
+                    <outline text="输入：数据集T=(x1,y1),(x2,y2),……(xn,yn)，数据X">
+                        <outline text="xi为具体数据（或数据的特征向量），yi为数据的类别，X为其它数据"/>
+                    </outline>
+                    <outline text="输出：X所属的类Y，"/>
+                </outline>
+            </outline>
+            <outline text="kd树（k近邻的计算优化）">
+                <outline text="目的">
+                    <outline text="分类：接受多个特征向量作为输入，将其按一定规律分类，输出分类结果，"/>
+                    <outline text="在训练集很大时，直接计算输入实例与每一个训练实例的距离会变得非常耗时；因此，可以通过使用特殊的结构存储训练数据，以减少计算距离的次数"/>
+                </outline>
+                <outline text="方法">
+                    <outline text="将给定的训练数据集T按一定方式由上至下划分为多组，使得每个最终节点都包含一定的区域，">
+                        <outline text="最终节点所包含的区域中，最终节点的位置不一定位于正中心，"/>
+                    </outline>
+                    <outline text="计算需要分类的数据X所在的区域，从下至上寻找是否还有更近邻的点，"/>
+                </outline>
+                <outline text="策略">
+                    <outline text="kd树的划分方式是人为指定的，一般选择数据的中位数为切分点，但此时的效率并非一定是最优的，"/>
+                    <outline text="kd树为二叉树，即每个节点都只有两个子节点，"/>
+                </outline>
+                <outline text="算法A3.2">
+                    <outline text="输入：k*n维数据集T=(X1,X2,……,Xn)，Xi=(x1,x2,……,xk)，"/>
+                    <outline text="运算">
+                        <outline text="选择x1为坐标轴，">
+                            <outline text="根据选定的划分方式，切分T中的数据；"/>
+                            <outline text="保存子节点与根节点，"/>
+                        </outline>
+                        <outline text="对每一个子区域，选择xl为坐标轴，">
+                            <outline text="根据选定的划分方式，分别分割每个子区域，"/>
+                            <outline text="同一坐标轴可能被多次选择，尤其在数据维度较低时，"/>
+                        </outline>
+                        <outline text="直到每个子区域只包括一个节点时停止，"/>
+                    </outline>
+                    <outline text="输出：kd树"/>
+                </outline>
+                <outline text="算法A3.3">
+                    <outline text="输入：kd树，数据X"/>
+                    <outline text="运算：">
+                        <outline text="寻找包含目标数据X的子结点A，"/>
+                        <outline text="假定A1为最近点，确定A1与X之间的距离，">
+                            <outline text="返回父节点B1，">
+<outline text="判断另一子节点A2与X的距离，">
+    <outline text="A2的距离更近">
+        <outline text="设定A2为最近点，">
+            <outline text="返回父节点B1……"/>
+        </outline>
+    </outline>
+    <outline text="A2的距离更远">
+        <outline text="返回父节点B1的上一父节点C1">
+            <outline text="判断另一子结点B2与X的关系">
+                <outline text="X在B2的范围内">
+                    <outline text="搜索B2的子节点A3……"/>
+                </outline>
+                <outline text="X不在B2的范围内">
+                    <outline text="返回上一父节点D1……"/>
+                </outline>
+            </outline>
+        </outline>
+    </outline>
+</outline>
+                            </outline>
+                            <outline text="返回根节点"/>
+                        </outline>
+                        <outline text="返回最终搜索到的最近点，"/>
+                    </outline>
+                    <outline text="输出：X的最近邻点"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="四、朴素贝叶斯法">
+            <outline text="目的">
+                <outline text="分类：接受多个特征向量作为输入，输出后验概率最大的对应类别，"/>
+            </outline>
+            <outline text="方法">
+                <outline text="统计假设">
+                    <outline text="联合分布">
+                        <outline text="输入数据集的特征向量X与输出数据集的向量Y具有联合分布P(X,Y)，"/>
+                        <outline text="（Xi，Yi）之间相互独立，"/>
+                    </outline>
+                    <outline text="先验分布">
+                        <outline text="Y具有先验分布P（Y=ck），"/>
+                    </outline>
+                    <outline text="条件分布">
+                        <outline text="向量Xi在给定Yi时具有条件分布P（X=x|Y=ck），从而可算出联合分布，"/>
+                    </outline>
+                    <outline text="条件独立性假设">
+                        <outline text="每个向量Xi中的每个分量xi独立，即P（X=x）=P（x1=x1，x2=x2…）=ΠP（xi=xi），"/>
+                    </outline>
+                </outline>
+                <outline text="贝叶斯定理">
+                    <outline text="通过给定的数据学习P（Y=ck）和P（X=x|Y=ck）后，即可由贝叶斯定理算出给定X时Y的后验分布P（Y=ck|X=x），"/>
+                    <outline text="通过后验分布即可确定给定的数据X对应的Y，"/>
+                </outline>
+            </outline>
+            <outline text="策略">
+                <outline text="后验分布的应用">
+                    <outline text="得到后验分布后，可以有多种计算Y的方式，"/>
+                    <outline text="一般采用0-1损失函数，此时，最小化期望损失等同于选择后验概率最大化的Y，"/>
+                </outline>
+                <outline text="参数估计">
+                    <outline text="极大似然估计">
+                        <outline text="先验概率与条件概率的极大似然估计都依据示性函数计算得到，类似于对取值的分类，"/>
+                    </outline>
+                    <outline text="贝叶斯估计">
+                        <outline text="可以从极大似然估计的算法看出，有时存在具体分类Xi/Yi，但数据集中可能没有对应数据，因而极大似然估计可能为0，从而产生一定的误差，"/>
+                        <outline text="采用贝叶斯估计可以避免这一问题，其算法可以理解为在随机变量的各个取值的频数上增加一个正数λ，λ的取值可以依据已有的信息选择，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="算法A4.1">
+                <outline text="输入">
+                    <outline text="训练数据T（Xi，Yi），实例数据X，"/>
+                </outline>
+                <outline text="运算">
+                    <outline text="计算先验概率与条件概率，"/>
+                    <outline text="计算联合分布，"/>
+                    <outline text="通过贝叶斯公式计算后验分布，"/>
+                </outline>
+                <outline text="输出">
+                    <outline text="实例X的分类yi"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="五、决策树">
+            <outline text="目的">
+                <outline text="基于给定的规则，对数据进行分类，"/>
+            </outline>
+            <outline text="决策树">
+                <outline text="方法">
+                    <outline text="决策树">
+                        <outline text="组成">
+                            <outline text="直观组成">
+<outline text="结点"/>
+<outline text="“有向边”：表示分类的顺序（如A1→A1.1→A1.1.1），"/>
+                            </outline>
+                            <outline text="引申含义">
+<outline text="多个if-then语句的集合：即在每个节点执行if语句，再根据决策树的规则执行then语句选择对应的子节点，"/>
+<outline text="条件概率分布：即在给定A1的情况下，A1.1发生的条件概率，可以表示为P(A1|A1.1)，"/>
+                            </outline>
+                        </outline>
+                        <outline text="构造">
+                            <outline text="由于数据的复杂性，一般决策树是不唯一的，而且一般难以找到各个方面都是最优的决策树，"/>
+                            <outline text="特征选择：即人为指定作为分类特征的节点，或节点的顺序，"/>
+                            <outline text="构造决策树时，一般只考虑最好的数据分类方式，而不过于关注泛化能力，"/>
+                        </outline>
+                        <outline text="修剪">
+                            <outline text="过拟合：决策树可能对训练数据有较好的分类能力，但对实际数据的分类能力较差，"/>
+                            <outline text="一般需要进一步修剪过于复杂的子节点，使其具有更好的泛化能力；即修剪决策树时需要基于全局构建最优选择，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="策略">
+                    <outline text="熵">
+                        <outline text="定义：H(X) = - Σp(xi)ln(p(xi))，"/>
+                        <outline text="性质">
+                            <outline text="熵的取值只与X的分布形式有关；即对于参数分布，熵的取值为参数θ的函数，而与随机变量X的具体取值无关，"/>
+                            <outline text="0≤H(θ)≤ln(n)，"/>
+                        </outline>
+                        <outline text="条件熵">
+                            <outline text="H(Y|X) = Σp(xi)H(Y|X=xi) ，其中H(Y|X=xi)为- Σp(Y|xi)ln(p(Y|xi))，即条件熵的数学期望，"/>
+                        </outline>
+                    </outline>
+                    <outline text="信息增益">
+                        <outline text="定义：g(X, A) = H(X) - H(X|A)，即数据集X的熵与给定A时X的条件熵的差值，也称为“互信息”；"/>
+                        <outline text="含义：由于特征A而使得对数据集X的分类的不确定性减少的程度，可以看出，信息增益大的特征具有更强的分类能力，"/>
+                        <outline text="选择方法：计算其每个特征的信息增益并比较它们的大小，选择信息增益最大的特征进行分类，"/>
+                    </outline>
+                    <outline text="信息增益比">
+                        <outline text="一般情况下，信息增益的取值与特征的具体类别成正比，但类别较多的特征并不一定是更优的分类特征，使用信息增益比可以对这一 问题进行校正，"/>
+                        <outline text="信息增益比：gR(D,A) = g(D,A) / Ha(D),"/>
+                    </outline>
+                    <outline text="ID3算法">
+                        <outline text="在每个结点根据信息增益准则选择特征，递归的构建决策树，直至所有特征的信息增益均很小或没有特征可以选择时结束，"/>
+                    </outline>
+                    <outline text="C4.5算法">
+                        <outline text="类似ID3算法，但其使用信息增益比来选择特征，"/>
+                    </outline>
+                    <outline text="决策树的修剪">
+                        <outline text="一般通过极小化决策树的整体损失函数来实现，"/>
+                        <outline text="损失函数：C(T) = ΣNt*Ht(T) + α*Ts">
+                            <outline text="Ts为子节点的总个数，t∈(1,2,…Ts），Nt为每个子节点所含的样本点个数，Ht为子节点t上的经验熵，正数α为人为选择的参数，"/>
+                            <outline text="损失函数由模型对训练数据的预测误差和模型的复杂度两者组成，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="算法A5.1">
+                    <outline text="输入：训练数据集X、特征A"/>
+                    <outline text="运算：计算经验熵 H(X) 、条件熵H(X|A)，和两者的差值g（信息增益），"/>
+                    <outline text="输出：每个特征对应的信息增益g，"/>
+                </outline>
+                <outline text="算法A5.2、A5.3（信息增益→信息增益比）">
+                    <outline text="输入：训练数据集X，特征集A阈值ε，"/>
+                    <outline text="运算">
+                        <outline text="Y = X"/>
+                        <outline text="if">
+                            <outline text="Y中所有实例都为同一类Ck，">
+<outline text="返回单节点树T，类标记为Ck，"/>
+                            </outline>
+                            <outline text="A 为空集，">
+<outline text="返回单节点树T，类标记为T中实例最多的类Cm，"/>
+                            </outline>
+                        </outline>
+                        <outline text="else">
+                            <outline text="计算A中各个特征对Y的信息增益，选择信息增益最大的特征Am，">
+<outline text="if ：Am＜ε">
+    <outline text="返回单节点树T，类标记为Y中实例最多的类Cm，"/>
+</outline>
+<outline text="else：Am＞ε">
+    <outline text="根据Am，将Y分割为若干子集Xi，将Xi中实例数最大的类作为标记构建子节点，形成树T并返回T，"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="对每个子节点，以Xi为训练集，A-Am为特征集，"/>
+                        <outline text="Y = Xi，"/>
+                    </outline>
+                    <outline text="输出：决策树T"/>
+                </outline>
+                <outline text="算法A5.4">
+                    <outline text="输入：决策树T，参数α，"/>
+                    <outline text="运算">
+                        <outline text="计算每个节点的经验熵，"/>
+                        <outline text="从子节点开始，若减去子节点后的决策树损失函数更小，则减去子节点；否则不做修改，"/>
+                        <outline text="由子节点向上递归求解，直到根节点为止，"/>
+                    </outline>
+                    <outline text="输出：决策树Tα，"/>
+                </outline>
+            </outline>
+            <outline text="CART算法">
+                <outline text="方法">
+                    <outline text="利用二叉树进行分类，即递归的二分每个特征，"/>
+                    <outline text="对于最终得到的每个输入空间的子集，确定对应输出值的条件概率分布，"/>
+                </outline>
+                <outline text="回归树">
+                    <outline text="策略">
+                        <outline text="最小二乘法">
+                            <outline text="损失函数">
+<outline text="假设最终模型为f(x) = ΣCm*I(x∈Cm)，m为划分得到的子节点（分类），"/>
+<outline text="对于训练数据（Xi，Yi），可以利用已知的Yi与f(x)的差值判断模型精确度，"/>
+<outline text="一般采用平方误差为损失函数，即Σ(Yi - f(xi))^2，"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="算法A5.5">
+                        <outline text="输入：训练数据集X"/>
+                        <outline text="运算">
+                            <outline text="求解最优切分变量j与切分点s，"/>
+                            <outline text="用选定的（j，s）划分区域，并决定相应的输出值，"/>
+                            <outline text="对每个子区域重复上述过程，"/>
+                        </outline>
+                        <outline text="输出：回归树f（X），"/>
+                    </outline>
+                </outline>
+                <outline text="分类树">
+                    <outline text="策略">
+                        <outline text="基尼指数">
+                            <outline text="Gini(p) = Σpki(1-pki) = 1- Σpki^2">
+<outline text="K为类别数，pki为样本点属于第i类的概率(Σpki = 1)，"/>
+<outline text="决策树的基尼指数为1 - Σ(Cki/X)^2，Cki为给定样本X中属于第ki类的样本子集，"/>
+<outline text="基尼指数只与概率分布有关，与样本的具体取值无关，"/>
+                            </outline>
+                            <outline text="（条件）基尼指数：Gini(X,A) = X1/X*Gini(X1) + X2/X*Gini(X2)，">
+<outline text="A为给定特征，X1、X2为按照特征A划分出的两个子集，"/>
+                            </outline>
+                            <outline text="基尼指数与集合X的不确定性成正比，类似于熵；例如，对于二分问题，基尼指数2p(1-p)与熵-plnp - (1-p)ln(1-p)的曲线非常接近，"/>
+                        </outline>
+                    </outline>
+                    <outline text="算法A5.6">
+                        <outline text="输入：训练数据集X，停止条件"/>
+                        <outline text="运算">
+                            <outline text="计算总的基尼指数，和每个特征的基尼指数，"/>
+                            <outline text="在所有可能的特征中，选择基尼指数最小的特征及其对应的切分点作为最优特征与最优切分点生成两个子结点，并将训练数据集依特征分配到两个子结点中，"/>
+                            <outline text="重复上述步骤，直至满足停止条件"/>
+                        </outline>
+                        <outline text="输出：分类树"/>
+                    </outline>
+                </outline>
+                <outline text="CART的修剪">
+                    <outline text="策略">
+                        <outline text="损失函数：Cα(T) = C(T) + α*Ts，C（T）为给定的预测误差，"/>
+                        <outline text="参数优化：研究显示，不同的α值对应的不同决策树中，可以通过计算得到最优的α值和对应的最优树Tα，"/>
+                    </outline>
+                    <outline text="算法A5.7">
+                        <outline text="输入：生成的决策树T0，"/>
+                        <outline text="运算">
+                            <outline text="k=0，T = T0；"/>
+                            <outline text="α→+∞，"/>
+                            <outline text="计算C(T), T和g(t),α = min(α, g(t)),"/>
+                            <outline text="k = k + 1, αk = α，Tk = T，"/>
+                            <outline text="若Tk不是由根结点及两个叶结点构成的树，则回到步骤2，否则取Tk =Tn，"/>
+                            <outline text="用交叉验证法在子树序列中选取最优树Tα，"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="六、逻辑斯蒂回归与最大熵模型">
+            <outline text="非线性模型">
+                <outline text="目的">
+                    <outline text="对于给定数据，通过逻辑斯蒂模型或最大熵模型进行回归，输出非线性模型；"/>
+                </outline>
+                <outline text="逻辑斯蒂回归">
+                    <outline text="目的">
+                        <outline text="进行离散分布（一般为因变量只取0、1的伯努利分布）的线性回归，对分布的参数p进行估计，"/>
+                    </outline>
+                    <outline text="方法">
+                        <outline text="输入：训练数据集T = (Xi, Yi)，xi∈R，yi = 0/1，"/>
+                        <outline text="运算">
+                            <outline text="给定X时，Y的条件分布为二项-逻辑斯蒂分布，即P(Y= y|X) = (p^y)*((1-p)^(1-y))，其中p = π(x，w)，为逻辑斯蒂变换，"/>
+                            <outline text="其似然函数L(Y= y|X) = ΠP(Y= y|X)，"/>
+                            <outline text="对似然函数极大化，即可得到参数w的估计值，"/>
+                        </outline>
+                        <outline text="输出：逻辑斯蒂模型，"/>
+                    </outline>
+                </outline>
+                <outline text="最大熵模型">
+                    <outline text="目的">
+                        <outline text="对于任意数据集 (Xi, Yi)，假定X、Y具有条件概率模型P(Y|X) ，希望得到最优的分类模型，"/>
+                    </outline>
+                    <outline text="策略">
+                        <outline text="最大熵原理">
+                            <outline text="最优的概率模型，应该是在满足己有的约束条件，且没有更多信息的情况下，使其余不确定的部分都为等可能的模型；“等可能”的条件可以通过使熵最大化来实现，"/>
+                        </outline>
+                        <outline text="约束条件">
+                            <outline text="对于训练数据集(Xi, Yi)，假定X、Y具有条件概率模型P(Y|X) （未知），已知的为X、Y的经验分布（频率）P`(X，Y) 和P`(X)，"/>
+                            <outline text="？特征函数、等期望"/>
+                            <outline text="应有 =P(Y|X) *P`(X)，和ΣP(Y|X) =1，"/>
+                        </outline>
+                        <outline text="熵的取值">
+                            <outline text="关于P(Y|X) 的条件熵H(P) = -ΣP`(X)*P(Y|X) *lnP(Y|X) ，"/>
+                        </outline>
+                    </outline>
+                    <outline text="方法">
+                        <outline text="输入：训练数据集T = (Xi, Yi)，特征函数，"/>
+                        <outline text="运算">
+                            <outline text="条件极值">
+<outline text="在等期望、ΣP(Y|X) =1的条件下，求函数H(P)的条件极值，"/>
+<outline text="拉格朗日乘数法"/>
+                            </outline>
+                            <outline text="极大似然估计">
+<outline text="对数似然函数l(P) = ΣP`(X，Y) *lnP(Y|X)，"/>
+                            </outline>
+                        </outline>
+                        <outline text="输出：条件概率模型P(Y|X)  = (1/Zw(x))*e^(Σwi*fi(x,y))，其中Zw(x)=Σe^(Σwi*fi(x,y))，wi为求解得到的参数，fi为特征函数，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="？迭代算法（求解参数）">
+                <outline text="目的">
+                    <outline text="逻辑斯蒂模型或最大熵模型都无法得到解析形式的解，所以需要通过迭代方法求出最优模型，"/>
+                    <outline text="通过迭代尺度法、梯度下降法和牛顿法等机器学习方法，可以实现最优模型的求解，"/>
+                </outline>
+                <outline text="迭代尺度法">
+                    <outline text="方法">
+                        <outline text="逐步优化参数向量，使得模型的对数似然函数值增大，重复这一过程并找到极值，"/>
+                    </outline>
+                    <outline text="策略"/>
+                    <outline text="算法A6.1">
+                        <outline text="输入：特征函数fi，经验分布ΣP`(X，Y) ，模型Pw(Y|X)，"/>
+                        <outline text="运算">
+                            <outline text="设置w(w1, w2,…wn) = (0,0,…0)，"/>
+                            <outline text="求解方程并更新wi">
+<outline text="存在没有收敛的wi">
+    <outline text="求解方程并更新wi"/>
+</outline>
+<outline text="所有wi都收敛">
+    <outline text="输出wi"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="输出：最优模型Pw(Y|X)，"/>
+                    </outline>
+                </outline>
+                <outline text="拟牛顿法">
+                    <outline text="算法A6.2">
+                        <outline text="输入：特征函数fi，经验分布ΣP`(X，Y) ，目标函数f(w)，梯度g(w)，精度要求ε，"/>
+                        <outline text="运算"/>
+                        <outline text="输出：最优模型Pw(Y|X)，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="七、支持向量机">
+            <outline text="支持向量机">
+                <outline text="目的">
+                    <outline text="基于给定数据Xi，输出正负两种类别，"/>
+                </outline>
+                <outline text="线性可分支持向量机">
+                    <outline text="方法">
+                        <outline text="特征空间（数据的转化）">
+                            <outline text="将训练数据由输入空间（x，y可能为任意变量）一一对应的转换至特征空间，xi∈Rn，yi=+1/-1；得到训练数据集T（xi，yi），"/>
+                        </outline>
+                        <outline text="线性超平面">
+                            <outline text="（线性可分性）假定数据集T为线性可分，"/>
+                            <outline text="存在超平面w*x + b = 0，可以将xi准确的分类为正类、负类两部分；w为向量，b为截距，"/>
+                        </outline>
+                        <outline text="超平面的选择">
+                            <outline text="一般认为，对于线性可分的数据集，存在多个可以将数据正确分类的超平面，"/>
+                            <outline text="支持向量机的基本理念为在正确分类的超平面中，选择“间隔”最大化的一个，"/>
+                        </outline>
+                        <outline text="超平面的定理">
+                            <outline text="可以证明，若训练数据集T为线性可分，则一定存在可以将训练数据集中的样本点完全正确分开的最大间隔超平面，且超平面是唯一的，"/>
+                        </outline>
+                    </outline>
+                    <outline text="策略">
+                        <outline text="“间隔”">
+                            <outline text="间隔(margin)可以简单理解为距离，但相比于几何上的直线距离，间隔具有更多的含义，"/>
+                            <outline text="函数间隔">
+<outline text="对于数据集T（xi，yi），定义超平面w*x + b关于点（xi，yi）的间隔γi = yi*(w*xi + b)，关于数据集T的间隔为minγi，"/>
+<outline text="其中，|w*xi + b|表示具体数据点xi距离超平面的距离，而yi则可以表示分类的正确性；"/>
+<outline text="可以看出，函数间隔类似于直接距离，易于理解和计算；但其稳定性较差，若按一定比例同时改变w、b，超平面不会改变，但函数间隔会变化，"/>
+                            </outline>
+                            <outline text="几何间隔">
+<outline text="对于数据集T（xi，yi），定义超平面w*x + b关于点（xi，yi）的间隔γi = yi*(w*xi/||w|| + b/||w||)，关于数据集T的间隔为min γi，"/>
+<outline text="几何间隔类似于“单位化”的函数间隔，按一定比例同时改变w、b时，几何间隔不会变化，"/>
+                            </outline>
+                        </outline>
+                        <outline text="支持向量">
+                            <outline text="（直观）定义：在线性可分的数据集T中，与分离超平面距离最近的（几个）样本点称为支持向量；距离超平面最近的正实例构成的直线H1，和最近的负实例构成的直线H2称为间隔边界，"/>
+                            <outline text="（定量）定义：对于由条件极值的对偶算法算出的最优解αi，称使αi＞0的样本点为支持向量，"/>
+                            <outline text="可以看出，支持向量在分离超平面的确定中起着更重要的作用；其它距离超平面较远的点则不会有很大的作用，因为这些点所属的类别的确定性很强，"/>
+                        </outline>
+                        <outline text="条件极值">
+                            <outline text="可以将确定几何间隔最大超平面的过程表示为条件极值问题，即在保证对于每个样本点（xi，yi），都有γ≤yi*(w*xi/||w|| + b/||w||)（即几何间隔）的条件下，求γ的最大值，"/>
+                            <outline text="（凸优化问题、凸二次规划问题），"/>
+                        </outline>
+                        <outline text="条件极值的对偶算法">
+                            <outline text="引入拉格朗日乘子αi，则拉格朗日函数转化为L（w，b，α），"/>
+                            <outline text="问题可以转化为在保证w，b取极小值（不需要算出具体的w，b）的情况下，求α能取到的最大值，"/>
+                            <outline text="经过计算，可以将问题转化为对于给定的（xi，yi），在h(αi，yi)的条件下，求g(αi，xi，yi)的极小值，（参数由w，b转为了α），"/>
+                            <outline text="根据定理，可以由公式将算出的αi转换为原本需要求解的参数w，b，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="线性支持向量机">
+                    <outline text="方法">
+                        <outline text="线性不可分">
+                            <outline text="总体上仍可以较明显的由超平面区分为两大类，但部分样本点不能满足函数间隔大于1的条件，"/>
+                        </outline>
+                        <outline text="松弛变量">
+                            <outline text="可以对每个样本点附加一个松弛变量ξi≥0，使得函数间隔加上松弛变量大于等于1，"/>
+                        </outline>
+                    </outline>
+                    <outline text="策略">
+                        <outline text="约束条件">
+                            <outline text="加入松弛变量后，约束条件变为yi*(w*xi + b) ≥ 1 - ξi，"/>
+                            <outline text="目标函数也需要改变为1/2*||w||^2 + C*Σξi，C＞0为惩罚参数，"/>
+                        </outline>
+                        <outline text="支持向量">
+                            <outline text="（定量）定义：对于由对偶算法算出的最优解αi，称使αi＞0的样本点为（软间隔）支持向量，"/>
+                            <outline text="不同于硬间隔的支持向量（一定位于间隔边界外侧），软间隔的支持向量可能位于间隔边界，间隔边界与超平面之间，也可能位于超平面误分类的一侧，"/>
+                        </outline>
+                        <outline text="合页损失函数">
+                            <outline text="称L(y(w*x + b)) = (1-(w*x + b))，(1-(w*x + b) &gt; 0)；0，(1-(w*x + b)≤0)为合页损失函数，"/>
+                            <outline text="其含义可以理解为，当样本点被正确分类且函数间隔yi(w*xi + b)大于1时损失为0，否则损失为1 - yi(w*xi + b)，"/>
+                            <outline text="定理：线性支持向量机的最优化问题等价于求解L + λ*||w||^2的极小值，"/>
+                        </outline>
+                        <outline text="对偶算法">
+                            <outline text="引入拉格朗日乘子αi，参数μi，则拉格朗日函数转化为L（w，b，ξ，α，μ），"/>
+                        </outline>
+                    </outline>
+                    <outline text="算法A7.3">
+                        <outline text="输入：训练数据集T，x∈Rn，y∈{+1，-1}，"/>
+                        <outline text="运算">
+                            <outline text="选择惩罚参数"/>
+                            <outline text="构造拉格朗日函数，求解凸二次规划问题，"/>
+                            <outline text="由求得的最优解α计算参数w，再由α的在区间（0，C）中的某个分量αj计算参数b，"/>
+                        </outline>
+                        <outline text="输出：分离超平面w*x + b = 0，分类决策函数f(x) = sgn(w*x + b)，"/>
+                    </outline>
+                </outline>
+                <outline text="非线性支持向量机">
+                    <outline text="方法">
+                        <outline text="非线性可分问题">
+                            <outline text="部分情况下，数据之间存在着分类关系，但不能用线性关系表示；此时，需要引入非线性模型来进行正确的区分，"/>
+                            <outline text="对于数据集T（x∈Rn，y∈{+1，-1}），若Rn中存在可以将正、负实例正确分开的超曲面，则称问题为非线性可分问题，"/>
+                        </outline>
+                        <outline text="非线性变换">
+                            <outline text="一般非线性问题难以直接求解，所以通常将非线性问题通过非线性变换转化为线性问题，再利用线性问题的解法处理，"/>
+                        </outline>
+                    </outline>
+                    <outline text="策略">
+                        <outline text="映射函数与核函数">
+                            <outline text="非线性问题同以上问题的解决方法类似，但需要将数据集T中的点转换为线性；可以定义映射函数Φ，以将xi变换为Φ(xi)，"/>
+                            <outline text="可以通过对偶算法的拉格朗日函数看出，具体运算中只需要考虑具体的两个点之间的内积；然而实际情况中，向量的维数可能很高，使得直接计算会比较困难，所以可以定义函数K(x1，x2) = Φ(x1)·Φ(x2)为核函数，即两个特征空间的向量的内积可以直接利用核函数在原始样本空间中计算，"/>
+                        </outline>
+                        <outline text="核函数的确定">
+                            <outline text="定理：设X为Rn的某个子空间，若K(x1，x2)为定义在X*X上的对称函数，则K为正定核函数的充要条件为，对任意xi∈X，K对应的Gram矩阵为半正定矩阵，"/>
+                            <outline text="定理表明，任意一个Gram矩阵为半正定矩阵的对称函数都可以作为核函数，即总可以找到对应的映射函数Φ，"/>
+                        </outline>
+                        <outline text="（常用核函数：多项式核函数、高斯核函数等），"/>
+                    </outline>
+                    <outline text="算法A7.4">
+                        <outline text="输入：训练数据集T，x∈Rn，y∈{+1，-1}，"/>
+                        <outline text="运算">
+                            <outline text="选取适当的核函数K与参数C，"/>
+                            <outline text="构造最优化问题，并求得最优解α，"/>
+                            <outline text="由求得的最优解α在区间（0，C）中的某个分量αj计算参数b，"/>
+                            <outline text="构造决策函数"/>
+                        </outline>
+                        <outline text="输出：分类决策函数f(x) = sgn(Σα*yi*K(x, xi)  + b)，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="支持向量机的实现">
+                <outline text="目的">
+                    <outline text="支持向量机的核心为凸二次规划问题的求解，在训练样本很大时，对问题的高效求解变得愈发重要，"/>
+                    <outline text="可以通过优化求解步骤，从而加快问题的求解，"/>
+                </outline>
+                <outline text="SMO算法">
+                    <outline text="方法">
+                        <outline text="SVM的目的为求解最优向量α，SMO算法的基本思路为，首先（利用整个数据集T）求解α中的两个分量，再逐步求解其它的分量，"/>
+                        <outline text="可以看出，针对两个分量的最优解是对整体最优解的一个接近；此外，关于两个分量的最优解可以通过解析方式求解，加快了算法的运算速度，"/>
+                    </outline>
+                    <outline text="策略">
+                        <outline text="具体分量的选择">
+                            <outline text="首先在样本中选取违反KKT条件最严重的样本点，并将其对应的变量作为第一个变量α1，"/>
+                            <outline text="选择第二个变量的标准为使变量二能够得到最大的改善，一般做法为寻找使|E1 - E2|最大的α2，"/>
+                        </outline>
+                    </outline>
+                    <outline text="算法A7.5">
+                        <outline text="输入：训练数据集T，x∈Rn，y∈{+1，-1}，精度ε，"/>
+                        <outline text="运算">
+                            <outline text="取初值α = 0，k = 0；"/>
+                            <outline text="选取优化变量α1、α2，求解最优化问题，利用得到的解更新α，"/>
+                            <outline text="若在精度ε范围内满足停机条件，则输出α；否则继续选取优化变量，"/>
+                        </outline>
+                        <outline text="输出：近似解α，"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="八、提升方法">
+            <outline text="目的">
+                <outline text="分类方法，即通过输入的数据集T进行学习，将具体实例分为+1/-1两类，"/>
+            </outline>
+            <outline text="加性模型">
+                <outline text="方法">
+                    <outline text="传统的统计推断偏重于线性模型，即利用一个完整的函数式（超平面）来描述具体的数据，或对数据进行分类；然后通过学习样本来确定模型中的参数的取值，"/>
+                    <outline text="然而对于线性规律不明显的数据，一般很难找到分类准确的线性模型，"/>
+                    <outline text="加性模型利用多个函数的组合（线性组合）来描述数据，同时不严格要求每个函数都由含明确意义的参数组成，"/>
+                </outline>
+            </outline>
+            <outline text="AdaBoost">
+                <outline text="方法">
+                    <outline text="效率不高但形式简单的分类器一般容易寻找，相比之下，效率高的分类器则难以求解，"/>
+                    <outline text="因此，可以通过将数个简单的分类器组合到一起的方式，弥补每个单独的分类器的效率的不足，"/>
+                </outline>
+                <outline text="损失函数">
+                    <outline text="策略">
+                        <outline text="简单分类器的规则">
+                            <outline text="基学习算法">
+<outline text="首先赋予每个样本点相同的权重（1/N），然后基于损失函数，计算出第一个分类器，"/>
+<outline text="一般采用0-1损失函数，"/>
+                            </outline>
+                            <outline text="分类器规则的强化">
+<outline text="保持损失函数不变，重新计算每个样本点的权重；即降低正确的样本点的权重，增加错误的样本点的权重，"/>
+<outline text="计算得到其他的分类器，而不是改善第一个分类器，"/>
+                            </outline>
+                        </outline>
+                        <outline text="分类器的组合">
+                            <outline text="一般采用多个分类器的加权线性组合，注意此处所有的加权值的和可能不为1，"/>
+                        </outline>
+                    </outline>
+                    <outline text="算法A8.1">
+                        <outline text="输入：训练数据集T，x∈Rn，y∈{+1，-1}；基学习算法G，"/>
+                        <outline text="运算">
+                            <outline text="初始化权值分布，即给每个样本点赋予相同权重，"/>
+                            <outline text="根据基学习算法G确定第一个分类器G1，"/>
+                            <outline text="计算G1在整个数据集N上的分类误差，和G1的系数α1，"/>
+                            <outline text="更新整个数据集N的权值分布，并运算得到第二个分类器和对应的系数，"/>
+                            <outline text="进行M轮后结束，构建分类器的组合，"/>
+                        </outline>
+                        <outline text="输出：分类器G，"/>
+                    </outline>
+                </outline>
+                <outline text="指数损失函数（前向分步算法）">
+                    <outline text="策略">
+                        <outline text="同样采用加性模型，但选用指数损失函数，即函数由数个参数指定，"/>
+                        <outline text="确定函数参数的过程一般较为复杂，所以一般通过逐步学习的方式，每次只最优化一组参数，最后将所有的模型相加，"/>
+                    </outline>
+                    <outline text="算法A8.2">
+                        <outline text="输入：训练数据集T，x∈Rn，y∈{+1，-1}；基函数b(x, γ)，损失函数L(x, f(x))，"/>
+                        <outline text="运算">
+                            <outline text="初始化f0(x) = 0,"/>
+                            <outline text="对于m = 1，2，…，M；每次只极小化关于(βm，γm)的损失函数，"/>
+                            <outline text="利用求得的(βm，γm)更新损失函数，再继续求解下一组使损失函数极小化的(βm，γm)，"/>
+                        </outline>
+                        <outline text="输出：加性模型fm(x)"/>
+                    </outline>
+                </outline>
+                <outline text="误差分析">
+                    <outline text="定理：AdaBoost的训练误差界为Σexp(-yi * f(xi)) / N = ΠZm，"/>
+                    <outline text="定理：二类分类的AdaBoost的训练误差界为exp(-2 *Σγm^2)，γm = 1/2 - em，"/>
+                </outline>
+            </outline>
+            <outline text="提升树">
+                <outline text="方法：以决策树为基函数，构造加性模型，"/>
+                <outline text="（二类）分类问题">
+                    <outline text="对于二类分类问题，提升树算法只需将 AdaBoost 算法中的基本分类器限制为二类分类树即可，此时的提升树算法是 AdaBoost 算法的一种特例，"/>
+                </outline>
+                <outline text="回归问题">
+                    <outline text="对于训练数据集T，x∈Rn，y∈R；分类问题变为回归问题，即输入空间X可以分类为多个区域，每个区域都对应不同的输出yi，"/>
+                    <outline text="策略">
+                        <outline text="损失函数：对于平方误差损失函数，损失为模型拟合数据的残差，比较易于计算，"/>
+                        <outline text="算法得到的回归树不是传统的多节点二叉树(A1→A1.1→A1.1.1)，而是多个单节点二叉树的组合，"/>
+                    </outline>
+                    <outline text="算法A8.3">
+                        <outline text="输入：训练数据集T，x∈Rn，y∈R；"/>
+                        <outline text="运算">
+                            <outline text="初始化f0(x) = 0,"/>
+                            <outline text="对于m = 1，2，…，M；计算残差rmi，"/>
+                            <outline text="拟合残差学习回归树，"/>
+                            <outline text="利用求得的回归树更新函数，再继续求解下一组回归树，"/>
+                        </outline>
+                        <outline text="输出：回归树fm(x)"/>
+                    </outline>
+                </outline>
+                <outline text="（梯度提升）"/>
+            </outline>
+        </outline>
+        <outline text="九、EM算法">
+            <outline text="目的">
+                <outline text="迭代算法，基于似然函数估计概率分布中的参数，"/>
+                <outline text="极大似然估计通过样本估计参数，但部分情况下，一些样本值无法被观测到（隐变量），此时极大似然估计无法应用；"/>
+                <outline text="EM算法可以基于先验数据（先验参数）对隐变量进行推测，再利用推测的隐变量估计参数，"/>
+            </outline>
+            <outline text="方法">
+                <outline text="EM算法分为E（期望）步和M（极大化）步；其基本思路为，基于给定的先验参数Θ，可以通过数据集T推测隐变量Z的取值（E步），有了推测的Z的取值后，就可以基于似然函数L求解参数Θ的极大似然估计，"/>
+                <outline text="假设X、Z具有联合分布P（X，Z；Θ），且X、Z的边缘分布分别为P（X；Θ）和P（Z；Θ）；可知，P（X；Θ）为可以观测到的数据，"/>
+            </outline>
+            <outline text="策略">
+                <outline text="Q函数">
+                    <outline text="（条件）期望E[g(Z|X)]">
+                        <outline text="g(Z)为联合分布的对数似然函数lnP（X,Z;Θ），分布为条件分布P（Z|X；Θi），"/>
+                        <outline text="对数似然函数中的X为已知给定数据，Θ为未知参数，条件分布中的Θi为给定参数（初始值或上一步算出的值），"/>
+                    </outline>
+                    <outline text="经过计算后，Q函数中只有参数Θ未知，因此可以求解参数的极大似然估计，"/>
+                </outline>
+                <outline text="收敛性">
+                    <outline text="定理：设L为似然函数，Θ(i)为EM算法得到的参数估计序列，则L(Θ(i))关于i单调递增，"/>
+                    <outline text="定理：设l为对数似然函数，若Q函数和似然函数L满足条件，则EM算法得到的Θ(i)最终会收敛于稳定值，"/>
+                </outline>
+                <outline text="可以看出，EM算法非常依赖先验参数，因此进行求解时应注意参数的选择，"/>
+            </outline>
+            <outline text="混合正态分布">
+                <outline text="定义">
+                    <outline text="若X的分布函数为K个正态分布函数的加权平均，则称X具有混合正态分布，"/>
+                    <outline text="对于混合正态分布，希望估计分布的参数(αi；μi，σ2i)；然而，实际情况下一般只能观测到X的取值，"/>
+                    <outline text="可以看出，此处的隐变量为α的估计，假设为γi；换言之，如果可以知道样本的混合模式，就可以根据观测样本X推断每个分布的参数，"/>
+                </outline>
+                <outline text="算法A9.2">
+                    <outline text="输入：观测数据X1，X2…；混合分布模型"/>
+                    <outline text="运算">
+                        <outline text="设定参数的初始值，"/>
+                        <outline text="E步：根据给定的参数值计算Q函数，"/>
+                        <outline text="M步：通过求Q函数中参数的极大似然估计，计算新一轮迭代的模型参数，"/>
+                        <outline text="重复E、M步骤，直至收敛，"/>
+                    </outline>
+                    <outline text="输出：混合分布模型参数，"/>
+                </outline>
+            </outline>
+            <outline text="（GEM算法）"/>
+        </outline>
+        <outline text="十、隐马尔科夫模型">
+            <outline text="定义">
+                <outline text="马尔可夫过程">
+                    <outline text="随机变量在t时刻的状态仅与t-1时刻的状态有关，而与其余t-2个状态无关，"/>
+                    <outline text="若给定t-1时刻的条件下，t时刻的状态的条件概率与t的具体取值无关，则称该马尔可夫过程具有平稳转移概率，"/>
+                </outline>
+                <outline text="隐马尔科夫模型">
+                    <outline text="定义">
+                        <outline text="由隐藏的马尔可夫序列Y生成的随机序列X，"/>
+                        <outline text="隐藏的马尔科夫序列称为状态序列/隐序列，为一个马尔可夫过程，无法被观测到；生成的随机序列称为观测序列，"/>
+                        <outline text="（假定）每个隐序列的状态和观测序列的状态一一对应，即每个Xi只与对应的Yi有关，而与其它Yj、Xj无关，"/>
+                    </outline>
+                    <outline text="组成">
+                        <outline text="观测序列空间X，状态序列空间Y，">
+                            <outline text="状态定义为整个序列所共有，而非序列中的每个分量都有单独的状态，"/>
+                        </outline>
+                        <outline text="状态转移概率矩阵A，其元素aij = P(Yi+1 | Yi);"/>
+                        <outline text="观测概率矩阵B，其元素bij = P(Xi | Yi);"/>
+                        <outline text="初始状态概率矩阵Π，其元素πij = P(Yi);"/>
+                    </outline>
+                </outline>
+                <outline text="基本问题">
+                    <outline text="匹配问题：给定隐马尔可夫模型λ和观测数据O，判断观测数据与模型的匹配程度，"/>
+                    <outline text="学习问题：给定观测序列，求解最可能的模型参数，"/>
+                    <outline text="预测问题：给定隐马尔可夫模型λ和观测数据O，求解隐藏的状态序列；"/>
+                </outline>
+            </outline>
+            <outline text="匹配问题">
+                <outline text="直接计算">
+                    <outline text="理论上，已知λ和数据O，可以利用概率公式直接计算P(O|λ) ，">
+                        <outline text="需要的数据：模型λ = (A, B, Π)，观测序列O（o1，o2，…ot），状态空间I（i1，i2…，it）"/>
+                        <outline text="状态序列的概率P(I;λ)，给定状态序列时观测序列的条件概率P(O|I;λ)，"/>
+                        <outline text="O、I的联合分布P(O，I;λ)"/>
+                        <outline text="O的边缘分布P(O;λ) = ΣP(O|I；λ)P(I|λ)，"/>
+                    </outline>
+                    <outline text="然而，直接计算的计算量很大，一般不可行，"/>
+                </outline>
+                <outline text="前向-后向算法">
+                    <outline text="前向-后向概率">
+                        <outline text="前向概率αti = P（Ot，it = qi；λ），为到时刻t时，（部分）观测序列为Ot，状态为qi的概率，"/>
+                        <outline text="后向概率βti = P（OT，it = qi；λ），为在时刻t，状态为qi时，（部分）观测序列ot+1…oT的概率，"/>
+                        <outline text="t = 1，2…T；i = 1，2…N，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="学习问题">
+                <outline text="监督学习">
+                    <outline text="观测序列和对应的状态序列均已知，"/>
+                    <outline text="需要对训练数据进行标注，但人工标注一般较为繁琐，"/>
+                </outline>
+                <outline text="无监督学习">
+                    <outline text="Baum-Welch算法">
+                        <outline text="类似EM算法，此处观测序列为已知变量，而状态序列为隐变量，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="预测问题">
+                <outline text="近似算法">
+                    <outline text="类似极大似然估计，即求解不同状态可能出现的概率，再选取出现概率最大的状态作为预测结果，"/>
+                    <outline text="近似算法易于计算，但缺乏对序列的整体性考虑，"/>
+                </outline>
+                <outline text="维特比算法">
+                    <outline text="利用动态规划，求解使概率最大化的路径，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="十一、条件随机场">
+            <outline text="定义">
+                <outline text="图：由多个结点和连接结点的边组成的集合，边可以为线段或向量，">
+                    <outline text="团：无向图中，任意两个节点均有边连接的结点的集合；满足这一条件的所含结点最多的团称为最大团（不唯一），"/>
+                    <outline text="因子分解：将无向图的联合概率分布表示为最大团上的随机变量的函数的乘积，"/>
+                </outline>
+                <outline text="概率图模型：利用图来描述变量之间的关系的概率模型，结点为随机变量，边为随机变量间的关系（条件分布），">
+                    <outline text="概率无向图模型（马尔可夫随机场）：满足马尔可夫性的概率图模型，"/>
+                    <outline text="马尔科夫性类似马尔可夫链的定义，即每个节点的概率都只与相连节点有关，而与不相连的其他节点无关，"/>
+                </outline>
+                <outline text="条件随机场">
+                    <outline text="若给定随机变量X的条件下，随机变量Y的条件概率可以由马尔可夫随机场表示，则称条件概率分布P(Y| X)为条件随机场，"/>
+                    <outline text="线性链条件随机场：条件随机场中的随机变量X、Y均为线性链表示的随机变量序列，">
+                        <outline text="定理：线性链条件随机场可以经因子分解表示为参数形式，即条件概率可以表示为由函数t、s和参数λ、μ确定的函数，函数模型为对数线性模型，"/>
+                    </outline>
+                    <outline text="（表示方式）：条件随机场可以由向量或矩阵表示，"/>
+                </outline>
+            </outline>
+            <outline text="概率计算"/>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+    </body>
+</opml>

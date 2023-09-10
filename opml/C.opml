@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>C</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="开始">
+            <outline text="环境设置">
+                <outline text="可以参考Get Started with C++ and Mingw-w64 in Visual Studio Code，"/>
+                <outline text="设置完环境后，才可以在windows终端内运行编译器，"/>
+            </outline>
+            <outline text="代码运行">
+                <outline text="编写代码，并保存为.c扩展名的文件，"/>
+                <outline text="将powershell设置到对应的路径，"/>
+                <outline text="利用编译器编译对应文件，一般为gcc file.c，"/>
+                <outline text="在编译器内运行输出的可执行程序，一般为./a.exe，"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+    </body>
+</opml>

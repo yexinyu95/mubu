@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>java</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="准备步骤">
+            <outline text="java的安装">
+                <outline text="java的版本：标准版（SE），企业版（EE），微型版（ME），"/>
+                <outline text="JDK（java开发工具包）由一组程序构成，用于编译、运行和测试java程序，"/>
+            </outline>
+            <outline text="ide的安装">
+                <outline text="集成开发环境（ide）组合了编辑、编译、运行、测试、帮助等编程活动，可以更方便的编辑代码，"/>
+            </outline>
+        </outline>
+        <outline text="java程序的基本组成">
+            <outline text="一般的java程序包括三步：代码编写（code），编译（compile），执行（execute），"/>
+            <outline text="代码编写">
+                <outline text="类（class）">
+                    <outline text="java文件Filename.java的命名需要与类public class Filename的命名相同，"/>
+                </outline>
+                <outline text="方法（method）">
+                    <outline text="一般类中的主要方法用main表示，即public static void main(String[] args)，"/>
+                    <outline text="一个类中可以含有多个方法，"/>
+                    <outline text="实例（instance）方法">
+                        <outline text="需要绑定具体的对象使用，即var1.method()，"/>
+                        <outline text="方法本身可以有参数或没有参数，"/>
+                    </outline>
+                    <outline text="静态（static）方法">
+                        <outline text="不需要经过对象调用（但一般需要指明对应的库），即Class.method()，"/>
+                        <outline text="方法本身可以有参数或没有参数，"/>
+                    </outline>
+                </outline>
+                <outline text="语句（statement）">
+                    <outline text="java的语句需要在方法内定义，"/>
+                </outline>
+                <outline text="变量（variable）">
+                    <outline text="一般而言，变量可以分为三类：接受的输入变量，运算中的临时变量，输出的结果变量，"/>
+                    <outline text="部分程序可能不需要接受外界输入的变量，但一般所有程序都会产生输出变量，"/>
+                    <outline text="在java中使用变量时，需要首先声明变量的数据类型，"/>
+                </outline>
+            </outline>
+            <outline text="编译">
+                <outline text="机器语言">
+                    <outline text="java不能“直接”执行程序并输出结果，而是需要首先编译才可以运行，"/>
+                </outline>
+                <outline text="javac命令">
+                    <outline text="可以在cmd中执行javac命令javac file.java，输入时不能忽略文件的扩展名.java，">
+                        <outline text="应首先保证cmd的执行位置同代码所在位置相同，"/>
+                        <outline text="可以使用cd c:\folder更改目录，Windows目录不区分大小写，"/>
+                    </outline>
+                    <outline text="javac语句会形成二进制文件（class），用于执行Java程序，">
+                        <outline text="若存在语法错误，则不会形成二进制文件class，"/>
+                    </outline>
+                    <outline text="class文件由java虚拟机（jvm）执行，"/>
+                </outline>
+                <outline text="静态类型语言（static）">
+                    <outline text="java的每个变量和表达式在编译时都是唯一确定的，不能在编译过程中修改，"/>
+                </outline>
+            </outline>
+            <outline text="执行">
+                <outline text="可以在cmd中执行java命令java file来执行java程序，"/>
+            </outline>
+        </outline>
+        <outline text="编程风格">
+            <outline text="java区分大小写，"/>
+            <outline text="java利用；来标记每条语句，利用大括号{}来对语句进行分块（block），">
+                <outline text="java默认忽视所有的空白字符，也不通过缩进来区分语句，但保持适当的缩进和空格便于代码的阅读，"/>
+            </outline>
+            <outline text="注释">
+                <outline text=".// comment（或/*comment */）可以用来注释语句，"/>
+                <outline text="Java中不能用# 或三引号'''来注释语句，"/>
+            </outline>
+            <outline text="命名规则">
+                <outline text="常量用全大写字母（数字和下划线）表示，"/>
+                <outline text="类名称中的每个单词的首字母大写，"/>
+                <outline text="保留字符：public，static，int， class等为java的保留字，不能用于变量名称，"/>
+            </outline>
+        </outline>
+        <outline text="数据类型">
+            <outline text="定义">
+                <outline text="值和对这些值的操作的集合， "/>
+                <outline text="java提供了三大类基本数据类型，数值（实数、整数）；字符（字符，字符串）；布尔值，"/>
+            </outline>
+            <outline text="声明（declaration）">
+                <outline text="类型安全">
+                    <outline text="Java需要在使用变量前先声明变量类型，"/>
+                    <outline text="java中的变量类型在声明后就不能再变化，">
+                        <outline text="已经声明的变量不能被重新声明为新的类型（解释器会报错），"/>
+                        <outline text="不能将不同类型的值赋值给已经声明的变量（解释器会报错），"/>
+                    </outline>
+                </outline>
+                <outline text="声明语句">
+                    <outline text="基本形式为int var，"/>
+                    <outline text="可以在同一个语句中声明同一类型的多个变量int var1, var2, ...，"/>
+                    <outline text="声明语句可以和赋值语句组合在一起，即int var1 = 1, var2 = 2, ...，是合法的，"/>
+                </outline>
+            </outline>
+            <outline text="类型转换">
+                <outline text="隐式类型转换（自动转换/coercion）">
+                    <outline text="部分（数学）运算会自动转换输入的数值的类型（如将11变为11.0），"/>
+                    <outline text="0-FFFF的任意一个十六进制数也可以自动转换为字符（char），"/>
+                    <outline text="然而，将输出的运算结果赋值给变量时仍需注意对应的数值类型，"/>
+                </outline>
+                <outline text="显示转型（cast）">
+                    <outline text="括号（）可以转换数据类型，一般使用方法为(type)(value)，">
+                        <outline text="如11 * 0.25会返回2.75（需要赋值给double），而11 * (int)（0.25）则会返回0（可以赋值给int），因为0.25被取整为0，"/>
+                        <outline text="具体的转换方式可参考java官方文档，"/>
+                    </outline>
+                    <outline text="转型操作的优先级高于算数运算，"/>
+                </outline>
+                <outline text="显式类型转换">
+                    <outline text="java库中提供的一些方法可以对数据类型进行转换，"/>
+                    <outline text="如parseInt和parseDouble方法可以将字符串转换为int和double，"/>
+                </outline>
+                <outline text="精度损失">
+                    <outline text="将double值转换为int值时，可能会产生精度的损失，"/>
+                </outline>
+            </outline>
+            <outline text="数字">
+                <outline text="整型数int">
+                    <outline text="int为默认的整型数类型，使用32位二进制数表示整数，">
+                        <outline text="long/short/byte同样可以用于表达整型数，只是它们分别使用64位/16位/8位二进制数来表示，范围分别为±2^{n-1} -1，"/>
+                        <outline text="short和byte可以节省内存，但保存的位数有限，一般不常应用，"/>
+                        <outline text="若预期存储的整数位数多于10位，int类型可能会溢出（overflow）并返回一个错误值，应考虑使用long类型，"/>
+                        <outline text="（java允许在整型数间加入下划线，即print(12_34)会返回1234），"/>
+                    </outline>
+                    <outline text="进制转换">
+                        <outline text="在数字前加入字符可以在将输入的其它进制数字转换为十进制，"/>
+                        <outline text="二进制的前置字符为0b，如print(0b1111)；同理，八进制的前置字符为0，十六进制的前置字符为0X，"/>
+                    </outline>
+                    <outline text="舍入错误">
+                        <outline text="计算机中设计浮点数的运算都是近似的，因此得到的取值可能与实际值存在差异，"/>
+                        <outline text="如1.0 - 0.9会返回0.09999998而不是0.1，"/>
+                    </outline>
+                </outline>
+                <outline text="实数double（双精度浮点数）">
+                    <outline text="理论上实数有无限多个（如无限位的小数），但计算机中的浮点数数量是有限的，"/>
+                    <outline text="因此，计算机中的浮点数一般是对实数的近似，即具体运算时可能出现精度不足的问题，">
+                        <outline text="Infinity表示过大的数字，而NaN则代表未定义的结果，因此浮点数计算一般不会抛出异常并终止运行，"/>
+                    </outline>
+                    <outline text="可以用科学计数法aEb或aE+b表示实数a * 10 ^b，"/>
+                    <outline text="java也支持用float表示浮点数，float可以节省内存，但一般可以保存7位有效数字；而double则可以保存15位有效数字，"/>
+                </outline>
+            </outline>
+            <outline text="布尔值（boolean）">
+                <outline text="布尔值只有True和False，且布尔值的运算只会返回布尔值，"/>
+                <outline text="同其它变量一样，布尔值同样需要声明变量类型，"/>
+            </outline>
+            <outline text="字符（char）">
+                <outline text="单引号括起来的字母/符号为字符类型，">
+                    <outline text="字符按照Unicode编码；如'a','%'等，因此可以对字符进行布尔运算（实质为比较其Unicode编码的数值），"/>
+                    <outline text="布尔运算可以用来判断输入的字符是数字还是字母，也可以用Character库中的方法判断，"/>
+                </outline>
+                <outline text="字符一般只用于进行赋值操作，"/>
+                <outline text="转义字符（Escape Sequence）">
+                    <outline text="反斜号\可以给后面的字符不同的含义，"/>
+                    <outline text="（若希望显示反斜号，可以使用\\）,"/>
+                </outline>
+            </outline>
+            <outline text="字符串（String）">
+                <outline text="定义">
+                    <outline text="双引号括起来的字母/符号为字符串类型，"/>
+                    <outline text="字符串并非java的基本数据类型，而是引用类型（reference type），">
+                        <outline text="例如，不同于其他基本类型，String中的S需要大写，"/>
+                        <outline text="部分数学运算不适用于字符串，"/>
+                    </outline>
+                </outline>
+                <outline text="基本操作">
+                    <outline text="+可以连接多个字符串，">
+                        <outline text="对字符串使用+操作时，数值会被主动转换为字符串（即&quot;a&quot; + 5会返回a5而不会报错），"/>
+                        <outline text="在脚本模式编辑时，字符串中间不能加入换行符，可以用连接符+将两个字符串连接起来，"/>
+                        <outline text="使用符号+时，应注意运算顺序和括号的使用，"/>
+                    </outline>
+                </outline>
+                <outline text="（实例/instance）方法">
+                    <outline text=".length()返回字符串中的字符数（int值），"/>
+                    <outline text=".charAt(n)返回字符串的第n（从0开始）个字符（char值），"/>
+                    <outline text=".var1.concat(var2)可以连接两个字符串，"/>
+                    <outline text="toLowerCase和toUpperCase可以将字符串的所有字母转换为小写/大写，"/>
+                    <outline text=""/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="基本操作">
+            <outline text="赋值语句">
+                <outline text="=可以给变量赋值，（=不同于数学中的相等），"/>
+                <outline text="java的运算顺序为从右到左，从上到下；即将右侧的值赋给左侧的变量，逐行运算，"/>
+                <outline text="复合（augmented/compound）赋值语句">
+                    <outline text="类型">
+                        <outline text="复合赋值：语句i = i + n（将i的值增加n，并重新赋给i）可以简写为i += n（减法-/乘法*同理），"/>
+                        <outline text="变量的自增减：语句i = i + 1（将i的值增加1，并重新赋给i）也可以简写为i++，++i；">
+                            <outline text="i++，++i只会将i的值增加1，"/>
+                            <outline text="右加i++先运算语句，再将i的值增加1；左加++i则先将i的值增加1，再运算语句，"/>
+                            <outline text="减法-同理，"/>
+                        </outline>
+                    </outline>
+                    <outline text="性质">
+                        <outline text="复合赋值一般只能用于整数，"/>
+                        <outline text="复合赋值符在其它操作符计算完成后执行，"/>
+                        <outline text="复合赋值符中间没有空格，"/>
+                    </outline>
+                </outline>
+                <outline text="常量赋值">
+                    <outline text="final关键字可以将变量声明为常量final double PI = 3.14，"/>
+                </outline>
+            </outline>
+            <outline text="数学计算">
+                <outline text=" +，-，*，/，%（返回余数），"/>
+                <outline text="除法">
+                    <outline text="整除：由于java区分整数和浮点数，所以整数间的除法/实际上为整除运算（如5 / 2 = 2），"/>
+                    <outline text="小数除法：对于不能整除的小数，需要使用浮点数（5.0 \ 2.0 = 2.5）来运算，"/>
+                    <outline text="求余：%运算符可以返回整除后的余数（仍为整数），"/>
+                </outline>
+                <outline text="运算顺序类似其它编程语言，可以用括号（）更改运算顺序，"/>
+                <outline text="^并非幂次运算符，可以使用Math.pow(a, b)来计算a^b，"/>
+            </outline>
+            <outline text="布尔运算">
+                <outline text="运算类型">
+                    <outline text="比较运算：==、!=、&lt;、&lt;=、&gt;=，"/>
+                    <outline text="复合运算：&amp;&amp;（与），||（或），！（非），^（异或，类似!=）">
+                        <outline text="相比于运算符&amp;和|，双运算符可以“加快”运算（即根据前一个表达式的对错得到总的对错，而不需要检查第二个表达式），"/>
+                    </outline>
+                </outline>
+                <outline text="运算规则">
+                    <outline text="比较运算比算数运算的优先度低，比布尔运算的优先度高，"/>
+                    <outline text="比较运算不能连续进行，即a&lt;b&lt;c是不合法的，">
+                        <outline text="比较运算将非布尔值运算的结果转换为布尔值，"/>
+                        <outline text="需要连续运算时，应通过复合运算符（如&amp;&amp;）将其连接起来，"/>
+                    </outline>
+                    <outline text="同基本数学运算一样，可使用括号等方式组合布尔运算符，进行复杂的布尔运算，"/>
+                </outline>
+            </outline>
+            <outline text="运算符的顺序">
+                <outline text="结合（associativity）规则">
+                    <outline text="一般的运算符都为左结合（从左往右计算），如a - b + c为（a - b）+ c，"/>
+                    <outline text="赋值运算为右结合，如a = b = 5先将b赋值为5，再将a赋值为b（5），"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="语句">
+            <outline text="局部变量和整体变量"/>
+            <outline text="条件语句（condition）">
+                <outline text="if-else语句">
+                    <outline text="基本用法">
+                        <outline text="语法为if(boolean){func;} ...else{func2;}，"/>
+                        <outline text="布尔值之后不需要分号，"/>
+                        <outline text="需要在语句后加入分号，而并非在大括号后，"/>
+                    </outline>
+                    <outline text="else if语句">
+                        <outline text="基本用法为else if(boolean){func;}，"/>
+                        <outline text="else if语句需要在if语句之后，其实质为嵌套条件语句，"/>
+                        <outline text="java会逐个检查if/else if后的布尔值，布尔值为true则执行后面的语句，否则就检查下一个条件，直到最后的else语句，"/>
+                    </outline>
+                    <outline text="else语句">
+                        <outline text="else语句需要在if/else if语句之后，当表达式为false时即执行else后的语句，"/>
+                        <outline text="可以没有else语句，"/>
+                        <outline text="（若所有条件都为false，且没有else语句，则不会执行任务），"/>
+                    </outline>
+                    <outline text="注意事项">
+                        <outline text="使用条件语句时应注意赋值符号=和相等符号==的区分，"/>
+                        <outline text="java不使用缩进来区分语句，因此在写else语句时应注意else匹配的if语句， 并使用花括号{}来标识if语句，"/>
+                        <outline text="浮点数的精度有限，因此一般不直接使用浮点数的相等==来判断布尔值，而是通过测试两个数的差值是否小于某个阈值Math.abs(a - b) &lt; c来判断，"/>
+                    </outline>
+                </outline>
+                <outline text="条件操作符">
+                    <outline text="基本语法为(boolean)?(statement1):(statement2)；若布尔值为True，则执行语句1，否则执行语句2，"/>
+                    <outline text="条件操作符可以简化if语句的书写，但可能会使代码难以理解，"/>
+                </outline>
+                <outline text="switch语句">
+                    <outline text="面临多个条件时可以使用switch语句，">
+                        <outline text="理论上，也可以使用嵌套if语句，但这会使代码难以理解，"/>
+                    </outline>
+                    <outline text="基本语法为switch (status) {case var_1: statement_1; break;  ...  case var_n: statement_n; break; default: statement}，">
+                        <outline text="不同于if语句的布尔值条件（T/F两种可能），switch语句可以接受其它条件，">
+                            <outline text="条件由status语句算出，与case后的结果相对应，"/>
+                            <outline text="一般条件为0，1，2等整数，也可以为更复杂的字符串（string），"/>
+                        </outline>
+                        <outline text=".break语句会在执行完条件对应的语句后终止switch语句，">
+                            <outline text="若不使用break，则执行完case后的语句后，Java会继续判断其它case，直到遇到break或到达switch语句的结尾，"/>
+                        </outline>
+                        <outline text="可以在结尾加入default语句，若没有条件匹配则执行default语句后的语句，"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="循环语句（loop）">
+                <outline text="while语句：基本用法为while(boolean){func};，">
+                    <outline text="while语句可以理解为一系列的if语句，即只要布尔值为true，就执行之后的语句，"/>
+                </outline>
+                <outline text="for语句：基本用法为for(func1; boolean; increment){func}，">
+                    <outline text="for语句一般可以理解为while语句的简化形式，即func1; while(boolean){func; increment;}，主要用于需要递增（如i = i +1）的语句中，"/>
+                    <outline text="作用域（scope）：for语句虽然简化了书写，但for语句中的递增变量在语句后就会消失，不能用于以后的运算，"/>
+                </outline>
+                <outline text="循环语句在计算机编程中十分重要， 但也可能导致错误；可以尝试使用print语句来打印出部分循环的结果，以追踪每次操作，"/>
+            </outline>
+            <outline text="嵌套（nesting）">
+                <outline text="语句与其它函数在编程时地位是相同的，因此可以随时按需使用这些语句，或将语句组合起来形成复合语句，"/>
+                <outline text="应注意，在嵌套语句中，外部循环每执行一次，内部循环会执行一整轮，"/>
+            </outline>
+            <outline text="流程图">
+                <outline text="对于复杂的任务，应使用流程图规划嵌套语句，"/>
+                <outline text="应首先确定需要设置的变量，然后重点跟踪变量的取值变化，">
+                    <outline text="运算中的临时变量不一定需要单独保留，"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="函数（function）">
+            <outline text="System.in为基本输入语句，">
+                <outline text="Scanner类">
+                    <outline text="Scanner对象">
+                        <outline text="需要先引入（在public class语句之前）Scanner类import java.util.Scanner;,"/>
+                        <outline text="语句Scanner input = new Scanner(System.in);会创建一个Scanner对象input，需要使用后续语句对input进行赋值，然后才能使用变量，"/>
+                    </outline>
+                    <outline text="Scanner方法">
+                        <outline text="在cmd中运行java file后，cmd会提供一个新行来接受输入，"/>
+                        <outline text="行内输入">
+                            <outline text=".var1 = input.nextType()将接受的输入赋给变量var1，并按照空格区分不同的输入信息，将行内的输入分别按后续语句赋值给其他变量，"/>
+                            <outline text="不同的类型需要用不同的next方法，如nextInt，nextDouble等（也需要赋值给声明的不同变量类型），"/>
+                            <outline text=".nextline()方法会将回车/Enter前输入的所有信息作为一整个字符串赋值给对应变量，"/>
+                            <outline text="回车（Enter）将会结束next方法，并继续执行后续语句，"/>
+                        </outline>
+                        <outline text="行间输入">
+                            <outline text="回车（Enter）将会结束next方法，若后续语句仍有下一个next方法var1 = input.nextType()，则cmd会继续提供一个新行来接受输入，同样以回车（Enter）作为结束，"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="数值输入">
+                    <outline text="可使用int a = Integer.parseInt(args[0])接受外界输入的int值，使用double a = Double.parseDouble(args[0])接受外界输入的double值，"/>
+                </outline>
+            </outline>
+            <outline text="System.out为基本输出语句，">
+                <outline text="system.out.print和system.out.println函数为基本的print函数，区别在于system.out.println函数会自动加入一个换行符，"/>
+            </outline>
+            <outline text="其它">
+                <outline text="System.currentTimeMillis()函数会返回一个long值，表示当前时间与1970年1月1日之间相差的毫秒数（需要赋值给long），"/>
+            </outline>
+        </outline>
+        <outline text="库（library）">
+            <outline text="基本概念">
+                <outline text="包含了已经写好的函数的java代码，也会包含一些具体数值（如自然对数e），"/>
+                <outline text="api（应用程序编程接口）">
+                    <outline text="对如何应用库中的方法的描述，"/>
+                    <outline text="一般由库的在线文档给出，因此使用方法时应考虑在在线文档中搜索，"/>
+                </outline>
+            </outline>
+            <outline text="Math库">
+                <outline text="常量">
+                    <outline text=".Math.PI, Math.E为double型常量，"/>
+                </outline>
+                <outline text="方法">
+                    <outline text="三角函数/反三角函数">
+                        <outline text="函数接受的都为double值，但默认单位为弧度，"/>
+                        <outline text="可以用toRadians或toDegrees方法相互转换，"/>
+                    </outline>
+                    <outline text="指数函数/对数函数">
+                        <outline text=".pow(a，b)函数可以用来计算幂，log()可以计算自然对数，"/>
+                    </outline>
+                </outline>
+                <outline text="服务方法">
+                    <outline text=".random()函数会返回一个0.0-1.0之间的随机浮点数，">
+                        <outline text="生成的数值需要赋值给double，也可以使用类型转换将其更改为int类型，"/>
+                    </outline>
+                    <outline text=".abs()函数可以接受double值或int值，返回数值的绝对值（同类型），"/>
+                    <outline text=".ceil(), floor()分别为向上，向下取整，"/>
+                    <outline text=".min(), max()返回两个值中的较小/较大值，"/>
+                </outline>
+            </outline>
+            <outline text="Character库">
+                <outline text="接受一个字符，返回一个布尔值，"/>
+                <outline text="一般用于判断数字/字符，或字符的大小写，"/>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text="其它">
+            <outline text="（计算机基础）">
+                <outline text="内存：存储程序和程序需要的数据，每个字节（bit）都有唯一的位置，"/>
+                <outline text="机器语言（二进制），汇编语言，高级语言，"/>
+                <outline text="操作系统：给不同的程序分配计算机资源，"/>
+            </outline>
+            <outline text="计算机程序">
+                <outline text="算法">
+                    <outline text="通过计算机擅长的方式设计解决问题的策略，"/>
+                    <outline text="包括需要执行的动作，和动作的执行顺序，"/>
+                    <outline text="关键在于解决问题，因此可以通过部分“伪代码”来描述，"/>
+                </outline>
+                <outline text="实现">
+                    <outline text="利用编程语言实现算法，"/>
+                </outline>
+            </outline>
+            <outline text="软件开发">
+                <outline text="需求分析"/>
+                <outline text="软件框架">
+                    <outline text="确定系统的输入与输出，"/>
+                    <outline text="一般的程序更注重输出的结果，再通过希望得到的结果分析需要怎样的输出，"/>
+                </outline>
+                <outline text="系统设计">
+                    <outline text="将问题分解为多个小部分，"/>
+                    <outline text="设计每个组成部分的具体方案"/>
+                    <outline text="将系统设计翻译为程序（实现/Implementation），"/>
+                </outline>
+                <outline text="系统调试">
+                    <outline text="测试系统的可执行性，"/>
+                    <outline text="调试">
+                        <outline text="语法（syntax）错误/编译（compile）错误"/>
+                        <outline text="运行时（runtime）错误"/>
+                        <outline text="逻辑（logic）错误"/>
+                    </outline>
+                </outline>
+                <outline text="部署与维护"/>
+            </outline>
+        </outline>
+    </body>
+</opml>

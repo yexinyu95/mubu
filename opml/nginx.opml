@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>nginx</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="问题：DNS">
+            <outline text="可行性">
+                <outline text="DNS地址错误，但IP地址仍可使用"/>
+                <outline text="nginx本地反代github | A little homepage. (neutron3529.github.io)"/>
+            </outline>
+            <outline text="解决方式：本地反向代理，"/>
+            <outline text="途径（软件）：nginx">
+                <outline text="参考">
+                    <outline text="GitHub - mashirozx/Pixiv-Nginx: P站（Pixiv）的正确打开方式"/>
+                </outline>
+                <outline text="nginx的设置">
+                    <outline text="nginx的安装">
+                        <outline text="nginx for Windows"/>
+                        <outline text="Nginx Windows详细安装部署教程 - taiyonghai - 博客园 (cnblogs.com)"/>
+                    </outline>
+                    <outline text="nginx的配置">
+                        <outline text="证书的签发">
+                            <outline text="openssl的安装"/>
+                            <outline text="证书的DNS修改"/>
+                        </outline>
+                        <outline text="服务修改（nginx.conf）"/>
+                        <outline text="DNS修改（新建hostmap.conf）">
+                            <outline text="DNS的设置"/>
+                            <outline text="DNS的配置"/>
+                        </outline>
+                    </outline>
+                    <outline text="windows的hosts修改"/>
+                    <outline text="nginx的启动和关闭"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+    </body>
+</opml>

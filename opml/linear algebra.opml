@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>linear algebra</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>SeA</ownerName>
+        <ownerEmail>abcqaz159@outlook.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="common matrices">
+            <outline text="C(column), R(row)"/>
+            <outline text="L(lower triangular), U(upper triangular)"/>
+            <outline text="Q(orthogonal), S(symmetric)"/>
+            <outline text=".\Lambda(eigenvalues)"/>
+        </outline>
+        <outline text="matrices multiplication">
+            <outline text=".\begin{pmatrix} a_{11} &amp; a_{12}  &amp; a_{13}\\ a_{21} &amp; a_{22}  &amp; a_{23} \\  a_{31} &amp; a_{32}  &amp; a_{33}\end{pmatrix} X\begin{pmatrix} b_{11} &amp; b_{12}  &amp; b_{13}\\ b_{21} &amp; b_{22}  &amp; b_{23} \\  b_{31} &amp; b_{32}  &amp; b_{33}\end{pmatrix}, "/>
+            <outline text=". \begin{pmatrix} a_{11} &amp; a_{12}  &amp; a_{13}\\ a_{21} &amp; a_{22}  &amp; a_{23} \\  a_{31} &amp; a_{32}  &amp; a_{33}\end{pmatrix} X \begin{pmatrix} b_{11} \\ b_{21} \\ b_{31} \end{pmatrix}  + ..."/>
+            <outline text=".\begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \end{pmatrix}  X b_{11} + ... = linear combinations of columns,"/>
+        </outline>
+        <outline text="rank">
+            <outline text="dependent and independent vectors"/>
+        </outline>
+        <outline text="eigenvalues and eigenvectors (only for square matrices)"/>
+        <outline text="singular values and singular vectors(for any matrices)"/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+        <outline text=""/>
+    </body>
+</opml>

@@ -1,0 +1,120 @@
+{
+  "main": {
+    "id": "b5de942e4093025f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b042c49d8d67f419",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "移动设备弹出.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a075f29ff463a8d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "1227b72150aaa146",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bd470c68fd40b46",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "715cacd80a9bce31",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 211.00000190734863
+  },
+  "right": {
+    "id": "fbe87c8160746d14",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0d5f4e5eab2f0f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91ab86cf8f5ab3f6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "移动设备弹出.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "482a9fc775136ade",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "90674bf35691ee5a",
+            "type": "leaf",
+            "state": {
+              "type": "stats-tracker",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 248.4444122314453,
+    "collapsed": true
+  },
+  "active": "b042c49d8d67f419",
+  "lastOpenFiles": [
+    "移动设备弹出.md",
+    "Others.md",
+    "常见分布族.md",
+    "C.md",
+    "favorites/Data_science.md",
+    "favorites/Medicine.md",
+    "favorites/Neuroscience.md",
+    "矩阵论.md",
+    "线性代数.md",
+    "随机过程.md"
+  ]
+}
